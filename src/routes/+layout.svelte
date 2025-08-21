@@ -3,6 +3,7 @@
 	import Icon from "@iconify/svelte";
 	import "@fontsource/poppins";
 	import { onMount } from "svelte";
+	import favicon from "$lib/assets/favicon.jpg";
 	let { children } = $props();
 
 	let isMenuOpen = $state(false);
@@ -32,7 +33,7 @@
 	<div class="nav">
 		<div class="logo">
 			<a href="/" class="logo-link">
-				<img src="favicon.PNG" alt="Logo" class="logo-img" />
+				<img src={favicon} alt="Logo" class="logo-img" />
 				<h1 class="username">chdkg</h1>
 			</a>
 		</div>
