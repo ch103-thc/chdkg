@@ -275,7 +275,7 @@
                 </section>
 
                 <a
-                    href="https://www.carousell.sg/p/logitech-m240-silent-bluetooth-mouse-1377814833/?t-id=14184060_1751775259709&t-referrer_browse_type=seller&t-referrer_page_type=profile&t-referrer_request_id=CQLceRgnawpbglXC&t-tap_index=1"
+                    href="https://www.carousell.sg/p/logitech-m240-wireless-mouse-1388215873/?t-id=14184060_1755684279929&t-referrer_browse_type=seller&t-referrer_page_type=profile&t-referrer_request_id=89lvejLFUl_22sMt&t-tap_index=1"
                     target="_blank"
                 >
                     <button class="action-button">Buy Now</button>
