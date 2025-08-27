@@ -279,7 +279,7 @@
                 </section>
 
                 <a
-                    href="https://www.carousell.sg/p/logitech-mx-keys-mini-1386861644/?t-id=YPt5WPQb2R_1755525041500&t-referrer_browse_type=seller&t-referrer_page_type=profile&t-referrer_request_id=F9qX4FS8kobwKNLb&t-tap_index=1"
+                    href="https://www.carousell.sg/p/bnib-logitech-mx-keys-mini-wireless-keyboard-1389212593/?t-id=14184060_1756291584940&t-referrer_browse_type=seller&t-referrer_page_type=profile&t-referrer_request_id=Hqxzf7IQkBmAxpFD&t-tap_index=1"
                     target="_blank"
                 >
                     <button class="action-button">Buy Now</button>
