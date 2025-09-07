@@ -3,7 +3,7 @@
 	import Icon from "@iconify/svelte";
 	import "@fontsource/poppins";
 	import { onMount } from "svelte";
-	import favicon from "$lib/assets/favicon.jpg";
+	import favicon from "/assets/favicon.jpg";
 	let { children } = $props();
 
 	let isMenuOpen = $state(false);
