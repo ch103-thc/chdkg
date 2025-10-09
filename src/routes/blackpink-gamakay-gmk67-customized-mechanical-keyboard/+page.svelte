@@ -24,7 +24,7 @@
         ],
         image: "/files/first.jpg",
         originalPrice: 450,
-        salePrice: 250,
+        salePrice: 220,
         features: ["65%", "Hotswap", "RGB", "Wireless"],
         includes: ["Keycap Puller", "2.4Hz USB Dongle", "USB Cable"],
         brand: "GamaKay",
@@ -338,7 +338,7 @@
         align-items: center;
 
         .section {
-            padding: 6rem 0;
+            padding: 7rem 0;
             background-color: #f9fafb;
             width: 100%;
 

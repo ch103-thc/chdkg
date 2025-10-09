@@ -325,7 +325,7 @@
         align-items: center;
 
         .section {
-            padding: 6rem 0;
+            padding: 7rem 0;
             background-color: #f9fafb;
             width: 100%;
 

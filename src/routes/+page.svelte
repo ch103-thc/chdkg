@@ -49,7 +49,7 @@
 
 <style lang="scss">
     .content {
-        padding-top: 4rem;
+        padding-top: 5rem;
         background-color: #f0f4f8;
     }
 

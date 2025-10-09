@@ -190,6 +190,7 @@
 			}
 
 			.username {
+				color: black;
 				font-weight: bold;
 				font-size: 1rem;
 			}
