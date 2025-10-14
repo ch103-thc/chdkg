@@ -24,7 +24,7 @@
         ],
         image: "/files/first.jpg",
         originalPrice: 450,
-        salePrice: 220,
+        salePrice: 179.90,
         features: ["65%", "Hotswap", "RGB", "Wireless"],
         includes: ["Keycap Puller", "2.4Hz USB Dongle", "USB Cable"],
         brand: "GamaKay",
@@ -289,7 +289,7 @@
                 </section>
 
                 <a
-                    href="https://www.carousell.sg/p/blackpink-gamakay-gmk67-customised-mechanical-keyboard-1355569878/?t-id=14184060_1743931823576&t-referrer_browse_type=seller&t-referrer_page_type=profile&t-referrer_request_id=nx8rCX0GZgr7vSDC&t-tap_index=0"
+                    href="https://www.carousell.sg/p/blackpink-mechanical-keyboard-1397962349/?t-id=kgTFMaJwBK_1760417565691&t-referrer_browse_type=seller&t-referrer_page_type=profile&t-referrer_request_id=QKfHRA8eGAOIPfGR&t-tap_index=3"
                     target="_blank"
                 >
                     <button class="action-button">Buy Now</button>

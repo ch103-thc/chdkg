@@ -11,7 +11,7 @@
     };
 
     const tags = $state(["Featured"]);
-    const price = $state(25);
+    const price = $state(22);
     const product = $state({
         name: "Logitech M240 Silent Bluetooth Mouse",
         description: [
@@ -22,7 +22,7 @@
             "Adjustable DPI - DPI Range: 400 - 4000, Steps of 100 DPI.",
         ],
         image: "/files/mouse1.jpg",
-        originalPrice: 25,
+        originalPrice: 22,
         features: [
             "Two-Handed",
             "Silent Clicking",
@@ -275,7 +275,7 @@
                 </section>
 
                 <a
-                    href="https://www.carousell.sg/p/logitech-m240-wireless-mouse-1389213270/?t-id=14184060_1756291584940&t-referrer_browse_type=seller&t-referrer_page_type=profile&t-referrer_request_id=Hqxzf7IQkBmAxpFD&t-tap_index=0"
+                    href="https://www.carousell.sg/p/logitech-m240-silent-wireless-mouse-1397912051/?t-id=kgTFMaJwBK_1760417565691&t-referrer_browse_type=seller&t-referrer_page_type=profile&t-referrer_request_id=GguwTXqpJaV7ZYBF&t-tap_index=2"
                     target="_blank"
                 >
                     <button class="action-button">Buy Now</button>

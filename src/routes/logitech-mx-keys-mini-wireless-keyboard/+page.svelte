@@ -11,7 +11,7 @@
     };
 
     const tags = $state(["Featured"]);
-    const price = $state(120);
+    const price = $state(110);
     const product = $state({
         name: "Logitech MX Keys Mini Wireless Keyboard",
         description: [
@@ -24,7 +24,7 @@
             "Compatible with Windows, macOS, iPadOS, Android, and more.",
         ],
         image: "/files/keyboard1.jpg",
-        originalPrice: 120,
+        originalPrice: 110,
         features: [
             "Silent Typing",
             "Bluetooth",
@@ -279,7 +279,7 @@
                 </section>
 
                 <a
-                    href="https://www.carousell.sg/p/bnib-logitech-mx-keys-mini-wireless-keyboard-1389212593/?t-id=14184060_1756291584940&t-referrer_browse_type=seller&t-referrer_page_type=profile&t-referrer_request_id=Hqxzf7IQkBmAxpFD&t-tap_index=1"
+                    href="https://www.carousell.sg/p/logitech-mx-keys-mini-wireless-keyboard-1397962848/?t-id=kgTFMaJwBK_1760417565691&t-referrer_browse_type=seller&t-referrer_page_type=profile&t-referrer_request_id=Qg_Bj5_u2sVw8x9b&t-tap_index=1"
                     target="_blank"
                 >
                     <button class="action-button">Buy Now</button>
