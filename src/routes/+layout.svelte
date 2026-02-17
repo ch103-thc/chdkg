@@ -1,12 +1,13 @@
 <script>
-	import Icon from "@iconify/svelte";
-	import "@fontsource/poppins";
-	import { onMount } from "svelte";
-	import favicon from "$lib/assets/favicon.jpg";
+	import Icon from '@iconify/svelte';
+	import '@fontsource/poppins';
+	import { onMount } from 'svelte';
+	import favicon from '$lib/assets/favicon.jpg';
 	let { children } = $props();
 
 	let isMenuOpen = $state(false);
 	let isMobile = $state(false);
+	let isDropdownOpen = $state(false);
 
 	const checkMobile = () => {
 		isMobile = window.innerWidth <= 768;
@@ -16,12 +17,23 @@
 		isMenuOpen = !isMenuOpen;
 	};
 
+	const handleClickOutside = (e) => {
+		if (isMenuOpen && !e.target.closest('.menulist') && !e.target.closest('.menu-toggle')) {
+			isMenuOpen = false;
+		}
+		if (isDropdownOpen && !e.target.closest('.dropdown')) {
+			isDropdownOpen = false;
+		}
+	};
+
 	onMount(() => {
 		checkMobile();
-		window.addEventListener("resize", checkMobile);
+		window.addEventListener('resize', checkMobile);
+		document.addEventListener('click', handleClickOutside);
 
 		return () => {
-			window.removeEventListener("resize", checkMobile);
+			window.removeEventListener('resize', checkMobile);
+			document.removeEventListener('click', handleClickOutside);
 		};
 	});
 </script>
@@ -38,100 +50,76 @@
 		</div>
 
 		<button class="menu-toggle" onclick={toggleMenu}>
-			<Icon
-				icon={isMenuOpen ? "mdi:close" : "mdi:menu"}
-				width="24"
-				height="24"
-			/>
+			<Icon icon={isMenuOpen ? 'mdi:close' : 'mdi:menu'} width="24" height="24" />
 		</button>
 
 		<ul class="menulist" class:active={isMenuOpen}>
-			<li>
-				<a
-					href="/blackpink-gamakay-gmk67-customized-mechanical-keyboard"
-					onclick={toggleMenu}
-				>
-					GMK67
-					{#if isMobile}
-						<Icon
+			<!-- Desktop dropdown trigger -->
+			<li class="dropdown" class:open={isDropdownOpen}>
+				<button class="dropdown-trigger" onclick={() => (isDropdownOpen = !isDropdownOpen)}>
+					Menu <Icon icon="mdi:chevron-down" width="18" height="18" />
+				</button>
+				<ul class="dropdown-menu">
+					<li><a href="/gamakay-gmk67-customized-mechanical-keyboard">GMK67</a></li>
+					<li><a href="/logitech-m240-silent-bluetooth-mouse">Logitech M240</a></li>
+					<li>
+						<a href="/jbl-tune-770nc-wireless-over-ear-noise-cancelling-headphones"
+							>JBL Tune 770NC</a
+						>
+					</li>
+					<li><a href="/aula-win68he-wireless-mechanical-keyboard">AULA WIN68HE</a></li>
+					<li><a href="/aula-f75-wireless-mechanical-keyboard">AULA F75</a></li>
+					<li>
+						<a href="/razer-basilisk-x-hyperspeed-wireless-gaming-mouse"
+							>Razer Basilisk x Hyperspeed</a
+						>
+					</li>
+				</ul>
+			</li>
+
+			<!-- Mobile links (unchanged) -->
+			{#if isMobile}
+				<li>
+					<a href="/gamakay-gmk67-customized-mechanical-keyboard" onclick={toggleMenu}
+						>GMK67 <Icon icon="ep:right" width="20" height="20" class="menu-icon" /></a
+					>
+				</li>
+				<li>
+					<a href="/logitech-m240-silent-bluetooth-mouse" onclick={toggleMenu}
+						>Logitech M240 <Icon icon="ep:right" width="20" height="20" class="menu-icon" /></a
+					>
+				</li>
+				<li>
+					<a
+						href="/jbl-tune-770nc-wireless-over-ear-noise-cancelling-headphones"
+						onclick={toggleMenu}
+						>JBL Tune 770NC <Icon icon="ep:right" width="20" height="20" class="menu-icon" /></a
+					>
+				</li>
+				<li>
+					<a href="/aula-win68he-wireless-mechanical-keyboard" onclick={toggleMenu}
+						>AULA WIN68HE <Icon icon="ep:right" width="20" height="20" class="menu-icon" /></a
+					>
+				</li>
+				<li>
+					<a href="/aula-f75-wireless-mechanical-keyboard" onclick={toggleMenu}
+						>AULA F75 <Icon icon="ep:right" width="20" height="20" class="menu-icon" /></a
+					>
+				</li>
+				<li>
+					<a href="/razer-basilisk-x-hyperspeed-wireless-gaming-mouse" onclick={toggleMenu}
+						>Razer Basilisk x Hyperspeed <Icon
 							icon="ep:right"
 							width="20"
 							height="20"
 							class="menu-icon"
-						/>
-					{/if}
-				</a>
-			</li>
-			<li>
-				<a
-					href="/logitech-m240-silent-bluetooth-mouse"
-					onclick={toggleMenu}
-				>
-					Logitech M240
-					{#if isMobile}
-						<Icon
-							icon="ep:right"
-							width="20"
-							height="20"
-							class="menu-icon"
-						/>
-					{/if}
-				</a>
-			</li>
-			<li>
-				<a
-					href="/jbl-tune-770nc-wireless-over-ear-noise-cancelling-headphones"
-					onclick={toggleMenu}
-				>
-					JBL Tune 770NC
-					{#if isMobile}
-						<Icon
-							icon="ep:right"
-							width="20"
-							height="20"
-							class="menu-icon"
-						/>
-					{/if}
-				</a>
-			</li>
-			<li>
-				<a
-					href="/logitech-mx-keys-mini-wireless-keyboard"
-					onclick={toggleMenu}
-				>
-					Logitech MX Keys Mini
-					{#if isMobile}
-						<Icon
-							icon="ep:right"
-							width="20"
-							height="20"
-							class="menu-icon"
-						/>
-					{/if}
-				</a>
-			</li>
-			<li>
-				<a
-					href="/razer-basilisk-x-hyperspeed-wireless-gaming-mouse"
-					onclick={toggleMenu}
-				>
-					Razer Basilisk x Hyperspeed
-					{#if isMobile}
-						<Icon
-							icon="ep:right"
-							width="20"
-							height="20"
-							class="menu-icon"
-						/>
-					{/if}
-				</a>
-			</li>
+						/></a
+					>
+				</li>
+			{/if}
+
 			<li class="social-links">
-				<a
-					href="https://www.instagram.com/swiftcurated"
-					target="_blank"
-					rel="noopener"
-				>
+				<a href="https://www.instagram.com/swiftcurated" target="_blank" rel="noopener">
 					<Icon icon="mdi:instagram" width="20" height="20" />
 				</a>
 			</li>
@@ -151,7 +139,7 @@
 
 <style lang="scss">
 	main {
-		font-family: "Poppins", sans-serif;
+		font-family: 'Poppins', sans-serif;
 	}
 
 	.nav {
@@ -246,6 +234,55 @@
 				a {
 					color: inherit;
 				}
+			}
+		}
+
+		.dropdown {
+			position: relative;
+
+			.dropdown-trigger {
+				display: flex;
+				align-items: center;
+				gap: 4px;
+				background: none;
+				border: none;
+				cursor: pointer;
+				font-family: 'Poppins', sans-serif;
+				font-size: 1rem;
+				padding: 8px 16px;
+			}
+
+			.dropdown-menu {
+				display: none;
+				position: absolute;
+				top: calc(100% + 8px);
+				right: 0;
+				background: white;
+				border: 1px solid rgba(0, 0, 0, 0.1);
+				border-radius: 8px;
+				list-style: none;
+				padding: 8px 0;
+				margin: 0;
+				min-width: 220px;
+				box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+
+				li a {
+					padding: 10px 20px;
+					white-space: nowrap;
+					display: block;
+
+					&:hover {
+						background: rgba(0, 0, 0, 0.04);
+					}
+				}
+			}
+
+			&.open .dropdown-menu {
+				display: block;
+			}
+
+			@media (max-width: 768px) {
+				display: none;
 			}
 		}
 

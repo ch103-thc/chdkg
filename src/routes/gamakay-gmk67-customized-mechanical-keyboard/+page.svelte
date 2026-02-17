@@ -3,39 +3,29 @@
 	import { slide } from 'svelte/transition';
 
 	const featureIcons = {
-		'Noise Cancelling': 'material-symbols:keyboard-outline-rounded',
-		Bass: 'material-symbols:speaker',
-		'Long-Lasting Battery': 'gg:battery',
-		Bluetooth: 'material-symbols:bluetooth-rounded',
-		Personalise: 'duo-icons:app',
-		'Clearer Calls': 'tabler:microphone-filled',
-		Lightweight: 'fe:feather'
+		'65%': 'material-symbols:keyboard-outline-rounded',
+		Hotswap: 'basil:exchange-solid',
+		RGB: 'tabler:sun-filled',
+		Wireless: 'mdi:battery-charging-wireless-50'
 	};
 
-	const tags = $state(['Featured']);
-	const price = $state(120);
+	const tags = $state(['Featured', 'Limited Edition', 'Customized']);
+	const price = $state(450);
 	const product = $state({
-		name: 'JBL Tune 770NC Wireless Over-Ear Noise Cancelling Headphones',
+		name: 'Blackpink GamaKay GMK67 Customized Mechanical Keyboard',
 		description: [
-			'Adaptive Noise Cancelling - Block out distractions and focus on your music, work, or calls. You can even switch to Smart Ambient mode to stay aware of your surroundings when needed.',
-			'Pure Bass, Pure Bliss - Feel the thump of JBL’s signature Pure Bass sound. Whether you’re vibing to beats or zoning into a podcast, your audio will be rich, clear, and immersive.',
-			'All-Day Battery Life - Get up to 70 hours of playtime on a single charge—enough to keep up with your longest days. In a rush? A quick 5-minute charge gives you 3 hours of playback.',
-			'Bluetooth 5.3 with LE Audio -  Enjoy stable, high-quality wireless streaming and seamless switching between your phone, tablet, or laptop with multi-point connection support.',
-			'Personalize Your Sound - Download the JBL Headphones app to adjust your EQ and customize your listening experience to match your mood or music.',
-			'Clearer Calls, Your Way - With VoiceAware, you control how much of your own voice you hear during calls—so you sound more natural and confident.',
-			'Foldable, Lightweight Design - The headphones fold flat for easy storage and travel, while the cushioned ear cups ensure all-day comfort.'
+			"Durability - With this mechanical keyboard, you'll enjoy years of reliable use, as each switch is rated for tens of millions of keystrokes.",
+			'Tactile Feedback - Every keypress provides satisfying feedback, helping you type with more accuracy and enjoyment.',
+			'Customization - Customize this keyboard to your preferences by swapping keycaps and switches to create your perfect setup.',
+			'Typing Speed -  The mechanical keys help you type faster and more accurately, enhancing both your efficiency and comfort.',
+			'Improved Gaming Performance - Experience faster response times and precise inputs, giving you an edge in your gaming performance.',
+			'Comfort - The ergonomic design and customizable switches reduce strain, offering comfort during long typing or gaming sessions.',
+			'Design - A sleek, stylish design that fits seamlessly into your desk setup, enhancing both form and function.'
 		],
-		image: '/files/headphones1.jpg',
-		originalPrice: 120,
-		features: [
-			'Noise Cancelling',
-			'Bass',
-			'Long-Lasting Battery',
-			'Bluetooth',
-			'Personalise',
-			'Clearer Calls',
-			'Lightweight'
-		],
+		image: '/files/first.jpg',
+		originalPrice: 450,
+		salePrice: 179.9,
+		features: ['65%', 'Hotswap', 'RGB', 'Wireless'],
 		includes: ['Keycap Puller', '2.4Hz USB Dongle', 'USB Cable'],
 		brand: 'GamaKay',
 		condition: 'New'
@@ -45,7 +35,7 @@
 		{
 			title: 'Specs & Details',
 			intro:
-				'Take your listening experience to the next level with the JBL Tune 770NC wireless over-ear headphones. Whether you’re commuting, working, or relaxing, these headphones give you the power to tune out the noise and dive deep into your music—just the way you like it.',
+				'A sleek 67 key keyboard kit with RGB, hot-swappable switches, and wireless modes. Perfect for gaming or just typing in style!',
 			listItems: product.description,
 			open: false
 		},
@@ -77,8 +67,13 @@
 			open: false
 		},
 		{
+			question: 'Is this keyboard hot-swappable?',
+			answer: 'Yes, it supports hot-swapping for both 3-pin and 5-pin switches.',
+			open: false
+		},
+		{
 			question: 'What type of connection does it support?',
-			answer: 'It supports both Bluetooth and wired connections.',
+			answer: 'It supports wired USB, Bluetooth, and 2.4GHz wireless connection.',
 			open: false
 		},
 		{
@@ -89,10 +84,8 @@
 	]);
 
 	const mediaItems = $state([
-		{ type: 'image', src: '/files/headphones1.jpg', alt: 'View 1' },
-		{ type: 'image', src: '/files/headphones2.jpg', alt: 'View 2' },
-		{ type: 'image', src: '/files/headphones3.jpg', alt: 'View 3' },
-		{ type: 'image', src: '/files/headphones4.jpg', alt: 'View 4' }
+		{ type: 'image', src: '/files/first.jpg', alt: 'View 1' },
+		{ type: 'image', src: '/files/second.jpg', alt: 'View 2' }
 	]);
 
 	let currentSlide = $state(0);
@@ -196,7 +189,17 @@
 				</div>
 				<h1 class="product-title">{product.name}</h1>
 				<div class="product-pricing">
-					<span class="regular-price">S${product.originalPrice.toFixed(2)}</span>
+					{#if product.salePrice && product.salePrice < product.originalPrice}
+						<span class="original-price">S${product.originalPrice.toFixed(2)}</span>
+						<span class="sale-price">S${product.salePrice.toFixed(2)}</span>
+						<span class="discount-badge"
+							>{Math.round(
+								((product.originalPrice - product.salePrice) / product.originalPrice) * 100
+							)}% OFF</span
+						>
+					{:else}
+						<span class="regular-price">S${product.originalPrice.toFixed(2)}</span>
+					{/if}
 				</div>
 				<div class="product-features">
 					<h3 class="features-title">Features</h3>
@@ -236,7 +239,7 @@
 				</section>
 
 				<a
-					href="https://www.carousell.sg/p/jbl-tune-770nc-wireless-over-ear-noise-cancelling-headphones-1371294412/?t-id=bVOd0KoDAV_1751775207462&t-referrer_browse_type=seller&t-referrer_page_type=profile&t-referrer_request_id=DkGxtgowjy7g32Ze&t-tap_index=3"
+					href="https://www.carousell.sg/p/blackpink-mechanical-keyboard-1397962349/?t-id=kgTFMaJwBK_1760417565691&t-referrer_browse_type=seller&t-referrer_page_type=profile&t-referrer_request_id=QKfHRA8eGAOIPfGR&t-tap_index=3"
 					target="_blank"
 				>
 					<button class="action-button">Buy Now</button>
@@ -440,9 +443,22 @@
 						gap: 0.5rem;
 						margin: 1rem 0;
 
-						.regular-price {
+						.original-price {
+							text-decoration: line-through;
+							color: #888;
+						}
+
+						.sale-price {
+							color: #27ae60;
 							font-weight: bold;
-							color: #333;
+						}
+
+						.discount-badge {
+							background-color: #27ae60;
+							color: #fff;
+							padding: 0.2rem 0.5rem;
+							font-size: 0.8rem;
+							border-radius: 4px;
 						}
 					}
 
