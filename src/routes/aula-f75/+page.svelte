@@ -1,4 +1,6 @@
 <script>
+	import { slide } from 'svelte/transition';
+
 	let activeMedia = $state('img/aula-f75-1.jpg');
 	let isVideo = $derived(activeMedia.endsWith('.MP4'));
 	const media = [
@@ -119,8 +121,8 @@
 
 			<ul class="perks">
 				<li>
-					<strong>75% Compact Layout</strong> – Clean desk. Clear mind. All your essential keys in a sleek,
-					space-saving design that looks as good as it feels.
+					<strong>75% Compact Layout</strong> – Clean desk. Clear mind. All your essential keys in a
+					sleek, space-saving design that looks as good as it feels.
 				</li>
 				<li>
 					<strong>Tri-Mode Connectivity</strong> – Wired USB-C, Bluetooth 5.0, and 2.4 GHz wireless for
@@ -139,7 +141,8 @@
 					typing feel with a creamier, smoother, and more satisfying sound.
 				</li>
 				<li>
-					<strong>Durable PBT Keycaps</strong> – Double-shot or side-printed; resistant to shine and wear.
+					<strong>Durable PBT Keycaps</strong> – Double-shot or side-printed; resistant to shine and
+					wear.
 				</li>
 				<li>
 					<strong>Multi-Function Metal Knob</strong> – Control volume, media, or lighting with ease.
@@ -201,7 +204,7 @@
 							<span class="faq-icon">{openFaq === i ? '−' : '+'}</span>
 						</button>
 						{#if openFaq === i}
-							<p class="faq-answer">{@html faq.a}</p>
+							<p class="faq-answer" transition:slide>{@html faq.a}</p>
 						{/if}
 					</div>
 				{/each}

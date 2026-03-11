@@ -34,11 +34,11 @@
 
 <div class="site">
 	<nav>
-		<span class="wordmark">Chdkg</span>
+		<a href="/" class="wordmark">Chdkg</a>
 
 		<div class="dropdown" on:click|stopPropagation>
 			<button class="item-label trigger" on:click={toggle} aria-expanded={dropdownOpen}>
-				Items
+				Products
 				<svg
 					class="chevron"
 					class:open={dropdownOpen}
@@ -108,6 +108,8 @@
 		font-family: 'Playfair Display', serif;
 		font-size: 1.1rem;
 		letter-spacing: 0.25em;
+		text-decoration: none;
+		color: #f0ede6;
 	}
 	.item-label {
 		font-size: 0.85rem;

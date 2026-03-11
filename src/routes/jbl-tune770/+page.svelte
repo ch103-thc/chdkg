@@ -1,606 +1,505 @@
 <script>
-	import Icon from '@iconify/svelte';
 	import { slide } from 'svelte/transition';
 
-	const featureIcons = {
-		'Noise Cancelling': 'material-symbols:keyboard-outline-rounded',
-		Bass: 'material-symbols:speaker',
-		'Long-Lasting Battery': 'gg:battery',
-		Bluetooth: 'material-symbols:bluetooth-rounded',
-		Personalise: 'duo-icons:app',
-		'Clearer Calls': 'tabler:microphone-filled',
-		Lightweight: 'fe:feather'
+	let activeMedia = $state('/img/headphones1.jpg');
+	let isVideo = $derived(activeMedia.endsWith('.MP4'));
+
+	const media = [
+		'/img/headphones1.jpg',
+		'/img/headphones2.jpg',
+		'/img/headphones3.jpg',
+		'/img/headphones4.jpg'
+	];
+
+	const product = {
+		name: 'JBL Tune 770NC Headphones',
+		tagline: 'Tune out. Turn up. Take over.',
+		price: 120,
+		description:
+			'Immerse yourself in sound with the JBL Tune 770NC — wireless over-ear headphones with adaptive noise cancelling, JBL Pure Bass, and up to 70 hours of battery life to keep you going all day, every day.'
 	};
 
-	const tags = $state(['Featured']);
-	const price = $state(120);
-	const product = $state({
-		name: 'JBL Tune 770NC Wireless Over-Ear Noise Cancelling Headphones',
-		description: [
-			'Adaptive Noise Cancelling - Block out distractions and focus on your music, work, or calls. You can even switch to Smart Ambient mode to stay aware of your surroundings when needed.',
-			'Pure Bass, Pure Bliss - Feel the thump of JBL’s signature Pure Bass sound. Whether you’re vibing to beats or zoning into a podcast, your audio will be rich, clear, and immersive.',
-			'All-Day Battery Life - Get up to 70 hours of playtime on a single charge—enough to keep up with your longest days. In a rush? A quick 5-minute charge gives you 3 hours of playback.',
-			'Bluetooth 5.3 with LE Audio -  Enjoy stable, high-quality wireless streaming and seamless switching between your phone, tablet, or laptop with multi-point connection support.',
-			'Personalize Your Sound - Download the JBL Headphones app to adjust your EQ and customize your listening experience to match your mood or music.',
-			'Clearer Calls, Your Way - With VoiceAware, you control how much of your own voice you hear during calls—so you sound more natural and confident.',
-			'Foldable, Lightweight Design - The headphones fold flat for easy storage and travel, while the cushioned ear cups ensure all-day comfort.'
-		],
-		image: '/files/headphones1.jpg',
-		originalPrice: 120,
-		features: [
-			'Noise Cancelling',
-			'Bass',
-			'Long-Lasting Battery',
-			'Bluetooth',
-			'Personalise',
-			'Clearer Calls',
-			'Lightweight'
-		],
-		includes: ['Keycap Puller', '2.4Hz USB Dongle', 'USB Cable'],
-		brand: 'GamaKay',
-		condition: 'New'
-	});
+	const features = [
+		'Adaptive Noise Cancelling — block out the world',
+		'Smart Ambient mode — stay aware when needed',
+		'JBL Pure Bass signature sound',
+		'Up to 70 hours battery life',
+		'5-minute quick charge = 3 hours playback',
+		'Bluetooth 5.3 with LE Audio',
+		'Multi-point connection — switch between 2 devices',
+		'VoiceAware — control how you sound on calls',
+		'JBL Headphones app — custom EQ & settings',
+		'Foldable, lightweight design for travel'
+	];
 
-	let productInfoSections = $state([
+	const specs = [
+		{ label: 'Driver Size', value: '40mm' },
+		{ label: 'Frequency', value: '20Hz – 20kHz' },
+		{ label: 'Bluetooth', value: '5.3 with LE Audio' },
+		{ label: 'Battery Life', value: 'Up to 70 hours' },
+		{ label: 'Quick Charge', value: '5 min → 3 hrs playback' },
+		{ label: 'Connectivity', value: 'Bluetooth + 3.5mm wired' },
+		{ label: 'Multi-point', value: '2 devices simultaneously' },
+		{ label: 'Condition', value: 'Brand New' }
+	];
+
+	const inbox = [
+		'JBL Tune 770NC Wireless Over-Ear Headphones',
+		'USB-C Charging Cable',
+		'3.5mm Audio Cable',
+		'Carry Pouch'
+	];
+
+	const faqs = [
 		{
-			title: 'Specs & Details',
-			intro:
-				'Take your listening experience to the next level with the JBL Tune 770NC wireless over-ear headphones. Whether you’re commuting, working, or relaxing, these headphones give you the power to tune out the noise and dive deep into your music—just the way you like it.',
-			listItems: product.description,
-			open: false
+			q: 'How can I pay for this listing?',
+			a: "Click on the above 'Buy Now' button to proceed to Carousell. Once you're on Carousell, tap on the 'Buy' button to pay securely via Carousell. Pay directly with your credit/debit card, DBS PayLah! or PayNow — no additional set-ups or wallet top-ups needed."
 		},
 		{
-			title: "What's in the box?",
-			intro: 'Keyboard comes fully assembled.<br>Accessories',
-			listItems: product.includes,
-			open: false
+			q: 'What is Buyer Protection?',
+			a: "Your purchase is covered by Buyer Protection when you pay via the 'Buy' button. This means you'll get a full refund if the item doesn't arrive, is damaged during delivery, or is not what you saw in the listing.<br><a href='https://support.carousell.com/hc/en-us/articles/360038048693--Singapore-What-does-Buyer-Protection-cover' target='_blank' rel='noopener noreferrer'>Learn more</a>"
+		},
+		{
+			q: 'How do I request for a return or refund?',
+			a: "Just tap on 'Return/refund' on your order details page if something goes wrong with your order. Carousell will reach out to you via email within 24h to resolve the issue.<br><a href='https://support.carousell.com/hc/en-us/articles/360001548627--Singapore-How-do-I-raise-a-return-refund-request' target='_blank' rel='noopener noreferrer'>Learn more</a>"
+		},
+		{
+			q: 'What type of connection does it support?',
+			a: 'It supports both Bluetooth 5.3 wireless and 3.5mm wired connections.'
+		},
+		{
+			q: 'How long does shipping take?',
+			a: '2–4 days after seller ships your order, with tracking.'
 		}
-	]);
+	];
 
-	let faqs = $state([
-		{
-			question: 'How can I pay for this listing?',
-			answer:
-				" Click on the above 'Buy Now' button to proceed to Carousell.<br><br>Once you're on Carousell, tap on the 'Buy' button to pay securely via Carousell. Pay directly with your credit/debit card, DBS PayLah! or PayNow—no additional set-ups or wallet top-ups needed.",
-			open: false
-		},
-		{
-			question: 'What is Buyer Protection?',
-			answer:
-				"Your purchase is covered by Buyer Protection when you pay via the 'Buy' button. This means you'll get a full refund if the item doesn't arrive, is damaged during delivery, or is not what you saw in the listing.<br><br><a href='https://support.carousell.com/hc/en-us/articles/360038048693--Singapore-What-does-Buyer-Protection-cover' target='_blank' rel='noopener'>Learn More</a>",
-			open: false
-		},
-		{
-			question: 'How do I request for a return or refund?',
-			answer:
-				"Just tap on 'Return/refund' on your order details page if something goes wrong with your order. Carousell will reach out to you via email within 24h to resolve the issue.<br><br><a href='https://support.carousell.com/hc/en-us/articles/360001548627--Singapore-How-do-I-raise-a-return-refund-request' target='_blank' rel='noopener'>Learn More</a>",
-			open: false
-		},
-		{
-			question: 'What type of connection does it support?',
-			answer: 'It supports both Bluetooth and wired connections.',
-			open: false
-		},
-		{
-			question: 'How long does shipping take?',
-			answer: '3-5 days after seller ships your order, with tracking.',
-			open: false
-		}
-	]);
-
-	const mediaItems = $state([
-		{ type: 'image', src: '/files/headphones1.jpg', alt: 'View 1' },
-		{ type: 'image', src: '/files/headphones2.jpg', alt: 'View 2' },
-		{ type: 'image', src: '/files/headphones3.jpg', alt: 'View 3' },
-		{ type: 'image', src: '/files/headphones4.jpg', alt: 'View 4' }
-	]);
-
-	let currentSlide = $state(0);
-	let isDesktop = $state(true);
-
-	function nextSlide() {
-		currentSlide = (currentSlide + 1) % mediaItems.length;
-	}
-
-	function prevSlide() {
-		currentSlide = (currentSlide - 1 + mediaItems.length) % mediaItems.length;
-	}
-
-	function goToSlide(index) {
-		currentSlide = index;
-	}
-
-	function toggleSection(sections, index) {
-		return sections.map((section, i) => ({
-			...section,
-			open: i === index ? !section.open : section.open
-		}));
-	}
-
-	function toggleProductInfo(index) {
-		productInfoSections = toggleSection(productInfoSections, index);
-	}
-
-	function toggleFAQ(index) {
-		faqs = toggleSection(faqs, index);
-	}
-
-	function checkScreenSize() {
-		isDesktop = window.innerWidth >= 768;
-	}
-
-	$effect(() => {
-		if (typeof window !== 'undefined') {
-			checkScreenSize();
-			window.addEventListener('resize', checkScreenSize);
-			return () => window.removeEventListener('resize', checkScreenSize);
-		}
-	});
+	let openFaq = $state(null);
 </script>
 
-<main class="main">
-	<section class="section">
-		<div class="container">
-			<section class="left-content">
-				{#if isDesktop}
-					<img src={mediaItems[0].src} alt={mediaItems[0].alt} class="product-image" />
-
-					<div class="image-stack">
-						{#each mediaItems as item, index}
-							{#if index > 0 && item.type === 'image'}
-								<img src={item.src} alt={item.alt} class="product-image" />
-							{:else if item.type === 'video' && index > 0}
-								<video src={item.src} controls class="product-video"></video>
-							{/if}
-						{/each}
-					</div>
+<main>
+	<section class="product">
+		<div class="visual">
+			<div class="main-image">
+				{#if isVideo}
+					<video src={activeMedia} controls autoplay loop />
 				{:else}
-					<div class="carousel-container">
-						<div class="carousel-slide">
-							{#if mediaItems[currentSlide].type === 'image'}
-								<img
-									src={mediaItems[currentSlide].src}
-									alt={mediaItems[currentSlide].alt}
-									class="carousel-image"
-								/>
-							{:else}
-								<video src={mediaItems[currentSlide].src} class="carousel-video" controls></video>
-							{/if}
-						</div>
-
-						<button class="carousel-button prev-button" onclick={prevSlide}>
-							<Icon icon="mingcute:left-line" width="24" height="24" />
-						</button>
-
-						<button class="carousel-button next-button" onclick={nextSlide}>
-							<Icon icon="mingcute:right-line" width="24" height="24" />
-						</button>
-
-						<div class="carousel-indicators">
-							{#each mediaItems as _, index}
-								<button
-									class="indicator-dot {currentSlide === index ? 'active' : ''}"
-									onclick={() => goToSlide(index)}
-								></button>
-							{/each}
-						</div>
-					</div>
+					<img src={activeMedia} alt="JBL Tune 770NC Headphones" />
 				{/if}
-			</section>
+			</div>
+			<div class="thumbnails">
+				{#each media as item}
+					<button
+						class="thumb-btn"
+						class:active={activeMedia === item}
+						onclick={() => (activeMedia = item)}
+					>
+						{#if item.endsWith('.MP4')}
+							<video src={item} muted />
+						{:else}
+							<img src={item} alt="JBL Tune 770NC view" />
+						{/if}
+					</button>
+				{/each}
+			</div>
+			<p class="image-caption">JBL Tune 770NC — Wireless Over-Ear Headphones</p>
+		</div>
 
-			<section class="right-content">
-				<div class="product-tags">
-					{#each tags as tag}
-						<span class="tag">{tag}</span>
-					{/each}
-				</div>
-				<h1 class="product-title">{product.name}</h1>
-				<div class="product-pricing">
-					<span class="regular-price">S${product.originalPrice.toFixed(2)}</span>
-				</div>
-				<div class="product-features">
-					<h3 class="features-title">Features</h3>
-					<div class="features-list">
-						{#each product.features as feature}
-							<div class="feature-item">
-								<Icon icon={featureIcons[feature]} width="24" height="24" class="feature-icon" />
-								<span class="feature-text">{feature}</span>
-							</div>
-						{/each}
+		<div class="details">
+			<p class="collection">Tune Series</p>
+			<h1>{product.name}</h1>
+			<p class="tagline">{product.tagline}</p>
+			<p class="price">${product.price} SGD</p>
+			<a
+				href="https://www.carousell.sg/p/jbl-tune-770nc-wireless-over-ear-noise-cancelling-headphones-1371294412/"
+				target="_blank"
+				rel="noopener noreferrer"
+				class="buy-btn"
+			>
+				Buy Now
+			</a>
+			<p class="description">{product.description}</p>
+
+			<ul class="perks">
+				<li>
+					<strong>Adaptive Noise Cancelling</strong> – Block out distractions on demand, or flip to Smart
+					Ambient mode to stay aware of your surroundings without removing your headphones.
+				</li>
+				<li>
+					<strong>JBL Pure Bass Sound</strong> – Deep, rich, immersive audio that makes every track feel
+					like a live performance — whether you're commuting or in the zone.
+				</li>
+				<li>
+					<strong>70-Hour Battery Life</strong> – Charge once, go for days. And when you're running low,
+					5 minutes on the charger buys you 3 hours of uninterrupted playback.
+				</li>
+				<li>
+					<strong>Bluetooth 5.3 + Multi-Point</strong> – Stable, high-quality wireless streaming with
+					seamless switching between your phone and laptop simultaneously.
+				</li>
+				<li>
+					<strong>VoiceAware & App Control</strong> – Hear yourself naturally on calls with VoiceAware,
+					and fine-tune your EQ through the JBL Headphones app.
+				</li>
+				<li>
+					<strong>Foldable & Lightweight</strong> – Cushioned ear cups for all-day comfort, and a fold-flat
+					design that slides easily into any bag.
+				</li>
+			</ul>
+		</div>
+	</section>
+
+	<section class="info-sections">
+		<div class="info-block">
+			<h2>Features</h2>
+			<ul class="feature-list">
+				{#each features as f}
+					<li>{f}</li>
+				{/each}
+			</ul>
+		</div>
+
+		<div class="info-block">
+			<h2>Specs & Details</h2>
+			<table class="specs-table">
+				{#each specs as s}
+					<tr>
+						<td class="spec-label">{s.label}</td>
+						<td class="spec-value">{s.value}</td>
+					</tr>
+				{/each}
+			</table>
+		</div>
+
+		<div class="info-block">
+			<h2>What's in the Box</h2>
+			<ul class="box-list">
+				{#each inbox as item}
+					<li>{item}</li>
+				{/each}
+			</ul>
+		</div>
+
+		<div class="info-block">
+			<h2>FAQ</h2>
+			<div class="faq-list">
+				{#each faqs as faq, i}
+					<div class="faq-item">
+						<button
+							class="faq-question"
+							class:open={openFaq === i}
+							onclick={() => (openFaq = openFaq === i ? null : i)}
+						>
+							{faq.q}
+							<span class="faq-icon">{openFaq === i ? '−' : '+'}</span>
+						</button>
+						{#if openFaq === i}
+							<p class="faq-answer" transition:slide>{@html faq.a}</p>
+						{/if}
 					</div>
-				</div>
-
-				<section class="collapsible-section product-info-section">
-					<ul class="collapsible-list">
-						{#each productInfoSections as section, i}
-							<li class="collapsible-item">
-								<button class="collapsible-header" onclick={() => toggleProductInfo(i)}>
-									{section.title}
-									<span class="toggle-icon">{section.open ? '−' : '+'}</span>
-								</button>
-								{#if section.open}
-									<div class="collapsible-content" transition:slide>
-										{#if section.intro}
-											<p>{@html section.intro}</p>
-										{/if}
-										<ul class="info-list">
-											{#each section.listItems as item}
-												<li>{item}</li>
-											{/each}
-										</ul>
-									</div>
-								{/if}
-							</li>
-						{/each}
-					</ul>
-				</section>
-
-				<a
-					href="https://www.carousell.sg/p/jbl-tune-770nc-wireless-over-ear-noise-cancelling-headphones-1371294412/?t-id=bVOd0KoDAV_1751775207462&t-referrer_browse_type=seller&t-referrer_page_type=profile&t-referrer_request_id=DkGxtgowjy7g32Ze&t-tap_index=3"
-					target="_blank"
-				>
-					<button class="action-button">Buy Now</button>
-				</a>
-
-				<section class="description">
-					<section class="collapsible-section faq-section">
-						<h2 class="section-title">FAQ</h2>
-						<ul class="collapsible-list">
-							{#each faqs as faq, i}
-								<li class="collapsible-item">
-									<button class="collapsible-header" onclick={() => toggleFAQ(i)}>
-										{faq.question}
-										<span class="toggle-icon">{faq.open ? '−' : '+'}</span>
-									</button>
-									{#if faq.open}
-										<div class="collapsible-content" transition:slide>
-											{@html faq.answer}
-										</div>
-									{/if}
-								</li>
-							{/each}
-						</ul>
-					</section>
-				</section>
-			</section>
+				{/each}
+			</div>
 		</div>
 	</section>
 </main>
 
-<style lang="scss">
-	.main {
-		min-height: 100vh;
-		background-color: white;
-		color: #1f2937;
+<style>
+	.product {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		min-height: calc(100vh - 65px);
+		overflow: hidden;
+	}
+
+	.visual {
+		background: #141412;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		justify-content: center;
+		gap: 1.5rem;
+		padding: 4rem;
+		border-right: 1px solid #2a2a28;
+		min-width: 0;
+		overflow: hidden;
+		max-width: 100%;
+	}
+	.main-image {
+		width: 420px;
+		height: 350px;
+		border-radius: 8px;
+		overflow: hidden;
+	}
+	.main-image img,
+	.main-image video {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+	.thumbnails {
+		display: flex;
+		gap: 0.6rem;
+	}
+	.thumb-btn {
+		width: 60px;
+		height: 50px;
+		padding: 0;
+		border: 1px solid #3a3a38;
+		border-radius: 4px;
+		overflow: hidden;
+		cursor: pointer;
+		opacity: 0.5;
+		transition:
+			opacity 0.15s,
+			border-color 0.15s;
+	}
+	.thumb-btn img,
+	.thumb-btn video {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+	.thumb-btn:hover,
+	.thumb-btn.active {
+		opacity: 1;
+		border-color: #f0ede6;
+	}
+	.image-caption {
+		font-size: 0.75rem;
+		letter-spacing: 0.15em;
+		color: #6a6a68;
+		text-transform: uppercase;
+	}
 
-		.section {
-			padding: 7rem 0;
-			background-color: #f9fafb;
+	.details {
+		padding: 4rem 3.5rem;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		gap: 1.25rem;
+		min-width: 0;
+		overflow: hidden;
+	}
+	.collection {
+		font-size: 0.75rem;
+		letter-spacing: 0.2em;
+		color: #8a8a88;
+		text-transform: uppercase;
+	}
+	h1 {
+		font-family: 'Playfair Display', serif;
+		font-size: 2.8rem;
+		line-height: 1.1;
+		font-weight: 400;
+	}
+	.tagline {
+		font-size: 1rem;
+		color: #a0a09e;
+		font-style: italic;
+	}
+	.price {
+		font-size: 1.4rem;
+		font-weight: 500;
+		letter-spacing: 0.05em;
+	}
+	.buy-btn {
+		display: inline-block;
+		background: #f0ede6;
+		color: #0e0d0b;
+		text-decoration: none;
+		padding: 0.85rem 2rem;
+		font-size: 0.85rem;
+		font-weight: 600;
+		letter-spacing: 0.15em;
+		text-transform: uppercase;
+		border-radius: 2px;
+		transition:
+			background 0.2s,
+			color 0.2s;
+		width: fit-content;
+	}
+	.buy-btn:hover {
+		background: #d8d5ce;
+	}
+	.description {
+		font-size: 0.9rem;
+		line-height: 1.7;
+		color: #b0b0ae;
+		border-top: 1px solid #2a2a28;
+		padding-top: 1.25rem;
+	}
+
+	.perks {
+		list-style: none;
+		display: flex;
+		flex-direction: column;
+		gap: 0.4rem;
+		border-top: 1px solid #2a2a28;
+		padding-top: 1.25rem;
+	}
+	.perks li {
+		font-size: 0.8rem;
+		color: #8a8a88;
+		letter-spacing: 0.03em;
+		line-height: 1.6;
+	}
+	.perks li strong {
+		color: #c0c0be;
+		font-weight: 500;
+	}
+
+	.info-sections {
+		max-width: 860px;
+		margin: 0 auto;
+		padding: 5rem 3rem;
+		width: 100%;
+		box-sizing: border-box;
+		display: flex;
+		flex-direction: column;
+		gap: 4rem;
+	}
+
+	.info-block h2 {
+		font-family: 'Playfair Display', serif;
+		font-size: 1.5rem;
+		font-weight: 400;
+		margin-bottom: 1.5rem;
+		padding-bottom: 0.75rem;
+		border-bottom: 1px solid #2a2a28;
+	}
+
+	.feature-list {
+		list-style: none;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 0.6rem 2rem;
+	}
+	.feature-list li {
+		font-size: 0.875rem;
+		color: #b0b0ae;
+		line-height: 1.6;
+	}
+	.feature-list li::before {
+		content: '✦ ';
+		color: #6a6a68;
+		font-size: 0.6rem;
+		vertical-align: middle;
+	}
+
+	.specs-table {
+		width: 100%;
+		border-collapse: collapse;
+		table-layout: fixed;
+		word-break: break-word;
+	}
+	.specs-table tr {
+		border-bottom: 1px solid #1e1e1c;
+	}
+	.specs-table tr:last-child {
+		border-bottom: none;
+	}
+	.spec-label {
+		font-size: 0.8rem;
+		color: #6a6a68;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+		padding: 0.7rem 0;
+		width: 40%;
+	}
+	.spec-value {
+		font-size: 0.875rem;
+		color: #d0d0ce;
+		padding: 0.7rem 0;
+	}
+
+	.box-list {
+		list-style: none;
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+	}
+	.box-list li {
+		font-size: 0.875rem;
+		color: #b0b0ae;
+	}
+	.box-list li::before {
+		content: '— ';
+		color: #6a6a68;
+	}
+
+	.faq-list {
+		display: flex;
+		flex-direction: column;
+	}
+	.faq-item {
+		border-bottom: 1px solid #2a2a28;
+	}
+	.faq-question {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 1.1rem 0;
+		background: none;
+		border: none;
+		color: #e0e0de;
+		font-size: 0.9rem;
+		text-align: left;
+		cursor: pointer;
+		letter-spacing: 0.02em;
+		transition: color 0.15s;
+	}
+	.faq-question:hover,
+	.faq-question.open {
+		color: #f0ede6;
+	}
+	.faq-icon {
+		font-size: 1.2rem;
+		color: #6a6a68;
+		flex-shrink: 0;
+		margin-left: 1rem;
+	}
+	.faq-answer {
+		font-size: 0.85rem;
+		color: #8a8a88;
+		line-height: 1.75;
+		padding-bottom: 1.25rem;
+		max-width: 680px;
+	}
+	.faq-answer :global(a) {
+		color: #f0ede6;
+		text-decoration: underline;
+		text-underline-offset: 2px;
+	}
+	.faq-answer :global(a:hover) {
+		color: #d8d5ce;
+	}
+
+	@media (max-width: 768px) {
+		.product {
+			grid-template-columns: 1fr;
+		}
+		.visual {
+			min-height: 40vh;
+			border-right: none;
+			border-bottom: 1px solid #2a2a28;
+			padding: 2.5rem 1.5rem;
+		}
+		.main-image {
 			width: 100%;
-
-			.container {
-				display: flex;
-				flex-direction: column;
-				padding: 0 0.8rem;
-				gap: 1.5rem;
-				align-items: flex-start;
-				justify-content: center;
-				margin: 0 auto;
-
-				@media (min-width: 768px) {
-					flex-direction: row;
-				}
-
-				.left-content {
-					display: flex;
-					flex-direction: column;
-					width: 100%;
-
-					@media (min-width: 768px) {
-						width: 50%;
-					}
-
-					.product-image,
-					.product-video {
-						aspect-ratio: 1 / 1;
-						margin-bottom: 1rem;
-						border-radius: 0.25rem;
-						width: 100%;
-						max-width: 70rem;
-						object-fit: cover;
-						height: auto;
-						box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-					}
-
-					.image-stack {
-						display: flex;
-						flex-direction: column;
-						gap: 1rem;
-					}
-
-					.carousel-container {
-						position: relative;
-						width: 100%;
-						overflow: hidden;
-						border-radius: 0.25rem;
-
-						.carousel-slide {
-							width: 100%;
-							display: flex;
-							align-items: center;
-							justify-content: center;
-						}
-
-						.carousel-image,
-						.carousel-video {
-							max-width: 100%;
-							max-height: 100%;
-							object-fit: cover;
-							aspect-ratio: 4 / 3;
-							border-radius: 0.25rem;
-						}
-
-						.carousel-button {
-							position: absolute;
-							top: 50%;
-							transform: translateY(-50%);
-							background-color: rgba(255, 255, 255, 0.3);
-							color: rgba(255, 255, 255, 0.5);
-							border: none;
-							border-radius: 50%;
-							width: 2rem;
-							height: 2rem;
-							display: flex;
-							align-items: center;
-							justify-content: center;
-							cursor: pointer;
-							z-index: 10;
-							transition: background-color 0.3s;
-
-							&.prev-button {
-								left: 0.5rem;
-							}
-
-							&.next-button {
-								right: 0.5rem;
-							}
-						}
-
-						.carousel-indicators {
-							position: absolute;
-							bottom: 0.5rem;
-							left: 0;
-							right: 0;
-							display: flex;
-							justify-content: center;
-							gap: 0.5rem;
-							z-index: 10;
-
-							.indicator-dot {
-								width: 0.5rem;
-								height: 0.5rem;
-								border-radius: 50%;
-								background-color: rgba(255, 255, 255, 0.5);
-								border: none;
-								cursor: pointer;
-								transition: background-color 0.3s;
-
-								&.active {
-									background-color: white;
-								}
-							}
-						}
-					}
-				}
-
-				.right-content {
-					width: 100%;
-
-					@media (min-width: 768px) {
-						width: 50%;
-					}
-
-					.product-tags {
-						margin-bottom: 0.8rem;
-						display: flex;
-						flex-wrap: wrap;
-						gap: 0.5rem;
-
-						.tag {
-							background-color: black;
-							color: white;
-							font-size: 0.75rem;
-							padding: 0.3rem 0.75rem;
-							border-radius: 25px;
-							font-weight: 500;
-
-							@media (min-width: 768px) {
-								font-size: 1rem;
-								padding: 0.4rem 1rem;
-							}
-						}
-					}
-
-					.product-title {
-						font-size: 1.5rem;
-						font-weight: 500;
-						margin-bottom: 1rem;
-
-						@media (min-width: 768px) {
-							font-size: 1.75rem;
-						}
-					}
-
-					.product-pricing {
-						display: flex;
-						align-items: center;
-						gap: 0.5rem;
-						margin: 1rem 0;
-
-						.regular-price {
-							font-weight: bold;
-							color: #333;
-						}
-					}
-
-					.product-features {
-						margin-top: 1rem;
-
-						.features-title {
-							font-weight: 200;
-							margin-bottom: 0.5rem;
-
-							@media (min-width: 768px) {
-								font-size: 1.25rem;
-							}
-						}
-
-						.features-list {
-							display: flex;
-							flex-wrap: wrap;
-
-							.feature-item {
-								display: flex;
-								flex-direction: column;
-								align-items: center;
-								text-align: center;
-								padding: 0.4rem 0.5rem;
-								border-radius: 0.5rem;
-								font-size: 0.85rem;
-								font-weight: 500;
-								white-space: nowrap;
-
-								@media (min-width: 768px) {
-									font-size: 1rem;
-								}
-
-								.feature-icon,
-								.feature-text {
-									font-weight: 600;
-									color: rgba(0, 0, 0, 0.7);
-								}
-
-								.feature-text {
-									margin-top: 0.5rem;
-								}
-							}
-						}
-					}
-
-					.action-button {
-						font-family: 'Poppins', sans-serif;
-						width: 100%;
-						background-color: black;
-						color: white;
-						padding: 0.75rem 1.5rem;
-						border-radius: 0.25rem;
-						transition: background-color 0.3s ease;
-						border: none;
-						cursor: pointer;
-					}
-
-					.collapsible-section {
-						width: 100%;
-						margin-bottom: 1rem;
-						overflow: hidden;
-
-						.section-title {
-							font-size: 1.25rem;
-							margin-left: 1rem;
-						}
-
-						.collapsible-list {
-							list-style: none;
-							padding: 0;
-							margin: 0;
-
-							.collapsible-item {
-								border-bottom: 1px solid #e5e7eb;
-
-								.collapsible-header {
-									font-family: 'Poppins', sans-serif;
-									background: none;
-									border: none;
-									width: 100%;
-									text-align: left;
-									display: flex;
-									justify-content: space-between;
-									align-items: center;
-									padding: 1rem;
-									cursor: pointer;
-									font-weight: 500;
-									transition: background-color 0.2s;
-
-									&:hover {
-										background-color: #f9fafb;
-									}
-
-									.toggle-icon {
-										font-size: 1.25rem;
-										color: #6b7280;
-										font-weight: 300;
-									}
-								}
-
-								.collapsible-content {
-									padding: 1rem;
-									background-color: #f9fafb;
-									color: #6b7280;
-
-									p {
-										margin-top: 0;
-										margin-bottom: 0.75rem;
-
-										&:last-child {
-											margin-bottom: 0;
-										}
-									}
-
-									a {
-										color: #1f2937;
-										text-decoration: underline;
-									}
-
-									.info-list {
-										list-style: none;
-										padding: 0;
-										margin: 0;
-
-										li {
-											margin-bottom: 0.5rem;
-											position: relative;
-											padding-left: 1.5rem;
-
-											&:before {
-												content: '•';
-												position: absolute;
-												left: 0.5rem;
-												font-size: 1.25rem;
-												color: #d1d5db;
-											}
-
-											&:last-child {
-												margin-bottom: 0;
-											}
-										}
-									}
-								}
-							}
-						}
-					}
-
-					.product-info-section {
-						margin-top: 1.5rem;
-					}
-
-					.faq-section {
-						margin-top: 2rem;
-					}
-				}
-			}
+			height: auto;
+			aspect-ratio: 4/3;
+		}
+		.details {
+			padding: 2.5rem 1.5rem;
+		}
+		h1 {
+			font-size: 2rem;
+		}
+		.info-sections {
+			padding: 3rem 1.5rem;
+		}
+		.feature-list {
+			grid-template-columns: 1fr;
 		}
 	}
 </style>
