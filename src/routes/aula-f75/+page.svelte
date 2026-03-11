@@ -81,7 +81,7 @@
 		<div class="visual">
 			<div class="main-image">
 				{#if isVideo}
-					<video src={activeMedia} controls autoplay loop />
+					<video src={activeMedia} controls autoplay loop poster="img/video-thumbnail.png" />
 				{:else}
 					<img src={activeMedia} alt="Aula F75 Mechanical Keyboard" />
 				{/if}
@@ -94,7 +94,10 @@
 						onclick={() => (activeMedia = item)}
 					>
 						{#if item.endsWith('.MP4')}
-							<video src={item} muted />
+							<div class="thumb-video-wrap">
+								<video src={item} muted preload="metadata" />
+								<span class="play-icon">{activeMedia === item ? '⏸' : '▶'}</span>
+							</div>
 						{:else}
 							<img src={item} alt="Aula F75 view" />
 						{/if}
@@ -271,6 +274,28 @@
 	.thumb-btn.active {
 		opacity: 1;
 		border-color: #f0ede6;
+	}
+	.thumb-video-wrap {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		display: flex;
+	}
+	.thumb-video-wrap video {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+	.play-icon {
+		position: absolute;
+		inset: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 0.75rem;
+		color: #f0ede6;
+		background: rgba(0, 0, 0, 0.45);
+		pointer-events: none;
 	}
 	.image-caption {
 		font-size: 0.75rem;

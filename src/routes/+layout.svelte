@@ -102,7 +102,7 @@
 		position: sticky;
 		top: 0;
 		background: #0e0d0b;
-		z-index: 10;
+		z-index: 200;
 	}
 	.wordmark {
 		font-family: 'Playfair Display', serif;
@@ -120,8 +120,6 @@
 	.item-label:hover {
 		color: #f0ede6;
 	}
-
-	/* Dropdown */
 	.dropdown {
 		position: relative;
 	}
@@ -149,10 +147,11 @@
 		background: #141412;
 		border: 1px solid #2a2a28;
 		list-style: none;
-		min-width: 130px;
-		padding: 0.35rem 0;
+		min-width: 200px;
+		padding: 0.6rem 0;
 		animation: fadeIn 0.15s ease;
 	}
+
 	@keyframes fadeIn {
 		from {
 			opacity: 0;
@@ -163,10 +162,11 @@
 			transform: translateY(0);
 		}
 	}
+
 	.menu-item {
 		display: block;
-		padding: 0.55rem 1.1rem;
-		font-size: 0.85rem;
+		padding: 0.8rem 1.5rem;
+		font-size: 0.9rem;
 		letter-spacing: 0.08em;
 		color: #8a8a88;
 		text-decoration: none;

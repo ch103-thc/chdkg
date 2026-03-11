@@ -18,7 +18,7 @@
 			fullName: 'AULA WIN68HE Wireless Mechanical Keyboard',
 			tagline: 'Hall effect precision. Wire-free freedom.',
 			price: 100,
-			badge: 'New',
+			badge: null,
 			img: 'img/aula-win68he.png',
 			href: '/aula-win68he'
 		},
@@ -51,7 +51,7 @@
 			fullName: 'Razer Basilisk X HyperSpeed Wireless Gaming Mouse',
 			tagline: 'HyperSpeed wireless. Built to win.',
 			price: 60,
-			badge: 'Popular',
+			badge: null,
 			img: 'img/razer-basilisk.png',
 			href: '/razer-basilisk'
 		},
@@ -92,7 +92,7 @@
 		<div class="header-inner">
 			<div class="brand">
 				<span class="brand-mark">✦</span>
-				<span class="brand-name">Chdkg Store</span>
+				<span class="brand-name">Catalog</span>
 			</div>
 			<nav class="filter-tabs">
 				{#each collections as col}
@@ -191,7 +191,7 @@
 	header {
 		position: sticky;
 		top: 0;
-		z-index: 100;
+		z-index: 50;
 		background: rgba(14, 13, 11, 0.92);
 		backdrop-filter: blur(12px);
 		border-bottom: 1px solid #2a2a28;
