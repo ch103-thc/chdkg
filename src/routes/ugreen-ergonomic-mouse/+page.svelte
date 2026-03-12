@@ -1,54 +1,44 @@
 <script>
 	import { slide } from 'svelte/transition';
 
-	let activeMedia = $state('/img/aula-f75-1.jpg');
+	let activeMedia = $state('/img/ugreen-1.jpg');
 	let isVideo = $derived(activeMedia.endsWith('.MP4'));
-	const media = [
-		'/img/aula-f75-1.jpg',
-		'/img/aula-f75-2.jpg',
-		'/img/aula-f75-3.jpg',
-		'/img/aula-f75-4.jpg',
-		'/img/aula-f75-5.jpg',
-		'/img/video.MP4'
-	];
+
+	const media = ['/img/ugreen-1.jpg', '/img/ugreen-2.jpg'];
 
 	const product = {
-		name: 'Aula F75 Mechanical Keyboard',
-		tagline: 'Compact. Precise. Yours.',
-		price: 60,
+		name: 'UGREEN Ergonomic Wireless Mouse',
+		tagline: 'Dual Wireless. Silent Clicks. 300-Day Battery.',
+		price: 15,
 		description:
-			'Elevate your typing experience with the AULA F75 — a 75% wireless mechanical keyboard that blends enthusiast-grade construction with versatile connectivity, perfect for both work and gaming.'
+			'The UGREEN Ergonomic Wireless Mouse lets you switch instantly between 2.4G and Bluetooth 5.0 — connecting two devices simultaneously with no dongle swaps. A curved grip with UV coating reduces wrist strain, ultra-silent clicks (≤40dB) keep you distraction-free, and a single AA battery lasts up to 300 days with smart 3-stage sleep. Works on virtually any surface, any OS, anywhere.'
 	};
 
 	const features = [
-		'Hot-swappable switches — no soldering required',
-		'Gasket mount for a soft, cushioned typing feel',
-		'Per-key RGB with 16.8 million colors',
-		'Tri-mode: 2.4GHz wireless, Bluetooth 5.0, USB-C wired',
-		'South-facing PCB — no RGB shine interference',
-		'Pre-lubed stabilizers',
-		'POM plate for a bouncy, smooth keystroke'
+		'Dual-mode: Bluetooth 5.0 + 2.4G — 2 devices at once',
+		'Ultra-silent clicks ≤40dB — offices, libraries, calls',
+		'Curved ergonomic grip with UV coating, reduces wrist strain',
+		'5 DPI levels: 800 / 1200 / 1600 / 2400 / 4000',
+		'Blue light sensor — tracks on wood, paper, fabric & glass',
+		'~300-day battery life (1× AA) with 3-stage smart sleep',
+		'5-button layout: left, right, scroll, forward, back',
+		'No drivers needed — 15m wireless range, universal OS support'
 	];
 
 	const specs = [
-		{ label: 'Layout', value: '75% (80 keys + knob)' },
-		{ label: 'Switch', value: 'Hot-swap (5-pin)' },
-		{ label: 'Battery', value: '4000mAh' },
-		{ label: 'Structure', value: 'Gasket mount' },
-		{ label: 'Connectivity', value: '2.4GHz / BT 5.0 / USB-C' },
-		{ label: 'Polling Rate', value: '1000Hz' },
-		{ label: 'Weight', value: '~1.02kg' },
-		{ label: 'Dimensions', value: '322.7 x 143.2 x 43.1 mm' }
+		{ label: 'Connectivity', value: 'Bluetooth 5.0 + 2.4G USB Receiver' },
+		{ label: 'Multi-device', value: '2 devices simultaneously (BT + 2.4G)' },
+		{ label: 'DPI Levels', value: '800 / 1200 / 1600 / 2400 / 4000 (5 levels)' },
+		{ label: 'Sensor', value: 'Blue light optical — works on most surfaces' },
+		{ label: 'Battery', value: '1× AA, ~300 days (3-stage smart sleep)' },
+		{ label: 'Buttons', value: '5 (L, R, scroll, forward, back)' },
+		{ label: 'Noise Level', value: '≤40dB ultra-silent clicks' },
+		{ label: 'Range', value: 'Up to 15m (unobstructed)' },
+		{ label: 'OS Support', value: 'Windows / macOS / Linux / ChromeOS / Android / iPadOS' },
+		{ label: 'Condition', value: 'Brand New' }
 	];
 
-	const inbox = [
-		'Aula F75 Keyboard',
-		'2.4GHz USB Dongle',
-		'USB-C Cable',
-		'Keycap & Switch Puller',
-		'Extra Switches (×2)',
-		'User Manual'
-	];
+	const inbox = ['UGREEN Ergonomic Wireless Mouse', '2.4G USB Nano Receiver (pre-stored in mouse)'];
 
 	const faqs = [
 		{
@@ -64,8 +54,16 @@
 			a: "Just tap on 'Return/refund' on your order details page if something goes wrong with your order. Carousell will reach out to you via email within 24h to resolve the issue.<br><a href='https://support.carousell.com/hc/en-us/articles/360001548627--Singapore-How-do-I-raise-a-return-refund-request' target='_blank' rel='noopener noreferrer'>Learn more</a>"
 		},
 		{
-			q: 'What type of connection does it support?',
-			a: 'It supports tri-mode connectivity: 2.4GHz wireless, Bluetooth, and USB-C wired.'
+			q: 'How do I switch between connected devices?',
+			a: 'Press the mode switch button on the mouse to toggle between your 2.4G and Bluetooth connections. Both connections are maintained simultaneously — no re-pairing needed when switching.'
+		},
+		{
+			q: 'Does it work without the USB receiver?',
+			a: 'Yes — you can connect via Bluetooth 5.0 without the USB receiver. The 2.4G nano receiver is pre-stored inside the mouse and only needed for 2.4G mode.'
+		},
+		{
+			q: 'Is the AA battery included?',
+			a: 'Yes. One standard AA battery lasts approximately 300 days thanks to the 3-stage auto-sleep feature (sleeps after 5s, 10min, and 30min of inactivity).'
 		},
 		{
 			q: 'How long does shipping take?',
@@ -81,9 +79,9 @@
 		<div class="visual">
 			<div class="main-image">
 				{#if isVideo}
-					<video src={activeMedia} controls autoplay loop poster="/img/video-thumbnail.png" />
+					<video src={activeMedia} controls autoplay loop />
 				{:else}
-					<img src={activeMedia} alt="Aula F75 Mechanical Keyboard" />
+					<img src={activeMedia} alt="UGREEN Ergonomic Wireless Mouse" />
 				{/if}
 			</div>
 			<div class="thumbnails">
@@ -94,72 +92,52 @@
 						onclick={() => (activeMedia = item)}
 					>
 						{#if item.endsWith('.MP4')}
-							<div class="thumb-video-wrap">
-								<video src={item} muted preload="metadata" />
-								<span class="play-icon">{activeMedia === item ? '⏸' : '▶'}</span>
-							</div>
+							<video src={item} muted />
 						{:else}
-							<img src={item} alt="Aula F75 view" />
+							<img src={item} alt="UGREEN Ergonomic Mouse view" />
 						{/if}
 					</button>
 				{/each}
 			</div>
-			<p class="image-caption">Aula F75 — Glacier Blue</p>
+			<p class="image-caption">UGREEN Ergonomic Mouse — Dual Wireless, Silent</p>
 		</div>
 
 		<div class="details">
-			<p class="collection">F Series</p>
+			<p class="collection">Ergonomic Series</p>
 			<h1>{product.name}</h1>
 			<p class="tagline">{product.tagline}</p>
 			<p class="price">${product.price} SGD</p>
-			<a
-				href="https://www.carousell.sg/p/aula-f75-mechanical-keyboard-glacier-blue-1425710647/?referrer_source=me_page"
-				target="_blank"
-				rel="noopener noreferrer"
-				class="buy-btn"
-			>
+			<a href="https://www.carousell.sg/" target="_blank" rel="noopener noreferrer" class="buy-btn">
 				Buy Now
 			</a>
 			<p class="description">{product.description}</p>
 
 			<ul class="perks">
 				<li>
-					<strong>75% Compact Layout</strong> – Clean desk. Clear mind. All your essential keys in a
-					sleek, space-saving design that looks as good as it feels.
+					<strong>Dual-Mode Wireless Freedom</strong> – Switch instantly between 2.4G and Bluetooth 5.0.
+					Connect a PC and tablet at the same time — no dongle swaps, no re-pairing.
 				</li>
 				<li>
-					<strong>Tri-Mode Connectivity</strong> – Wired USB-C, Bluetooth 5.0, and 2.4 GHz wireless for
-					flexible use. Switch effortlessly between work, gaming, and everything in between.
+					<strong>Ergonomic Grip with UV Coating</strong> – Curved palm shape reduces wrist strain during
+					long workdays. Comfortable for extended use in any setting.
 				</li>
 				<li>
-					<strong>Massive 4000 mAh Battery</strong> – Type for days without worrying about charging.
+					<strong>Ultra-Silent Clicks (≤40dB)</strong> – Near-inaudible clicks and scroll for distraction-free
+					work in libraries, open offices, or video calls.
 				</li>
 				<li>
-					<strong>Hot-Swappable PCB</strong> – Supports both 3-pin & 5-pin switches; customize without
-					soldering.
+					<strong>300-Day Battery Life</strong> – One AA battery lasts up to 300 days. Smart 3-stage
+					sleep (5s / 10min / 30min) aggressively cuts power waste when idle.
 				</li>
 				<li>
-					<strong>Gasket-Mount + Foam Layers (Poron, IXPE, PET)</strong> – The gasket-mounted structure
-					with Poron, IXPE, and PET foam layers cushions every keystroke, creating a softer, bouncier
-					typing feel with a creamier, smoother, and more satisfying sound.
-				</li>
-				<li>
-					<strong>Durable PBT Keycaps</strong> – Double-shot or side-printed; resistant to shine and
-					wear.
-				</li>
-				<li>
-					<strong>Multi-Function Metal Knob</strong> – Control volume, media, or lighting with ease.
-				</li>
-				<li>
-					<strong>Vibrant RGB Lighting</strong> – Set the mood. Work mode, gaming mode, late-night vibe
-					— your setup, your atmosphere.
+					<strong>Blue Light Sensor, Any Surface</strong> – Tracks flawlessly on wood, paper, fabric,
+					and glass. 5 DPI levels (800–4000) for precision or speed. 15m wireless range.
 				</li>
 			</ul>
 		</div>
 	</section>
 
 	<section class="info-sections">
-		<!-- Features -->
 		<div class="info-block">
 			<h2>Features</h2>
 			<ul class="feature-list">
@@ -169,7 +147,6 @@
 			</ul>
 		</div>
 
-		<!-- Specs & Details -->
 		<div class="info-block">
 			<h2>Specs & Details</h2>
 			<table class="specs-table">
@@ -182,7 +159,6 @@
 			</table>
 		</div>
 
-		<!-- What's in the Box -->
 		<div class="info-block">
 			<h2>What's in the Box</h2>
 			<ul class="box-list">
@@ -192,7 +168,6 @@
 			</ul>
 		</div>
 
-		<!-- FAQ -->
 		<div class="info-block">
 			<h2>FAQ</h2>
 			<div class="faq-list">
@@ -243,7 +218,8 @@
 		border-radius: 8px;
 		overflow: hidden;
 	}
-	.main-image img {
+	.main-image img,
+	.main-image video {
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
@@ -265,7 +241,8 @@
 			opacity 0.15s,
 			border-color 0.15s;
 	}
-	.thumb-btn img {
+	.thumb-btn img,
+	.thumb-btn video {
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
@@ -274,28 +251,6 @@
 	.thumb-btn.active {
 		opacity: 1;
 		border-color: #f0ede6;
-	}
-	.thumb-video-wrap {
-		position: relative;
-		width: 100%;
-		height: 100%;
-		display: flex;
-	}
-	.thumb-video-wrap video {
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-	}
-	.play-icon {
-		position: absolute;
-		inset: 0;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		font-size: 0.75rem;
-		color: #f0ede6;
-		background: rgba(0, 0, 0, 0.45);
-		pointer-events: none;
 	}
 	.image-caption {
 		font-size: 0.75rem;
@@ -380,9 +335,6 @@
 		color: #c0c0be;
 		font-weight: 500;
 	}
-	/* .perks li::before {
-		content: '— ';
-	} */
 
 	.info-sections {
 		max-width: 860px;
@@ -404,7 +356,6 @@
 		border-bottom: 1px solid #2a2a28;
 	}
 
-	/* Features */
 	.feature-list {
 		list-style: none;
 		display: grid;
@@ -423,7 +374,6 @@
 		vertical-align: middle;
 	}
 
-	/* Specs */
 	.specs-table {
 		width: 100%;
 		border-collapse: collapse;
@@ -450,7 +400,6 @@
 		padding: 0.7rem 0;
 	}
 
-	/* In the Box */
 	.box-list {
 		list-style: none;
 		display: flex;
@@ -466,7 +415,6 @@
 		color: #6a6a68;
 	}
 
-	/* FAQ */
 	.faq-list {
 		display: flex;
 		flex-direction: column;
@@ -523,6 +471,12 @@
 			min-height: 40vh;
 			border-right: none;
 			border-bottom: 1px solid #2a2a28;
+			padding: 2.5rem 1.5rem;
+		}
+		.main-image {
+			width: 100%;
+			height: auto;
+			aspect-ratio: 4/3;
 		}
 		.details {
 			padding: 2.5rem 1.5rem;

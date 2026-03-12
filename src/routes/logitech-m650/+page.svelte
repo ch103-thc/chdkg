@@ -1,53 +1,45 @@
 <script>
 	import { slide } from 'svelte/transition';
 
-	let activeMedia = $state('/img/aula-f75-1.jpg');
+	let activeMedia = $state('/img/logitech-m650-1.jpg');
 	let isVideo = $derived(activeMedia.endsWith('.MP4'));
-	const media = [
-		'/img/aula-f75-1.jpg',
-		'/img/aula-f75-2.jpg',
-		'/img/aula-f75-3.jpg',
-		'/img/aula-f75-4.jpg',
-		'/img/aula-f75-5.jpg',
-		'/img/video.MP4'
-	];
+
+	const media = ['/img/logitech-m650-1.jpg', '/img/logitech-m650-2.jpg'];
 
 	const product = {
-		name: 'Aula F75 Mechanical Keyboard',
-		tagline: 'Compact. Precise. Yours.',
-		price: 60,
+		name: 'Logitech Signature M650',
+		tagline: 'Smart Scroll. Silent Clicks. Shaped for You.',
+		price: 44,
 		description:
-			'Elevate your typing experience with the AULA F75 — a 75% wireless mechanical keyboard that blends enthusiast-grade construction with versatile connectivity, perfect for both work and gaming.'
+			'The Logitech Signature M650 is an ergonomic wireless mouse built for all-day comfort. Featuring SmartWheel scrolling that switches instantly between line-by-line precision and free-spin speed, SilentTouch technology for 90% quieter clicks, and a 24-month battery life — it connects via Bluetooth or Logi Bolt for a seamless, clutter-free setup.'
 	};
 
 	const features = [
-		'Hot-swappable switches — no soldering required',
-		'Gasket mount for a soft, cushioned typing feel',
-		'Per-key RGB with 16.8 million colors',
-		'Tri-mode: 2.4GHz wireless, Bluetooth 5.0, USB-C wired',
-		'South-facing PCB — no RGB shine interference',
-		'Pre-lubed stabilizers',
-		'POM plate for a bouncy, smooth keystroke'
+		'90% quieter clicks with SilentTouch technology',
+		'SmartWheel — line-by-line or free-spin scrolling',
+		'Bluetooth Low Energy + Logi Bolt USB receiver',
+		'Up to 24 months on a single AA battery',
+		'400-4000 DPI optical sensor for smooth tracking',
+		'Contoured shape with soft thumb area & rubber grips',
+		'2 customizable side buttons via Logi Options+',
+		'Compatible with Windows, macOS, ChromeOS, Linux, iPadOS, Android'
 	];
 
 	const specs = [
-		{ label: 'Layout', value: '75% (80 keys + knob)' },
-		{ label: 'Switch', value: 'Hot-swap (5-pin)' },
-		{ label: 'Battery', value: '4000mAh' },
-		{ label: 'Structure', value: 'Gasket mount' },
-		{ label: 'Connectivity', value: '2.4GHz / BT 5.0 / USB-C' },
-		{ label: 'Polling Rate', value: '1000Hz' },
-		{ label: 'Weight', value: '~1.02kg' },
-		{ label: 'Dimensions', value: '322.7 x 143.2 x 43.1 mm' }
+		{ label: 'Connectivity', value: 'Bluetooth LE + Logi Bolt USB' },
+		{ label: 'DPI', value: '400-4000 DPI optical sensor' },
+		{ label: 'Battery', value: '1× AA (~24 months)' },
+		{ label: 'Buttons', value: '5 (L, R, scroll click, 2× side)' },
+		{ label: 'Design', value: 'Right-handed ergonomic' },
+		{ label: 'Scroll', value: 'SmartWheel (precision + free-spin)' },
+		{ label: 'OS Support', value: 'Windows / macOS / ChromeOS / Linux / iPadOS / Android' },
+		{ label: 'Condition', value: 'Brand New' }
 	];
 
 	const inbox = [
-		'Aula F75 Keyboard',
-		'2.4GHz USB Dongle',
-		'USB-C Cable',
-		'Keycap & Switch Puller',
-		'Extra Switches (×2)',
-		'User Manual'
+		'Logitech Signature M650 Wireless Mouse',
+		'Logi Bolt USB Receiver',
+		'1× AA Battery (pre-installed)'
 	];
 
 	const faqs = [
@@ -64,8 +56,12 @@
 			a: "Just tap on 'Return/refund' on your order details page if something goes wrong with your order. Carousell will reach out to you via email within 24h to resolve the issue.<br><a href='https://support.carousell.com/hc/en-us/articles/360001548627--Singapore-How-do-I-raise-a-return-refund-request' target='_blank' rel='noopener noreferrer'>Learn more</a>"
 		},
 		{
-			q: 'What type of connection does it support?',
-			a: 'It supports tri-mode connectivity: 2.4GHz wireless, Bluetooth, and USB-C wired.'
+			q: 'What is SmartWheel scrolling?',
+			a: 'SmartWheel automatically switches between two modes: precise line-by-line scrolling for detailed work, and free-spin mode for rapidly moving through long pages — all with a single flick of your finger.'
+		},
+		{
+			q: 'Does it work without the USB receiver?',
+			a: 'Yes — it connects via Bluetooth Low Energy directly to your device without needing the Logi Bolt USB receiver. The receiver is included as an alternative connection option.'
 		},
 		{
 			q: 'How long does shipping take?',
@@ -81,9 +77,9 @@
 		<div class="visual">
 			<div class="main-image">
 				{#if isVideo}
-					<video src={activeMedia} controls autoplay loop poster="/img/video-thumbnail.png" />
+					<video src={activeMedia} controls autoplay loop />
 				{:else}
-					<img src={activeMedia} alt="Aula F75 Mechanical Keyboard" />
+					<img src={activeMedia} alt="Logitech Signature M650" />
 				{/if}
 			</div>
 			<div class="thumbnails">
@@ -94,26 +90,23 @@
 						onclick={() => (activeMedia = item)}
 					>
 						{#if item.endsWith('.MP4')}
-							<div class="thumb-video-wrap">
-								<video src={item} muted preload="metadata" />
-								<span class="play-icon">{activeMedia === item ? '⏸' : '▶'}</span>
-							</div>
+							<video src={item} muted />
 						{:else}
-							<img src={item} alt="Aula F75 view" />
+							<img src={item} alt="Logitech Signature M650 view" />
 						{/if}
 					</button>
 				{/each}
 			</div>
-			<p class="image-caption">Aula F75 — Glacier Blue</p>
+			<p class="image-caption">Logitech Signature M650 — Silent Wireless Mouse</p>
 		</div>
 
 		<div class="details">
-			<p class="collection">F Series</p>
+			<p class="collection">Signature Series</p>
 			<h1>{product.name}</h1>
 			<p class="tagline">{product.tagline}</p>
 			<p class="price">${product.price} SGD</p>
 			<a
-				href="https://www.carousell.sg/p/aula-f75-mechanical-keyboard-glacier-blue-1425710647/?referrer_source=me_page"
+				href="https://www.carousell.sg/p/logitech-signature-m650-wireless-mouse-1414576336/"
 				target="_blank"
 				rel="noopener noreferrer"
 				class="buy-btn"
@@ -124,35 +117,24 @@
 
 			<ul class="perks">
 				<li>
-					<strong>75% Compact Layout</strong> – Clean desk. Clear mind. All your essential keys in a
-					sleek, space-saving design that looks as good as it feels.
+					<strong>SmartWheel Scrolling</strong> – Instantly switch between line-by-line precision for
+					documents and free-spin speed for long pages — all with a flick of your finger.
 				</li>
 				<li>
-					<strong>Tri-Mode Connectivity</strong> – Wired USB-C, Bluetooth 5.0, and 2.4 GHz wireless for
-					flexible use. Switch effortlessly between work, gaming, and everything in between.
+					<strong>SilentTouch Technology</strong> – Up to 90% quieter clicks than standard mice. Stay
+					focused in shared spaces, libraries, or video calls.
 				</li>
 				<li>
-					<strong>Massive 4000 mAh Battery</strong> – Type for days without worrying about charging.
+					<strong>Bluetooth + Logi Bolt</strong> – Two ways to connect. Plug-free Bluetooth or the included
+					Logi Bolt USB receiver for a rock-solid wireless link up to 10m.
 				</li>
 				<li>
-					<strong>Hot-Swappable PCB</strong> – Supports both 3-pin & 5-pin switches; customize without
-					soldering.
+					<strong>24-Month Battery Life</strong> – One AA battery powers up to two years of work. Less
+					time hunting for batteries, more time getting things done.
 				</li>
 				<li>
-					<strong>Gasket-Mount + Foam Layers (Poron, IXPE, PET)</strong> – The gasket-mounted structure
-					with Poron, IXPE, and PET foam layers cushions every keystroke, creating a softer, bouncier
-					typing feel with a creamier, smoother, and more satisfying sound.
-				</li>
-				<li>
-					<strong>Durable PBT Keycaps</strong> – Double-shot or side-printed; resistant to shine and
-					wear.
-				</li>
-				<li>
-					<strong>Multi-Function Metal Knob</strong> – Control volume, media, or lighting with ease.
-				</li>
-				<li>
-					<strong>Vibrant RGB Lighting</strong> – Set the mood. Work mode, gaming mode, late-night vibe
-					— your setup, your atmosphere.
+					<strong>Ergonomic Comfort Design</strong> – Contoured shape, soft thumb area, and rubber side
+					grips crafted for small-to-medium right hands. Built for long sessions.
 				</li>
 			</ul>
 		</div>
@@ -243,7 +225,8 @@
 		border-radius: 8px;
 		overflow: hidden;
 	}
-	.main-image img {
+	.main-image img,
+	.main-image video {
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
@@ -265,7 +248,8 @@
 			opacity 0.15s,
 			border-color 0.15s;
 	}
-	.thumb-btn img {
+	.thumb-btn img,
+	.thumb-btn video {
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
@@ -274,28 +258,6 @@
 	.thumb-btn.active {
 		opacity: 1;
 		border-color: #f0ede6;
-	}
-	.thumb-video-wrap {
-		position: relative;
-		width: 100%;
-		height: 100%;
-		display: flex;
-	}
-	.thumb-video-wrap video {
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-	}
-	.play-icon {
-		position: absolute;
-		inset: 0;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		font-size: 0.75rem;
-		color: #f0ede6;
-		background: rgba(0, 0, 0, 0.45);
-		pointer-events: none;
 	}
 	.image-caption {
 		font-size: 0.75rem;
@@ -380,9 +342,6 @@
 		color: #c0c0be;
 		font-weight: 500;
 	}
-	/* .perks li::before {
-		content: '— ';
-	} */
 
 	.info-sections {
 		max-width: 860px;
@@ -523,6 +482,12 @@
 			min-height: 40vh;
 			border-right: none;
 			border-bottom: 1px solid #2a2a28;
+			padding: 2.5rem 1.5rem;
+		}
+		.main-image {
+			width: 100%;
+			height: auto;
+			aspect-ratio: 4/3;
 		}
 		.details {
 			padding: 2.5rem 1.5rem;

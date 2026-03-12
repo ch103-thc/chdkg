@@ -65,6 +65,28 @@
 			badge: null,
 			img: 'img/jbl-tune770.png',
 			href: '/jbl-tune770'
+		},
+		{
+			id: 7,
+			category: 'Mice',
+			name: 'Logitech Signature M650',
+			fullName: 'Logitech Signature M650 Wireless Mouse',
+			tagline: 'Smart scrolling. Comfortable control.',
+			price: 44,
+			badge: null,
+			img: 'img/logitech-m650.png',
+			href: '/logitech-m650'
+		},
+		{
+			id: 8,
+			category: 'Mice',
+			name: 'UGREEN Ergonomic Mouse',
+			fullName: 'UGREEN Ergonomic Wireless Mouse',
+			tagline: 'Ergonomic design. Smooth wireless performance.',
+			price: 15,
+			badge: null,
+			img: 'img/ugreen-mouse.png',
+			href: '/ugreen-ergonomic-mouse'
 		}
 	];
 
