@@ -9,7 +9,7 @@
 	const product = {
 		name: 'AULA WIN68HE Mechanical Keyboard',
 		tagline: 'Magnetic. Modular. Masterful.',
-		price: 90,
+		price: 100,
 		description:
 			'Push your typing to the next level with the AULA WIN68HE — a compact 65% mechanical keyboard featuring Hall Effect magnetic switches, gasket mount construction, and full hot-swap support for the enthusiast who refuses to compromise.'
 	};

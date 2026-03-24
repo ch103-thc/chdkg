@@ -17,7 +17,7 @@
 			name: 'AULA WIN68HE',
 			fullName: 'AULA WIN68HE Wireless Mechanical Keyboard',
 			tagline: 'Hall effect precision. Wire-free freedom.',
-			price: 90,
+			price: 100,
 			badge: null,
 			img: 'img/aula-win68he.png',
 			href: '/aula-win68he'
