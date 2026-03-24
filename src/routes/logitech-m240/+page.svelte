@@ -9,7 +9,7 @@
 	const product = {
 		name: 'Logitech M240 Silent Mouse',
 		tagline: 'Silent. Smooth. Anywhere.',
-		price: 21,
+		price: 20,
 		description:
 			'Work without the noise with the Logitech M240 — a compact ambidextrous Bluetooth mouse that delivers up to 90% quieter clicks, an 18-month battery life, and seamless multi-device connectivity for every setup.'
 	};

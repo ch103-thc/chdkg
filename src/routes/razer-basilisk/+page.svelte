@@ -9,7 +9,7 @@
 	const product = {
 		name: 'Razer Basilisk X HyperSpeed',
 		tagline: 'Fast. Precise. Untethered.',
-		price: 60,
+		price: 55,
 		description:
 			'Dominate every session with the Razer Basilisk X HyperSpeed — a lightweight ergonomic gaming mouse built for speed, featuring HyperSpeed wireless technology, a 16,000 DPI optical sensor, and up to 450 hours of battery life.'
 	};

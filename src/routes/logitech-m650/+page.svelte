@@ -9,7 +9,7 @@
 	const product = {
 		name: 'Logitech Signature M650',
 		tagline: 'Smart Scroll. Silent Clicks. Shaped for You.',
-		price: 44,
+		price: 40,
 		description:
 			'The Logitech Signature M650 is an ergonomic wireless mouse built for all-day comfort. Featuring SmartWheel scrolling that switches instantly between line-by-line precision and free-spin speed, SilentTouch technology for 90% quieter clicks, and a 24-month battery life — it connects via Bluetooth or Logi Bolt for a seamless, clutter-free setup.'
 	};

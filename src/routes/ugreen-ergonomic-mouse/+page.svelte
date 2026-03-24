@@ -9,7 +9,7 @@
 	const product = {
 		name: 'UGREEN Ergonomic Wireless Mouse',
 		tagline: 'Dual Wireless. Silent Clicks. 300-Day Battery.',
-		price: 15,
+		price: 12,
 		description:
 			'The UGREEN Ergonomic Wireless Mouse lets you switch instantly between 2.4G and Bluetooth 5.0 — connecting two devices simultaneously with no dongle swaps. A curved grip with UV coating reduces wrist strain, ultra-silent clicks (≤40dB) keep you distraction-free, and a single AA battery lasts up to 300 days with smart 3-stage sleep. Works on virtually any surface, any OS, anywhere.'
 	};

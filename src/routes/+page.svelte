@@ -17,7 +17,7 @@
 			name: 'AULA WIN68HE',
 			fullName: 'AULA WIN68HE Wireless Mechanical Keyboard',
 			tagline: 'Hall effect precision. Wire-free freedom.',
-			price: 100,
+			price: 90,
 			badge: null,
 			img: 'img/aula-win68he.png',
 			href: '/aula-win68he'
@@ -39,7 +39,7 @@
 			name: 'Logitech M240',
 			fullName: 'Logitech M240 Silent Bluetooth Mouse',
 			tagline: 'Whisper-quiet. All-day comfort.',
-			price: 21,
+			price: 20,
 			badge: null,
 			img: 'img/logitech-m240.png',
 			href: '/logitech-m240'
@@ -50,7 +50,7 @@
 			name: 'Razer Basilisk X',
 			fullName: 'Razer Basilisk X HyperSpeed Wireless Gaming Mouse',
 			tagline: 'HyperSpeed wireless. Built to win.',
-			price: 60,
+			price: 55,
 			badge: null,
 			img: 'img/razer-basilisk.png',
 			href: '/razer-basilisk'
@@ -72,7 +72,7 @@
 			name: 'Logitech Signature M650',
 			fullName: 'Logitech Signature M650 Wireless Mouse',
 			tagline: 'Smart scrolling. Comfortable control.',
-			price: 44,
+			price: 40,
 			badge: null,
 			img: 'img/logitech-m650.png',
 			href: '/logitech-m650'
@@ -83,7 +83,7 @@
 			name: 'UGREEN Ergonomic Mouse',
 			fullName: 'UGREEN Ergonomic Wireless Mouse',
 			tagline: 'Ergonomic design. Smooth wireless performance.',
-			price: 15,
+			price: 12,
 			badge: null,
 			img: 'img/ugreen-mouse.png',
 			href: '/ugreen-ergonomic-mouse'
