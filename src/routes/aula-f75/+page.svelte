@@ -1,7 +1,7 @@
 <script>
 	import { slide } from 'svelte/transition';
 
-	let activeMedia = $state('/img/aula-f75-1.JPG');
+	let activeMedia = $state('/img/aula-f75-1.jpg');
 	let isVideo = $derived(activeMedia.endsWith('.mp4'));
 	const media = [
 		'/img/aula-f75-1.jpg',
@@ -232,14 +232,15 @@
 		align-items: center;
 		justify-content: center;
 		gap: 1.5rem;
-		padding: 4rem;
+		padding: 2rem 1.5rem;
 		border-right: 1px solid #2a2a28;
 		min-width: 0;
 		overflow: hidden;
 		max-width: 100%;
 	}
 	.main-image {
-		width: 420px;
+		width: 100%;
+		max-width: 420px;
 		height: 350px;
 		border-radius: 8px;
 		overflow: hidden;
