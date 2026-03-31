@@ -1,42 +1,52 @@
 <script>
 	import { slide } from 'svelte/transition';
 
-	let activeMedia = $state('/img/mouse1.jpg');
+	let activeMedia = $state('/img/attack-shark-1.jpg');
 	let isVideo = $derived(activeMedia.endsWith('.MP4'));
 
-	const media = ['/img/mouse1.jpg', '/img/mouse2.jpg'];
+	const media = ['/img/attack-shark-1.jpg', '/img/attack-shark-2.jpg', '/img/attack-shark-3.jpg'];
 
 	const product = {
-		name: 'Logitech M240 Silent Mouse',
-		tagline: 'Silent. Smooth. Anywhere.',
-		price: 20,
+		name: 'Attack Shark X3',
+		tagline: 'Ultralight. Tri-Mode. Unstoppable.',
+		price: 50,
 		description:
-			'Work without the noise with the Logitech M240 — a compact ambidextrous Bluetooth mouse that delivers up to 90% quieter clicks, an 18-month battery life, and seamless multi-device connectivity for every setup.'
+			'Dominate every session with the Attack Shark X3 — a 49g ultralight gaming mouse powered by the flagship PAW3395 sensor, Kailh GM8.0 switches rated for 80 million clicks, and tri-mode connectivity (Bluetooth 5.2, 2.4GHz wireless, USB-C wired) with an incredible 200-hour battery life.'
 	};
 
 	const features = [
-		'90% quieter clicks vs standard mice',
-		'Ambidextrous — works for left & right hand',
-		'Bluetooth 5.0 — no dongle needed',
-		'Up to 18 months on a single AA battery',
-		'Adjustable DPI: 400–4000 in 100-step increments',
-		'Compatible with Windows, macOS, ChromeOS, Linux',
-		'Power-saving sleep mode when idle',
-		'Smooth-glide feet for frictionless tracking'
+		'49g ultralight solid shell — no honeycomb cutouts',
+		'PAW3395 flagship sensor — up to 26,000 DPI',
+		'Tri-mode: Bluetooth 5.2 / 2.4GHz / USB-C wired',
+		'200-hour battery life on a single charge',
+		'Kailh GM8.0 switches — 80 million click lifespan',
+		'5 programmable buttons with onboard memory',
+		'100% pure PTFE skates for frictionless glide',
+		'Compatible with Windows, macOS, Android'
 	];
 
 	const specs = [
-		{ label: 'Connectivity', value: 'Bluetooth 5.0' },
-		{ label: 'DPI Range', value: '400 – 4000 (100-step)' },
-		{ label: 'Battery', value: '1× AA (~18 months)' },
-		{ label: 'Buttons', value: '3 (L, R, scroll click)' },
-		{ label: 'Design', value: 'Ambidextrous' },
-		{ label: 'Noise', value: '90% quieter vs standard' },
-		{ label: 'OS Support', value: 'Windows / macOS / ChromeOS / Linux' },
+		{ label: 'Sensor', value: 'PixArt PAW3395' },
+		{ label: 'DPI Range', value: '800 / 1600 / 2400 / 3200 / 5000 / 26000' },
+		{ label: 'Polling Rate', value: '1000 Hz' },
+		{ label: 'Tracking Speed', value: '650 IPS' },
+		{ label: 'Acceleration', value: '50G' },
+		{ label: 'Switches', value: 'Kailh GM8.0 (80M clicks)' },
+		{ label: 'Connectivity', value: 'Bluetooth 5.2 / 2.4GHz / USB-C Wired' },
+		{ label: 'Battery', value: '300 mAh (~200 hours)' },
+		{ label: 'Weight', value: '49g' },
+		{ label: 'Dimensions', value: '118.5 × 61 × 39.7 mm' },
+		{ label: 'Mouse Feet', value: '100% Pure PTFE Skates' },
+		{ label: 'OS Support', value: 'Windows / macOS / Android' },
 		{ label: 'Condition', value: 'Brand New' }
 	];
 
-	const inbox = ['Logitech M240 Silent Bluetooth Mouse', '1× AA Battery (pre-installed)'];
+	const inbox = [
+		'Attack Shark X3 Gaming Mouse',
+		'USB-C Charging / Data Cable',
+		'2.4GHz NANO Receiver',
+		'Sticker Sheet'
+	];
 
 	const faqs = [
 		{
@@ -53,7 +63,11 @@
 		},
 		{
 			q: 'What type of connection does it support?',
-			a: 'It supports Bluetooth only — no USB dongle required.'
+			a: 'It supports three modes: Bluetooth 5.2, 2.4GHz wireless (via NANO receiver), and USB-C wired. You can connect up to 4 devices simultaneously.'
+		},
+		{
+			q: 'Does it need to be charged? How long does a charge last?',
+			a: 'Yes, it has a built-in 300 mAh battery. A full charge takes 2–3 hours and provides up to 200 hours of use. An auto-sleep function kicks in when idle to conserve power.'
 		},
 		{
 			q: 'How long does shipping take?',
@@ -71,7 +85,7 @@
 				{#if isVideo}
 					<video src={activeMedia} controls autoplay loop />
 				{:else}
-					<img src={activeMedia} alt="Logitech M240 Silent Mouse" />
+					<img src={activeMedia} alt="Attack Shark X3" />
 				{/if}
 			</div>
 			<div class="thumbnails">
@@ -84,21 +98,21 @@
 						{#if item.endsWith('.MP4')}
 							<video src={item} muted />
 						{:else}
-							<img src={item} alt="Logitech M240 view" />
+							<img src={item} alt="Attack Shark X3 view" />
 						{/if}
 					</button>
 				{/each}
 			</div>
-			<p class="image-caption">Logitech M240 — Silent Bluetooth Mouse</p>
+			<p class="image-caption">Attack Shark X3 — Ultralight Gaming Mouse</p>
 		</div>
 
 		<div class="details">
-			<p class="collection">M Series</p>
+			<p class="collection">X Series</p>
 			<h1>{product.name}</h1>
 			<p class="tagline">{product.tagline}</p>
 			<p class="price">${product.price} SGD</p>
 			<a
-				href="https://www.carousell.sg/p/logitech-m240-silent-bluetooth-wireless-mouse-1407231009/"
+				href="https://www.carousell.sg/p/attack-shark-x3-lightweight-wireless-gaming-mouse-1429360968/?referrer_source=me_page"
 				target="_blank"
 				rel="noopener noreferrer"
 				class="buy-btn"

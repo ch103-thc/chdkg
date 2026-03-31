@@ -1,10 +1,10 @@
 <script>
 	import { slide } from 'svelte/transition';
 
-	let activeMedia = $state('/img/mouse3.jpg');
+	let activeMedia = $state('/img/razer1.jpg');
 	let isVideo = $derived(activeMedia.endsWith('.MP4'));
 
-	const media = ['/img/mouse3.jpg', '/img/mouse4.jpg', '/img/mouse5.jpg'];
+	const media = ['/img/razer1.jpg', '/img/razer2.jpg', '/img/razer3.jpg'];
 
 	const product = {
 		name: 'Razer Basilisk X HyperSpeed',

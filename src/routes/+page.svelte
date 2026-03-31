@@ -36,13 +36,13 @@
 		{
 			id: 4,
 			category: 'Mice',
-			name: 'Logitech M240',
-			fullName: 'Logitech M240 Silent Bluetooth Mouse',
-			tagline: 'Whisper-quiet. All-day comfort.',
-			price: 20,
+			name: 'Attack Shark X3',
+			fullName: 'Attack Shark X3 Lightweight Wireless Gaming Mouse',
+			tagline: 'Ultra-light. Precision performance.',
+			price: 50,
 			badge: null,
-			img: 'img/logitech-m240.png',
-			href: '/logitech-m240'
+			img: 'img/attack-shark-x3.png',
+			href: '/attack-shark-x3'
 		},
 		{
 			id: 5,

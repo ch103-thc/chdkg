@@ -1,15 +1,16 @@
 <script>
 	import { slide } from 'svelte/transition';
 
-	let activeMedia = $state('/img/aula-f75-1.jpg');
-	let isVideo = $derived(activeMedia.endsWith('.MP4'));
+	let activeMedia = $state('/img/aula-f75-1.JPG');
+	let isVideo = $derived(activeMedia.endsWith('.mp4'));
 	const media = [
-		'/img/aula-f75-1.jpg',
-		'/img/aula-f75-2.jpg',
-		'/img/aula-f75-3.jpg',
-		'/img/aula-f75-4.jpg',
+		'/img/aula-f75-1.JPG',
+		'/img/aula-f75-2.JPG',
+		'/img/aula-f75-3.JPG',
+		'/img/aula-f75-4.JPG',
 		'/img/aula-f75-5.jpg',
-		'/img/video.MP4'
+		'/img/aula-f75-6.jpg',
+		'/img/video.mp4'
 	];
 
 	const product = {
@@ -93,7 +94,7 @@
 						class:active={activeMedia === item}
 						onclick={() => (activeMedia = item)}
 					>
-						{#if item.endsWith('.MP4')}
+						{#if item.endsWith('.mp4')}
 							<div class="thumb-video-wrap">
 								<video src={item} muted preload="metadata" />
 								<span class="play-icon">{activeMedia === item ? '⏸' : '▶'}</span>
@@ -104,7 +105,7 @@
 					</button>
 				{/each}
 			</div>
-			<p class="image-caption">Aula F75 — Glacier Blue</p>
+			<p class="image-caption">Aula F75 — Cedar Green</p>
 		</div>
 
 		<div class="details">
