@@ -82,7 +82,7 @@
 		<div class="visual">
 			<div class="main-image">
 				{#if isVideo}
-					<video src={activeMedia} controls autoplay loop poster="/img/video-thumbnail.png" />
+					<video src={activeMedia} controls loop playsinline poster="/img/video-thumbnail.png" />
 				{:else}
 					<img src={activeMedia} alt="Aula F75 Mechanical Keyboard" />
 				{/if}
@@ -232,15 +232,14 @@
 		align-items: center;
 		justify-content: center;
 		gap: 1.5rem;
-		padding: 2rem 1.5rem;
+		padding: 4rem;
 		border-right: 1px solid #2a2a28;
 		min-width: 0;
 		overflow: hidden;
 		max-width: 100%;
 	}
 	.main-image {
-		width: 100%;
-		max-width: 420px;
+		width: 420px;
 		height: 350px;
 		border-radius: 8px;
 		overflow: hidden;
