@@ -2,7 +2,7 @@
 	import { slide } from 'svelte/transition';
 
 	let activeMedia = $state('/img/aula-f75-1.jpg');
-	let isVideo = $derived(activeMedia.endsWith('.mp4'));
+	let isVideo = $derived(activeMedia.endsWith('.MP4'));
 	const media = [
 		'/img/aula-f75-1.jpg',
 		'/img/aula-f75-2.jpg',
@@ -10,7 +10,7 @@
 		'/img/aula-f75-4.jpg',
 		'/img/aula-f75-5.jpg',
 		'/img/aula-f75-6.jpg',
-		'/img/video.mp4'
+		'/img/video.MP4'
 	];
 
 	const product = {
@@ -82,15 +82,7 @@
 		<div class="visual">
 			<div class="main-image">
 				{#if isVideo}
-					<video
-						src={activeMedia}
-						controls
-						loop
-						playsinline
-						webkit-playsinline
-						preload="metadata"
-						poster="/img/video-thumbnail.png"
-					/>
+					<video src={activeMedia} controls autoplay loop poster="/img/video-thumbnail.png" />
 				{:else}
 					<img src={activeMedia} alt="Aula F75 Mechanical Keyboard" />
 				{/if}
@@ -102,7 +94,7 @@
 						class:active={activeMedia === item}
 						onclick={() => (activeMedia = item)}
 					>
-						{#if item.endsWith('.mp4')}
+						{#if item.endsWith('.MP4')}
 							<div class="thumb-video-wrap">
 								<video src={item} muted preload="metadata" />
 								<span class="play-icon">{activeMedia === item ? '⏸' : '▶'}</span>
