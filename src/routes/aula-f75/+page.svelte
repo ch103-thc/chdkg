@@ -82,7 +82,15 @@
 		<div class="visual">
 			<div class="main-image">
 				{#if isVideo}
-					<video src={activeMedia} controls autoplay loop poster="/img/video-thumbnail.png" />
+					<video
+						src={activeMedia}
+						controls
+						loop
+						playsinline
+						webkit-playsinline
+						preload="metadata"
+						poster="/img/video-thumbnail.png"
+					/>
 				{:else}
 					<img src={activeMedia} alt="Aula F75 Mechanical Keyboard" />
 				{/if}
