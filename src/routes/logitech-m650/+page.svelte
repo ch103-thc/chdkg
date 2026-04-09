@@ -106,7 +106,7 @@
 			<p class="tagline">{product.tagline}</p>
 			<p class="price">${product.price} SGD</p>
 			<a
-				href="https://www.carousell.sg/p/logitech-signature-m650-wireless-mouse-1414576336/"
+				href="https://www.carousell.sg/p/logitech-signature-m650-wireless-mouse-1431087755/?referrer_source=me_page"
 				target="_blank"
 				rel="noopener noreferrer"
 				class="buy-btn"
