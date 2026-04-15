@@ -8,9 +8,11 @@
 		{ label: 'GamaKay GMK67', href: '/gamakay-gmk67' },
 		{ label: 'AULA WIN68HE', href: '/aula-win68he' },
 		{ label: 'AULA F75', href: '/aula-f75' },
-		{ label: 'Logitech M240', href: '/logitech-m240' },
 		{ label: 'Razer Basilisk X', href: '/razer-basilisk' },
-		{ label: 'JBL Tune 770NC', href: '/jbl-tune770' }
+		{ label: 'JBL Tune 770NC', href: '/jbl-tune770' },
+		{ label: 'UGREEN Ergonomic Mouse', href: '/ugreen-ergonomic-mouse' },
+		{ label: 'Lofree Flow Lite', href: '/lofree-flow-lite' },
+		{ label: 'AULA F87', href: '/aula-f87' }
 	];
 
 	function toggle() {

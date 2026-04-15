@@ -1,52 +1,46 @@
 <script>
 	import { slide } from 'svelte/transition';
 
-	let activeMedia = $state('/img/attack-shark-1.jpg');
+	let activeMedia = $state('/img/lofree-flow-lite-1.jpg');
 	let isVideo = $derived(activeMedia.endsWith('.MP4'));
 
-	const media = ['/img/attack-shark-1.jpg', '/img/attack-shark-2.jpg', '/img/attack-shark-3.jpg'];
+	const media = [
+		'/img/lofree-flow-lite-1.jpg',
+		'/img/lofree-flow-lite-2.jpg',
+		'/img/lofree-flow-lite-3.jpg',
+		'/img/lofree-flow-lite.MP4'
+	];
 
 	const product = {
-		name: 'Attack Shark X3',
-		tagline: 'Ultralight. Tri-Mode. Unstoppable.',
-		price: 50,
+		name: 'Lofree Flow Lite Mechanical Keyboard',
+		tagline: 'Featherlight. Fluid. Flawless.',
+		price: 100,
 		description:
-			'Dominate every session with the Attack Shark X3 — a 49g ultralight gaming mouse powered by the flagship PAW3395 sensor, Kailh GM8.0 switches rated for 80 million clicks, and tri-mode connectivity (Bluetooth 5.2, 2.4GHz wireless, USB-C wired) with an incredible 200-hour battery life.'
+			'The Lofree Flow Lite brings the beloved Flow experience to a lighter, more portable form — featuring Specter linear switches, a gasket-mount structure, and wireless tri-mode connectivity in a sleek white finish.'
 	};
 
 	const features = [
-		'49g ultralight solid shell — no honeycomb cutouts',
-		'PAW3395 flagship sensor — up to 26,000 DPI',
-		'Tri-mode: Bluetooth 5.2 / 2.4GHz / USB-C wired',
-		'200-hour battery life on a single charge',
-		'Kailh GM8.0 switches — 80 million click lifespan',
-		'5 programmable buttons with onboard memory',
-		'100% pure PTFE skates for frictionless glide',
-		'Compatible with Windows, macOS, Android'
+		'Specter linear switches — smooth, factory-lubed',
+		'Gasket mount with silicone dampening',
+		'Per-key RGB with dynamic lighting effects',
+		'Tri-mode: 2.4GHz wireless, Bluetooth 5.0, USB-C wired',
+		'Hot-swappable',
+		'Low-profile PBT keycaps',
+		'Compact 75% layout with function row'
 	];
 
 	const specs = [
-		{ label: 'Sensor', value: 'PixArt PAW3395' },
-		{ label: 'DPI Range', value: '800 / 1600 / 2400 / 3200 / 5000 / 26000' },
-		{ label: 'Polling Rate', value: '1000 Hz' },
-		{ label: 'Tracking Speed', value: '650 IPS' },
-		{ label: 'Acceleration', value: '50G' },
-		{ label: 'Switches', value: 'Kailh GM8.0 (80M clicks)' },
-		{ label: 'Connectivity', value: 'Bluetooth 5.2 / 2.4GHz / USB-C Wired' },
-		{ label: 'Battery', value: '300 mAh (~200 hours)' },
-		{ label: 'Weight', value: '49g' },
-		{ label: 'Dimensions', value: '118.5 × 61 × 39.7 mm' },
-		{ label: 'Mouse Feet', value: '100% Pure PTFE Skates' },
-		{ label: 'OS Support', value: 'Windows / macOS / Android' },
-		{ label: 'Condition', value: 'Brand New' }
+		{ label: 'Layout', value: '75% (84 keys)' },
+		{ label: 'Switch', value: 'Specter Linear (hot-swap)' },
+		{ label: 'Battery', value: '2000mAh' },
+		{ label: 'Structure', value: 'Gasket mount' },
+		{ label: 'Connectivity', value: '2.4GHz / BT 5.0 / USB-C' },
+		{ label: 'Polling Rate', value: '1000Hz' },
+		{ label: 'Weight', value: '~680g' },
+		{ label: 'Colour', value: 'White' }
 	];
 
-	const inbox = [
-		'Attack Shark X3 Gaming Mouse',
-		'USB-C Charging / Data Cable',
-		'2.4GHz NANO Receiver',
-		'Sticker Sheet'
-	];
+	const inbox = ['Lofree Flow Lite Keyboard', '2.4GHz USB Dongle', 'USB-C Cable', 'User Manual'];
 
 	const faqs = [
 		{
@@ -62,12 +56,12 @@
 			a: "Just tap on 'Return/refund' on your order details page if something goes wrong with your order. Carousell will reach out to you via email within 24h to resolve the issue.<br><a href='https://support.carousell.com/hc/en-us/articles/360001548627--Singapore-How-do-I-raise-a-return-refund-request' target='_blank' rel='noopener noreferrer'>Learn more</a>"
 		},
 		{
-			q: 'What type of connection does it support?',
-			a: 'It supports three modes: Bluetooth 5.2, 2.4GHz wireless (via NANO receiver), and USB-C wired. You can connect up to 4 devices simultaneously.'
+			q: 'What switches does it use?',
+			a: 'It comes with Specter linear switches — smooth, factory-lubed linears designed by Lofree for a light, fast keystroke. The PCB is hot-swappable so you can change switches without soldering.'
 		},
 		{
-			q: 'Does it need to be charged? How long does a charge last?',
-			a: 'Yes, it has a built-in 300 mAh battery. A full charge takes 2–3 hours and provides up to 200 hours of use. An auto-sleep function kicks in when idle to conserve power.'
+			q: 'What type of connection does it support?',
+			a: 'It supports tri-mode connectivity: 2.4GHz wireless, Bluetooth 5.0, and USB-C wired.'
 		},
 		{
 			q: 'How long does shipping take?',
@@ -83,9 +77,15 @@
 		<div class="visual">
 			<div class="main-image">
 				{#if isVideo}
-					<video src={activeMedia} controls autoplay loop />
+					<video
+						src={activeMedia}
+						controls
+						autoplay
+						loop
+						poster="/img/lofree-flow-lite-video-thumb.png"
+					/>
 				{:else}
-					<img src={activeMedia} alt="Attack Shark X3" />
+					<img src={activeMedia} alt="Lofree Flow Lite Mechanical Keyboard" />
 				{/if}
 			</div>
 			<div class="thumbnails">
@@ -96,23 +96,26 @@
 						onclick={() => (activeMedia = item)}
 					>
 						{#if item.endsWith('.MP4')}
-							<video src={item} muted />
+							<div class="thumb-video-wrap">
+								<video src={item} muted preload="metadata" />
+								<span class="play-icon">{activeMedia === item ? '⏸' : '▶'}</span>
+							</div>
 						{:else}
-							<img src={item} alt="Attack Shark X3 view" />
+							<img src={item} alt="Lofree Flow Lite view" />
 						{/if}
 					</button>
 				{/each}
 			</div>
-			<p class="image-caption">Attack Shark X3 — Ultralight Gaming Mouse</p>
+			<p class="image-caption">Lofree Flow Lite — White</p>
 		</div>
 
 		<div class="details">
-			<p class="collection">X Series</p>
+			<p class="collection">Flow Series</p>
 			<h1>{product.name}</h1>
 			<p class="tagline">{product.tagline}</p>
 			<p class="price">${product.price} SGD</p>
 			<a
-				href="https://www.carousell.sg/p/attack-shark-x3-lightweight-wireless-gaming-mouse-1429360968/?referrer_source=me_page"
+				href="https://www.carousell.sg/p/lofree-flow-lite-1429884801/?referrer_source=me_page"
 				target="_blank"
 				rel="noopener noreferrer"
 				class="buy-btn"
@@ -123,24 +126,35 @@
 
 			<ul class="perks">
 				<li>
-					<strong>Ambidextrous Compact Design</strong> – Comfortable for both left- and right-handed
-					users. Slim profile fits naturally in hand for all-day use.
+					<strong>75% Compact Layout</strong> – All the keys you need, none you don't. Clean, minimal,
+					desk-friendly.
 				</li>
 				<li>
-					<strong>Whisper-Quiet Clicks</strong> – Up to 90% quieter than standard mice. Stay focused
-					in libraries, offices, or shared spaces without the noise.
+					<strong>Specter Linear Switches</strong> – Silky-smooth keystrokes with a light actuation force.
+					Factory-lubed and ready to type from day one.
 				</li>
 				<li>
-					<strong>Bluetooth 5.0 — No Dongle</strong> – Plug-free pairing with Windows, macOS, ChromeOS,
-					and Linux. Clean desk, zero clutter.
+					<strong>Tri-Mode Connectivity</strong> – Wired USB-C, Bluetooth 5.0, and 2.4GHz wireless. Seamlessly
+					switch between up to three devices.
 				</li>
 				<li>
-					<strong>18-Month Battery Life</strong> – One AA battery lasts up to 18 months. Smart sleep
-					mode kicks in when idle to preserve power.
+					<strong>Gasket Mount + Silicone Dampening</strong> – The gasket structure absorbs impact and
+					softens the sound profile, giving every keystroke a satisfying, cushioned feel.
 				</li>
 				<li>
-					<strong>Adjustable DPI (400–4000)</strong> – Fine-tune your pointer speed in 100-step increments
-					for precision tasks or fast navigation.
+					<strong>Hot-Swappable PCB</strong> – Swap your switches anytime, no soldering needed.
+				</li>
+				<li>
+					<strong>Low-Profile PBT Keycaps</strong> – Durable, shine-resistant, and sculpted for comfortable
+					long typing sessions.
+				</li>
+				<li>
+					<strong>Per-Key RGB Lighting</strong> – Dial in the perfect atmosphere with fully customisable
+					per-key lighting.
+				</li>
+				<li>
+					<strong>Lightweight &amp; Portable</strong> – At ~680g, the Flow Lite is built to travel. Toss
+					it in your bag without a second thought.
 				</li>
 			</ul>
 		</div>
@@ -254,8 +268,7 @@
 			opacity 0.15s,
 			border-color 0.15s;
 	}
-	.thumb-btn img,
-	.thumb-btn video {
+	.thumb-btn img {
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
@@ -264,6 +277,28 @@
 	.thumb-btn.active {
 		opacity: 1;
 		border-color: #f0ede6;
+	}
+	.thumb-video-wrap {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		display: flex;
+	}
+	.thumb-video-wrap video {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+	.play-icon {
+		position: absolute;
+		inset: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 0.75rem;
+		color: #f0ede6;
+		background: rgba(0, 0, 0, 0.45);
+		pointer-events: none;
 	}
 	.image-caption {
 		font-size: 0.75rem;
@@ -369,7 +404,6 @@
 		border-bottom: 1px solid #2a2a28;
 	}
 
-	/* Features */
 	.feature-list {
 		list-style: none;
 		display: grid;
@@ -388,7 +422,6 @@
 		vertical-align: middle;
 	}
 
-	/* Specs */
 	.specs-table {
 		width: 100%;
 		border-collapse: collapse;
@@ -415,7 +448,6 @@
 		padding: 0.7rem 0;
 	}
 
-	/* In the Box */
 	.box-list {
 		list-style: none;
 		display: flex;
@@ -431,7 +463,6 @@
 		color: #6a6a68;
 	}
 
-	/* FAQ */
 	.faq-list {
 		display: flex;
 		flex-direction: column;
@@ -488,12 +519,6 @@
 			min-height: 40vh;
 			border-right: none;
 			border-bottom: 1px solid #2a2a28;
-			padding: 2.5rem 1.5rem;
-		}
-		.main-image {
-			width: 100%;
-			height: auto;
-			aspect-ratio: 4/3;
 		}
 		.details {
 			padding: 2.5rem 1.5rem;

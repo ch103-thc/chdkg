@@ -10,7 +10,7 @@
 		'/img/aula-f75-4.jpg',
 		'/img/aula-f75-5.jpg',
 		'/img/aula-f75-6.jpg',
-		'/img/video.MP4'
+		'/img/aula-f75.MP4'
 	];
 
 	const product = {
@@ -82,7 +82,7 @@
 		<div class="visual">
 			<div class="main-image">
 				{#if isVideo}
-					<video src={activeMedia} controls autoplay loop poster="/img/video-thumbnail.png" />
+					<video src={activeMedia} controls autoplay loop poster="/img/aula-f75-video-thumb.png" />
 				{:else}
 					<img src={activeMedia} alt="Aula F75 Mechanical Keyboard" />
 				{/if}

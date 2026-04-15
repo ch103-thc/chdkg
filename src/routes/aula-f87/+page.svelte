@@ -1,45 +1,53 @@
 <script>
 	import { slide } from 'svelte/transition';
 
-	let activeMedia = $state('/img/logitech-m650-1.jpg');
+	let activeMedia = $state('/img/aula-f87-1.jpg');
 	let isVideo = $derived(activeMedia.endsWith('.MP4'));
 
-	const media = ['/img/logitech-m650-1.jpg', '/img/logitech-m650-2.jpg'];
+	const media = [
+		'/img/aula-f87-1.jpg',
+		'/img/aula-f87-2.jpg',
+		'/img/aula-f87-3.jpg',
+		'/img/aula-f87-4.jpg',
+		'/img/aula-f87.MP4'
+	];
 
 	const product = {
-		name: 'Logitech Signature M650',
-		tagline: 'Smart Scroll. Silent Clicks. Shaped for You.',
-		price: 40,
+		name: 'Aula F87 Mechanical Keyboard',
+		tagline: 'Full-size feel. Tenkeyless freedom.',
+		price: 65,
 		description:
-			'The Logitech Signature M650 is an ergonomic wireless mouse built for all-day comfort. Featuring SmartWheel scrolling that switches instantly between line-by-line precision and free-spin speed, SilentTouch technology for 90% quieter clicks, and a 24-month battery life — it connects via Bluetooth or Logi Bolt for a seamless, clutter-free setup.'
+			'The AULA F87 is a tenkeyless mechanical keyboard built for typists and gamers who want all their essential keys without the bulk of a numpad — wrapped in a striking White Orange colourway with wireless tri-mode connectivity.'
 	};
 
 	const features = [
-		'90% quieter clicks with SilentTouch technology',
-		'SmartWheel — line-by-line or free-spin scrolling',
-		'Bluetooth Low Energy + Logi Bolt USB receiver',
-		'Up to 24 months on a single AA battery',
-		'400-4000 DPI optical sensor for smooth tracking',
-		'Contoured shape with soft thumb area & rubber grips',
-		'2 customizable side buttons via Logi Options+',
-		'Compatible with Windows, macOS, ChromeOS, Linux, iPadOS, Android'
+		'Hot-swappable switches — no soldering required',
+		'Gasket mount for a cushioned typing feel',
+		'Per-key RGB with 16.8 million colors',
+		'Tri-mode: 2.4GHz wireless, Bluetooth 5.0, USB-C wired',
+		'South-facing PCB — no RGB shine interference',
+		'Pre-lubed stabilizers for rattle-free typing',
+		'TKL layout — all keys, no numpad'
 	];
 
 	const specs = [
-		{ label: 'Connectivity', value: 'Bluetooth LE + Logi Bolt USB' },
-		{ label: 'DPI', value: '400-4000 DPI optical sensor' },
-		{ label: 'Battery', value: '1× AA (~24 months)' },
-		{ label: 'Buttons', value: '5 (L, R, scroll click, 2× side)' },
-		{ label: 'Design', value: 'Right-handed ergonomic' },
-		{ label: 'Scroll', value: 'SmartWheel (precision + free-spin)' },
-		{ label: 'OS Support', value: 'Windows / macOS / ChromeOS / Linux / iPadOS / Android' },
-		{ label: 'Condition', value: 'Brand New' }
+		{ label: 'Layout', value: 'TKL 87-key' },
+		{ label: 'Switch', value: 'Hot-swap (5-pin)' },
+		{ label: 'Battery', value: '4000mAh' },
+		{ label: 'Structure', value: 'Gasket mount' },
+		{ label: 'Connectivity', value: '2.4GHz / BT 5.0 / USB-C' },
+		{ label: 'Polling Rate', value: '1000Hz' },
+		{ label: 'Colour', value: 'White Orange' },
+		{ label: 'Keycaps', value: 'Double-shot PBT' }
 	];
 
 	const inbox = [
-		'Logitech Signature M650 Wireless Mouse',
-		'Logi Bolt USB Receiver',
-		'1× AA Battery (pre-installed)'
+		'Aula F87 Keyboard',
+		'2.4GHz USB Dongle',
+		'USB-C Cable',
+		'Keycap & Switch Puller',
+		'Extra Switches (×2)',
+		'User Manual'
 	];
 
 	const faqs = [
@@ -56,12 +64,12 @@
 			a: "Just tap on 'Return/refund' on your order details page if something goes wrong with your order. Carousell will reach out to you via email within 24h to resolve the issue.<br><a href='https://support.carousell.com/hc/en-us/articles/360001548627--Singapore-How-do-I-raise-a-return-refund-request' target='_blank' rel='noopener noreferrer'>Learn more</a>"
 		},
 		{
-			q: 'What is SmartWheel scrolling?',
-			a: 'SmartWheel automatically switches between two modes: precise line-by-line scrolling for detailed work, and free-spin mode for rapidly moving through long pages — all with a single flick of your finger.'
+			q: 'What is the difference between TKL and full-size?',
+			a: 'A TKL (tenkeyless) layout removes the numpad from a full-size keyboard, giving you a more compact footprint while keeping every other key — including the full function row, arrow keys, and navigation cluster.'
 		},
 		{
-			q: 'Does it work without the USB receiver?',
-			a: 'Yes — it connects via Bluetooth Low Energy directly to your device without needing the Logi Bolt USB receiver. The receiver is included as an alternative connection option.'
+			q: 'What type of connection does it support?',
+			a: 'It supports tri-mode connectivity: 2.4GHz wireless, Bluetooth 5.0, and USB-C wired.'
 		},
 		{
 			q: 'How long does shipping take?',
@@ -77,9 +85,9 @@
 		<div class="visual">
 			<div class="main-image">
 				{#if isVideo}
-					<video src={activeMedia} controls autoplay loop />
+					<video src={activeMedia} controls autoplay loop poster="/img/aula-f87-video-thumb.png" />
 				{:else}
-					<img src={activeMedia} alt="Logitech Signature M650" />
+					<img src={activeMedia} alt="Aula F87 Mechanical Keyboard" />
 				{/if}
 			</div>
 			<div class="thumbnails">
@@ -90,23 +98,26 @@
 						onclick={() => (activeMedia = item)}
 					>
 						{#if item.endsWith('.MP4')}
-							<video src={item} muted />
+							<div class="thumb-video-wrap">
+								<video src={item} muted preload="metadata" />
+								<span class="play-icon">{activeMedia === item ? '⏸' : '▶'}</span>
+							</div>
 						{:else}
-							<img src={item} alt="Logitech Signature M650 view" />
+							<img src={item} alt="Aula F87 view" />
 						{/if}
 					</button>
 				{/each}
 			</div>
-			<p class="image-caption">Logitech Signature M650 — Silent Wireless Mouse</p>
+			<p class="image-caption">Aula F87 — White Orange</p>
 		</div>
 
 		<div class="details">
-			<p class="collection">Signature Series</p>
+			<p class="collection">F Series</p>
 			<h1>{product.name}</h1>
 			<p class="tagline">{product.tagline}</p>
 			<p class="price">${product.price} SGD</p>
 			<a
-				href="https://www.carousell.sg/p/logitech-signature-m650-wireless-mouse-1431087755/?referrer_source=me_page"
+				href="https://www.carousell.sg/p/creamy-aula-f87-mechanical-keyboard-1431287649/?referrer_source=me_page"
 				target="_blank"
 				rel="noopener noreferrer"
 				class="buy-btn"
@@ -117,31 +128,42 @@
 
 			<ul class="perks">
 				<li>
-					<strong>SmartWheel Scrolling</strong> – Instantly switch between line-by-line precision for
-					documents and free-spin speed for long pages — all with a flick of your finger.
+					<strong>TKL 87-Key Layout</strong> – Everything you need from a full-size board, minus the
+					numpad. More mouse room, less compromise.
 				</li>
 				<li>
-					<strong>SilentTouch Technology</strong> – Up to 90% quieter clicks than standard mice. Stay
-					focused in shared spaces, libraries, or video calls.
+					<strong>Tri-Mode Connectivity</strong> – Wired USB-C, Bluetooth 5.0, and 2.4GHz wireless. Switch
+					seamlessly between up to three devices.
 				</li>
 				<li>
-					<strong>Bluetooth + Logi Bolt</strong> – Two ways to connect. Plug-free Bluetooth or the included
-					Logi Bolt USB receiver for a rock-solid wireless link up to 10m.
+					<strong>4000mAh Battery</strong> – Long battery life so you can go days between charges, even
+					with RGB on.
 				</li>
 				<li>
-					<strong>24-Month Battery Life</strong> – One AA battery powers up to two years of work. Less
-					time hunting for batteries, more time getting things done.
+					<strong>Hot-Swappable PCB</strong> – Supports both 3-pin &amp; 5-pin switches. Customise your
+					feel without ever picking up a soldering iron.
 				</li>
 				<li>
-					<strong>Ergonomic Comfort Design</strong> – Contoured shape, soft thumb area, and rubber side
-					grips crafted for small-to-medium right hands. Built for long sessions.
+					<strong>Gasket Mount + Foam Layers</strong> – The gasket-mounted structure cushions every keystroke,
+					producing a softer, bouncier feel with a satisfying thock.
+				</li>
+				<li>
+					<strong>Double-Shot PBT Keycaps</strong> – Legends that won't fade. Resistant to shine and
+					wear for long-term use.
+				</li>
+				<li>
+					<strong>Vibrant RGB Lighting</strong> – Per-key RGB with south-facing LEDs so shine-through
+					legends always look their best.
+				</li>
+				<li>
+					<strong>White Orange Colourway</strong> – A bold, warm accent against a clean white base. Stands
+					out on any desk setup.
 				</li>
 			</ul>
 		</div>
 	</section>
 
 	<section class="info-sections">
-		<!-- Features -->
 		<div class="info-block">
 			<h2>Features</h2>
 			<ul class="feature-list">
@@ -151,7 +173,6 @@
 			</ul>
 		</div>
 
-		<!-- Specs & Details -->
 		<div class="info-block">
 			<h2>Specs & Details</h2>
 			<table class="specs-table">
@@ -164,7 +185,6 @@
 			</table>
 		</div>
 
-		<!-- What's in the Box -->
 		<div class="info-block">
 			<h2>What's in the Box</h2>
 			<ul class="box-list">
@@ -174,7 +194,6 @@
 			</ul>
 		</div>
 
-		<!-- FAQ -->
 		<div class="info-block">
 			<h2>FAQ</h2>
 			<div class="faq-list">
@@ -248,8 +267,7 @@
 			opacity 0.15s,
 			border-color 0.15s;
 	}
-	.thumb-btn img,
-	.thumb-btn video {
+	.thumb-btn img {
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
@@ -258,6 +276,28 @@
 	.thumb-btn.active {
 		opacity: 1;
 		border-color: #f0ede6;
+	}
+	.thumb-video-wrap {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		display: flex;
+	}
+	.thumb-video-wrap video {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+	.play-icon {
+		position: absolute;
+		inset: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 0.75rem;
+		color: #f0ede6;
+		background: rgba(0, 0, 0, 0.45);
+		pointer-events: none;
 	}
 	.image-caption {
 		font-size: 0.75rem;
@@ -363,7 +403,6 @@
 		border-bottom: 1px solid #2a2a28;
 	}
 
-	/* Features */
 	.feature-list {
 		list-style: none;
 		display: grid;
@@ -382,7 +421,6 @@
 		vertical-align: middle;
 	}
 
-	/* Specs */
 	.specs-table {
 		width: 100%;
 		border-collapse: collapse;
@@ -409,7 +447,6 @@
 		padding: 0.7rem 0;
 	}
 
-	/* In the Box */
 	.box-list {
 		list-style: none;
 		display: flex;
@@ -425,7 +462,6 @@
 		color: #6a6a68;
 	}
 
-	/* FAQ */
 	.faq-list {
 		display: flex;
 		flex-direction: column;
@@ -482,12 +518,6 @@
 			min-height: 40vh;
 			border-right: none;
 			border-bottom: 1px solid #2a2a28;
-			padding: 2.5rem 1.5rem;
-		}
-		.main-image {
-			width: 100%;
-			height: auto;
-			aspect-ratio: 4/3;
 		}
 		.details {
 			padding: 2.5rem 1.5rem;

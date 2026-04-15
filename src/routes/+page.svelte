@@ -36,17 +36,6 @@
 		{
 			id: 4,
 			category: 'Mice',
-			name: 'Attack Shark X3',
-			fullName: 'Attack Shark X3 Lightweight Wireless Gaming Mouse',
-			tagline: 'Ultra-light. Precision performance.',
-			price: 50,
-			badge: null,
-			img: 'img/attack-shark-x3.png',
-			href: '/attack-shark-x3'
-		},
-		{
-			id: 5,
-			category: 'Mice',
 			name: 'Razer Basilisk X',
 			fullName: 'Razer Basilisk X HyperSpeed Wireless Gaming Mouse',
 			tagline: 'HyperSpeed wireless. Built to win.',
@@ -56,7 +45,7 @@
 			href: '/razer-basilisk'
 		},
 		{
-			id: 6,
+			id: 5,
 			category: 'Audio',
 			name: 'JBL Tune 770NC',
 			fullName: 'JBL Tune 770NC Wireless Over-Ear Headphones',
@@ -67,18 +56,7 @@
 			href: '/jbl-tune770'
 		},
 		{
-			id: 7,
-			category: 'Mice',
-			name: 'Logitech Signature M650',
-			fullName: 'Logitech Signature M650 Wireless Mouse',
-			tagline: 'Smart scrolling. Comfortable control.',
-			price: 40,
-			badge: null,
-			img: 'img/logitech-m650.png',
-			href: '/logitech-m650'
-		},
-		{
-			id: 8,
+			id: 6,
 			category: 'Mice',
 			name: 'UGREEN Ergonomic Mouse',
 			fullName: 'UGREEN Ergonomic Wireless Mouse',
@@ -87,6 +65,28 @@
 			badge: null,
 			img: 'img/ugreen-mouse.png',
 			href: '/ugreen-ergonomic-mouse'
+		},
+		{
+			id: 7,
+			category: 'Keyboards',
+			name: 'Lofree Flow Lite',
+			fullName: 'Lofree Flow Lite Low-Profile Mechanical Keyboard',
+			tagline: 'Sleek, silent, sophisticated.',
+			price: 100,
+			badge: null,
+			img: 'img/lofree-flow-lite.png',
+			href: '/lofree-flow-lite'
+		},
+		{
+			id: 8,
+			category: 'Keyboards',
+			name: 'AULA F87',
+			fullName: 'AULA F87 Mechanical Gaming Keyboard',
+			tagline: '87 keys of pure performance.',
+			price: 65,
+			badge: null,
+			img: 'img/aula-f87.png',
+			href: '/aula-f87'
 		}
 	];
 
