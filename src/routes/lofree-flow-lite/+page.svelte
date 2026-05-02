@@ -14,7 +14,7 @@
 	const product = {
 		name: 'Lofree Flow Lite Mechanical Keyboard',
 		tagline: 'Featherlight. Fluid. Flawless.',
-		price: 100,
+		price: 99.9,
 		description:
 			'The Lofree Flow Lite brings the beloved Flow experience to a lighter, more portable form — featuring Specter linear switches, a gasket-mount structure, and wireless tri-mode connectivity in a sleek white finish.'
 	};

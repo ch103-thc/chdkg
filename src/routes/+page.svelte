@@ -6,7 +6,7 @@
 			name: 'GamaKay GMK67',
 			fullName: 'GamaKay GMK67 Customized Mechanical Keyboard',
 			tagline: 'Built for enthusiasts. Ready out of the box.',
-			price: 179.9,
+			price: 160,
 			badge: null,
 			img: 'img/gamakay-gmk67.png',
 			href: '/gamakay-gmk67'
@@ -17,7 +17,7 @@
 			name: 'AULA WIN68HE',
 			fullName: 'AULA WIN68HE Wireless Mechanical Keyboard',
 			tagline: 'Hall effect precision. Wire-free freedom.',
-			price: 100,
+			price: 80,
 			badge: null,
 			img: 'img/aula-win68he.png',
 			href: '/aula-win68he'
@@ -57,36 +57,14 @@
 		},
 		{
 			id: 6,
-			category: 'Mice',
-			name: 'UGREEN Ergonomic Mouse',
-			fullName: 'UGREEN Ergonomic Wireless Mouse',
-			tagline: 'Ergonomic design. Smooth wireless performance.',
-			price: 12,
-			badge: null,
-			img: 'img/ugreen-mouse.png',
-			href: '/ugreen-ergonomic-mouse'
-		},
-		{
-			id: 7,
 			category: 'Keyboards',
 			name: 'Lofree Flow Lite',
 			fullName: 'Lofree Flow Lite Low-Profile Mechanical Keyboard',
 			tagline: 'Sleek, silent, sophisticated.',
-			price: 100,
+			price: 99.9,
 			badge: null,
 			img: 'img/lofree-flow-lite.png',
 			href: '/lofree-flow-lite'
-		},
-		{
-			id: 8,
-			category: 'Keyboards',
-			name: 'AULA F87',
-			fullName: 'AULA F87 Mechanical Gaming Keyboard',
-			tagline: '87 keys of pure performance.',
-			price: 65,
-			badge: null,
-			img: 'img/aula-f87.png',
-			href: '/aula-f87'
 		}
 	];
 

@@ -10,7 +10,7 @@
 		name: 'Blackpink GMK67 Mechanical Keyboard',
 		tagline: 'Limited. Customized. Iconic.',
 		originalPrice: 450,
-		salePrice: 179.9,
+		salePrice: 160,
 		description:
 			'A one-of-a-kind Blackpink-themed GamaKay GMK67 — fully assembled and customized with a 65% hot-swappable build, tri-mode wireless connectivity, and vibrant per-key RGB. Enthusiast-grade hardware meets collector-worthy aesthetics.'
 	};
