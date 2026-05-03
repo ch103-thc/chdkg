@@ -8,8 +8,6 @@
 		'/img/aula-f75-2.jpg',
 		'/img/aula-f75-3.jpg',
 		'/img/aula-f75-4.jpg',
-		'/img/aula-f75-5.jpg',
-		'/img/aula-f75-6.jpg',
 		'/img/aula-f75.MP4'
 	];
 
