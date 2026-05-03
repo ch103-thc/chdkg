@@ -112,7 +112,7 @@
 			<p class="tagline">{product.tagline}</p>
 			<p class="price">${product.price} SGD</p>
 			<a
-				href="https://www.carousell.sg/p/creamy-epomaker-x-aula-f75-mechanical-keyboard-1429881410/?referrer_source=me_page"
+				href="https://www.carousell.sg/p/creamy-epomaker-x-aula-f75-mechanical-keyboard-1435749580/?referrer_source=me_page"
 				target="_blank"
 				rel="noopener noreferrer"
 				class="buy-btn"
