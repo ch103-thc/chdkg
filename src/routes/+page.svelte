@@ -65,6 +65,17 @@
 			badge: null,
 			img: 'img/lofree-flow-lite.png',
 			href: '/lofree-flow-lite'
+		},
+		{
+			id: 7,
+			category: 'Keyboards',
+			name: 'Elecfox Linky 87',
+			fullName: 'Elecfox Linky 87 TKL Mechanical Keyboard',
+			tagline: 'Gasket Mounted. Tri-Mode Wireless.',
+			price: 70,
+			badge: null,
+			img: 'img/elecfox-linky87.png',
+			href: '/elecfox-linky87'
 		}
 	];
 

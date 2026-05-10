@@ -103,7 +103,7 @@
 					</button>
 				{/each}
 			</div>
-			<p class="image-caption">Aula F75 — Cedar Green</p>
+			<p class="image-caption">Aula F75 — Glacier Blue</p>
 		</div>
 
 		<div class="details">
