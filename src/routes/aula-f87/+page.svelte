@@ -117,7 +117,7 @@
 			<p class="tagline">{product.tagline}</p>
 			<p class="price">${product.price} SGD</p>
 			<a
-				href="https://www.carousell.sg/p/creamy-aula-f87-mechanical-keyboard-1431287649/?referrer_source=me_page"
+				href="https://www.carousell.sg/p/creamy-aula-f87-mechanical-keyboard-1445465867/?t-id=DKpYKLlX5V_1780729958132&t-referrer_browse_type=seller&t-referrer_page_type=profile&t-referrer_request_id=7aw_C4Vkn_P-i2fx&t-tap_index=0"
 				target="_blank"
 				rel="noopener noreferrer"
 				class="buy-btn"

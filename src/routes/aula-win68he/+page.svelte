@@ -101,7 +101,7 @@
 			<p class="tagline">{product.tagline}</p>
 			<p class="price">${product.price} SGD</p>
 			<a
-				href="https://www.carousell.sg/p/aula-win68-he-hall-effect-mechanical-keyboard-1425404685/?referrer_source=me_page/"
+				href="https://www.carousell.sg/p/aula-win68he-hall-effect-mechanical-keyboard-1444887472/?t-id=DKpYKLlX5V_1780729958132&t-referrer_browse_type=seller&t-referrer_page_type=profile&t-referrer_request_id=LfXpJjF1Er1byYq5&t-tap_index=2"
 				target="_blank"
 				rel="noopener noreferrer"
 				class="buy-btn"
