@@ -17,7 +17,7 @@
 			name: 'AULA WIN68HE',
 			fullName: 'AULA WIN68HE Wireless Mechanical Keyboard',
 			tagline: 'Hall effect precision. Wire-free freedom.',
-			price: 80,
+			price: 75,
 			badge: null,
 			img: 'img/aula-win68he.png',
 			href: '/aula-win68he'
@@ -46,14 +46,14 @@
 		},
 		{
 			id: 5,
-			category: 'Audio',
-			name: 'JBL Tune 770NC',
-			fullName: 'JBL Tune 770NC Wireless Over-Ear Headphones',
-			tagline: 'Noise cancelled. Bass amplified.',
-			price: 100,
+			category: 'Keyboards',
+			name: 'AULA F87',
+			fullName: 'AULA F87 Wireless Mechanical Keyboard',
+			tagline: 'Tri-mode. Tuned to perform.',
+			price: 65,
 			badge: null,
-			img: 'img/jbl-tune770.png',
-			href: '/jbl-tune770'
+			img: 'img/aula-f87-1.jpg',
+			href: '/aula-f87'
 		},
 		{
 			id: 6,
@@ -61,7 +61,7 @@
 			name: 'Lofree Flow Lite',
 			fullName: 'Lofree Flow Lite Low-Profile Mechanical Keyboard',
 			tagline: 'Sleek, silent, sophisticated.',
-			price: 99.9,
+			price: 99,
 			badge: null,
 			img: 'img/lofree-flow-lite.png',
 			href: '/lofree-flow-lite'
@@ -69,13 +69,24 @@
 		{
 			id: 7,
 			category: 'Keyboards',
-			name: 'Elecfox Linky 87',
-			fullName: 'Elecfox Linky 87 TKL Mechanical Keyboard',
-			tagline: 'Gasket Mounted. Tri-Mode Wireless.',
-			price: 70,
+			name: 'Logitech MX Keys Mini',
+			fullName: 'Logitech MX Keys Mini Wireless Illuminated Keyboard — Pale Grey',
+			tagline: 'Compact by design. Comfortable by feel.',
+			price: 100,
 			badge: null,
-			img: 'img/elecfox-linky87.png',
-			href: '/elecfox-linky87'
+			img: 'img/mx-keys-mini-white.png',
+			href: '/mx-keys-mini-pale-grey'
+		},
+		{
+			id: 8,
+			category: 'Keyboards',
+			name: 'Logitech MX Keys Mini',
+			fullName: 'Logitech MX Keys Mini Wireless Illuminated Keyboard — Graphite',
+			tagline: 'Compact by design. Comfortable by feel.',
+			price: 100,
+			badge: null,
+			img: 'img/mx-keys-mini-black.png',
+			href: '/mx-keys-mini-graphite'
 		}
 	];
 

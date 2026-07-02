@@ -9,9 +9,10 @@
 		{ label: 'AULA WIN68HE', href: '/aula-win68he' },
 		{ label: 'AULA F75', href: '/aula-f75' },
 		{ label: 'Razer Basilisk X', href: '/razer-basilisk' },
-		{ label: 'JBL Tune 770NC', href: '/jbl-tune770' },
+		{ label: 'AULA F87', href: '/aula-f87' },
 		{ label: 'Lofree Flow Lite', href: '/lofree-flow-lite' },
-		{ label: 'Elecfox Linky 87', href: '/elecfox-linky87' }
+		{ label: 'MX Keys Mini — Pale Grey', href: '/mx-keys-mini-pale-grey' },
+		{ label: 'MX Keys Mini — Graphite', href: '/mx-keys-mini-graphite' }
 	];
 
 	function toggle() {

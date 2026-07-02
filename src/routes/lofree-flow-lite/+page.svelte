@@ -14,7 +14,7 @@
 	const product = {
 		name: 'Lofree Flow Lite Mechanical Keyboard',
 		tagline: 'Featherlight. Fluid. Flawless.',
-		price: 99.9,
+		price: 99,
 		description:
 			'The Lofree Flow Lite brings the beloved Flow experience to a lighter, more portable form — featuring Specter linear switches, a gasket-mount structure, and wireless tri-mode connectivity in a sleek white finish.'
 	};
@@ -115,7 +115,7 @@
 			<p class="tagline">{product.tagline}</p>
 			<p class="price">${product.price} SGD</p>
 			<a
-				href="https://www.carousell.sg/p/lofree-flow-lite-1429884801/?referrer_source=me_page"
+				href="https://www.carousell.sg/p/creamy-lofree-flow-lite-wireless-low-profile-keyboard-1446391780/?t-id=DKpYKLlX5V_1780729958132&t-referrer_browse_type=seller&t-referrer_page_type=profile&t-referrer_request_id=rKyiT2IiuFC3VSUC&t-tap_index=0"
 				target="_blank"
 				rel="noopener noreferrer"
 				class="buy-btn"
