@@ -5,49 +5,48 @@
 	let isVideo = $derived(activeMedia.endsWith('.MP4'));
 
 	const media = [
-		'/img/aula-f87-1.jpg',
-		'/img/aula-f87-2.jpg',
-		'/img/aula-f87-3.jpg',
-		'/img/aula-f87-4.jpg',
-		'/img/aula-f87.MP4'
+		'/img/pop-icon-1.jpg',
+		'/img/pop-icon-2.jpg',
+		'/img/pop-icon-3.jpg',
+		'/img/pop-icon-4.jpg',
+		'/img/pop-icon.MP4'
 	];
 
 	const product = {
-		name: 'Aula F87 Mechanical Keyboard',
-		tagline: 'Full-size feel. Tenkeyless freedom.',
-		price: 65,
+		name: 'Logitech POP Icon Keys',
+		tagline: 'Bold looks. Effortless typing.',
+		price: 60,
 		description:
-			'The AULA F87 is a tenkeyless mechanical keyboard built for typists and gamers who want all their essential keys without the bulk of a numpad — wrapped in a striking White Orange colourway with wireless tri-mode connectivity.'
+			'The Logitech POP Icon Keys is a compact wireless Bluetooth keyboard with a detailed transparent frame and bold colourway made from recycled plastic. Contoured, low-profile keys give a quiet, comfortable typing feel, and customizable Action Keys let you launch shortcuts, emoji, or AI tools in a tap.'
 	};
 
 	const features = [
-		'Hot-swappable switches — no soldering required',
-		'Gasket mount for a cushioned typing feel',
-		'Per-key RGB with 16.8 million colors',
-		'Tri-mode: 2.4GHz wireless, Bluetooth 5.0, USB-C wired',
-		'South-facing PCB — no RGB shine interference',
-		'Pre-lubed stabilizers for rattle-free typing',
-		'TKL layout — all keys, no numpad'
+		'Customizable Action Keys via Logi Options+ app',
+		'Contoured, low-profile keys for quiet, comfortable typing',
+		'Bluetooth Low Energy — pairs with up to 3 devices',
+		'Easy-Switch button to jump between paired devices',
+		'Compact layout — saves desk space',
+		'Up to 3-year battery life on 2× AAA batteries (included)',
+		'Made with recycled plastic, transparent detail frame',
+		'Multi-OS: Windows, macOS, ChromeOS, Linux, iOS, iPadOS, Android'
 	];
 
 	const specs = [
-		{ label: 'Layout', value: 'TKL 87-key' },
-		{ label: 'Switch', value: 'Hot-swap (5-pin)' },
-		{ label: 'Battery', value: '4000mAh' },
-		{ label: 'Structure', value: 'Gasket mount' },
-		{ label: 'Connectivity', value: '2.4GHz / BT 5.0 / USB-C' },
-		{ label: 'Polling Rate', value: '1000Hz' },
-		{ label: 'Colour', value: 'White Orange' },
-		{ label: 'Keycaps', value: 'Double-shot PBT' }
+		{ label: 'Layout', value: 'Compact' },
+		{ label: 'Switch Type', value: 'Low-profile membrane' },
+		{ label: 'Battery', value: '2× AAA (included, up to 3 yrs)' },
+		{ label: 'Connectivity', value: 'Bluetooth Low Energy' },
+		{ label: 'Devices Paired', value: 'Up to 3, Easy-Switch' },
+		{ label: 'Dimensions', value: '12.78" x 12.78" x 0.87"' },
+		{ label: 'Weight', value: '~1.17 lb' },
+		{ label: 'Colour', value: 'Off White & Orange' }
 	];
 
 	const inbox = [
-		'Aula F87 Keyboard',
-		'2.4GHz USB Dongle',
-		'USB-C Cable',
-		'Keycap & Switch Puller',
-		'Extra Switches (×2)',
-		'User Manual'
+		'Logitech POP Icon Keys Keyboard',
+		'2× AAA Batteries (pre-installed)',
+		'Quick Start Guide',
+		'Warranty Card'
 	];
 
 	const faqs = [
@@ -64,8 +63,12 @@
 			a: "Just tap on 'Return/refund' on your order details page if something goes wrong with your order. Carousell will reach out to you via email within 24h to resolve the issue.<br><a href='https://support.carousell.com/hc/en-us/articles/360001548627--Singapore-How-do-I-raise-a-return-refund-request' target='_blank' rel='noopener noreferrer'>Learn more</a>"
 		},
 		{
-			q: 'What is the difference between TKL and full-size?',
-			a: 'A TKL (tenkeyless) layout removes the numpad from a full-size keyboard, giving you a more compact footprint while keeping every other key — including the full function row, arrow keys, and navigation cluster.'
+			q: 'Can I customize the Action Keys?',
+			a: 'Yes — download the Logi Options+ app to remap the Action Keys to shortcuts, emoji, or app launches.'
+		},
+		{
+			q: 'How long does the battery last?',
+			a: 'Logitech rates it for up to 3 years on the included AAA batteries, with auto-sleep to save power when idle.'
 		},
 		{
 			q: 'What type of connection does it support?',
@@ -108,7 +111,7 @@
 					</button>
 				{/each}
 			</div>
-			<p class="image-caption">Aula F87 — White Orange</p>
+			<p class="image-caption">Logitech POP Icon Keys — Off White & Orange</p>
 		</div>
 
 		<div class="details">
@@ -128,36 +131,36 @@
 
 			<ul class="perks">
 				<li>
-					<strong>TKL 87-Key Layout</strong> – Everything you need from a full-size board, minus the
-					numpad. More mouse room, less compromise.
+					<strong>Compact Layout</strong> – A space-saving footprint that frees up desk room without
+					sacrificing a full set of keys.
 				</li>
 				<li>
-					<strong>Tri-Mode Connectivity</strong> – Wired USB-C, Bluetooth 5.0, and 2.4GHz wireless. Switch
-					seamlessly between up to three devices.
+					<strong>Customizable Action Keys</strong> – Remap shortcuts, emoji, or app launches through
+					the Logi Options+ app to match how you work.
 				</li>
 				<li>
-					<strong>4000mAh Battery</strong> – Long battery life so you can go days between charges, even
-					with RGB on.
+					<strong>Bluetooth Low Energy</strong> – Pair with up to 3 devices and jump between them instantly
+					with the Easy-Switch button.
 				</li>
 				<li>
-					<strong>Hot-Swappable PCB</strong> – Supports both 3-pin &amp; 5-pin switches. Customise your
-					feel without ever picking up a soldering iron.
+					<strong>Up to 3-Year Battery Life</strong> – Runs on 2× included AAA batteries with auto-sleep
+					power saving, so you're not chasing a charging cable.
 				</li>
 				<li>
-					<strong>Gasket Mount + Foam Layers</strong> – The gasket-mounted structure cushions every keystroke,
-					producing a softer, bouncier feel with a satisfying thock.
+					<strong>Low-Profile, Contoured Keys</strong> – Shaped to fit your fingertips for a quiet, comfortable,
+					laptop-like typing feel.
 				</li>
 				<li>
-					<strong>Double-Shot PBT Keycaps</strong> – Legends that won't fade. Resistant to shine and
-					wear for long-term use.
+					<strong>Recycled Plastic Build</strong> – Made with a meaningful share of post-consumer recycled
+					plastic, varying by colourway.
 				</li>
 				<li>
-					<strong>Vibrant RGB Lighting</strong> – Per-key RGB with south-facing LEDs so shine-through
-					legends always look their best.
+					<strong>Multi-OS Compatible</strong> – Works across Windows, macOS, ChromeOS, Linux, iOS/iPadOS,
+					and Android.
 				</li>
 				<li>
-					<strong>White Orange Colourway</strong> – A bold, warm accent against a clean white base. Stands
-					out on any desk setup.
+					<strong>Off White & Orange Colourway</strong> – A bold two-tone finish with a transparent detail
+					frame that stands out on any desk.
 				</li>
 			</ul>
 		</div>

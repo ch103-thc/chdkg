@@ -25,7 +25,7 @@
 		{
 			id: 3,
 			category: 'Keyboards',
-			name: 'AULA F75',
+			name: 'AULA F75 - Thunder Black',
 			fullName: 'AULA F75 Wireless Mechanical Keyboard',
 			tagline: 'Compact. Precise. Yours.',
 			price: 60,
@@ -47,27 +47,16 @@
 		{
 			id: 5,
 			category: 'Keyboards',
-			name: 'AULA F87',
-			fullName: 'AULA F87 Wireless Mechanical Keyboard',
+			name: 'POP Icon Keys',
+			fullName: 'POP Icon Keys Bluetooth Mechanical Keyboard',
 			tagline: 'Tri-mode. Tuned to perform.',
-			price: 65,
+			price: 60,
 			badge: null,
-			img: 'img/aula-f87-1.jpg',
-			href: '/aula-f87'
+			img: 'img/pop-icon.png',
+			href: '/pop-icon'
 		},
 		{
 			id: 6,
-			category: 'Keyboards',
-			name: 'Lofree Flow Lite',
-			fullName: 'Lofree Flow Lite Low-Profile Mechanical Keyboard',
-			tagline: 'Sleek, silent, sophisticated.',
-			price: 99,
-			badge: null,
-			img: 'img/lofree-flow-lite.png',
-			href: '/lofree-flow-lite'
-		},
-		{
-			id: 7,
 			category: 'Keyboards',
 			name: 'Logitech MX Keys Mini',
 			fullName: 'Logitech MX Keys Mini Wireless Illuminated Keyboard — Pale Grey',
@@ -78,15 +67,15 @@
 			href: '/mx-keys-mini-pale-grey'
 		},
 		{
-			id: 8,
+			id: 7,
 			category: 'Keyboards',
-			name: 'Logitech MX Keys Mini',
-			fullName: 'Logitech MX Keys Mini Wireless Illuminated Keyboard — Graphite',
-			tagline: 'Compact by design. Comfortable by feel.',
-			price: 100,
+			name: 'AULA F75 - Glacier Blue',
+			fullName: 'AULA F75 Wireless Mechanical Keyboard',
+			tagline: 'Compact. Precise. Yours.',
+			price: 60,
 			badge: null,
-			img: 'img/mx-keys-mini-black.png',
-			href: '/mx-keys-mini-graphite'
+			img: 'img/aula-f75-glacier.png',
+			href: '/aula-f75-1'
 		}
 	];
 

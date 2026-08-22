@@ -1,56 +1,54 @@
 <script>
 	import { slide } from 'svelte/transition';
 
-	let activeMedia = $state('/img/mxkeys-black-1.jpg');
+	let activeMedia = $state('/img/aula-f75-1.jpg');
 	let isVideo = $derived(activeMedia.endsWith('.MP4'));
-
-	const media = ['/img/mxkeys-black-1.jpg'];
+	const media = [
+		'/img/aula-f75-1.jpg',
+		'/img/aula-f75-2.jpg',
+		'/img/aula-f75-3.jpg',
+		'/img/aula-f75-4.jpg',
+		'/img/aula-f75-5.jpg',
+		'/img/aula-f75-6.jpg',
+		'/img/aula-f75.MP4'
+	];
 
 	const product = {
-		name: 'Logitech MX Keys Mini - Graphite',
-		tagline: 'Compact by design. Comfortable by feel. Graphite.',
-		price: 90,
+		name: 'Aula F75 Mechanical Keyboard',
+		tagline: 'Compact. Precise. Yours.',
+		price: 60,
 		description:
-			'The Logitech MX Keys Mini brings all the comfort of the full-size MX Keys into a compact 75% frame. Low-profile, concave keycaps and Perfect Stroke keys give every keypress a quiet, stable feel, while smart backlighting adjusts automatically as your hands approach. Pair up to 3 devices over Bluetooth and switch between them instantly with Easy-Switch. Graphite colourway.'
+			'Elevate your typing experience with the AULA F75 — a 75% wireless mechanical keyboard that blends enthusiast-grade construction with versatile connectivity, perfect for both work and gaming.'
 	};
 
 	const features = [
-		'Compact 75% layout — closer reach to your mouse, no numpad',
-		'Low-profile, concave spherical keycaps for stable typing',
-		'Perfect Stroke keys — quiet, precise 1.5mm actuation',
-		'Smart illumination — backlights adjust as your hands approach',
-		'Easy-Switch — pair up to 3 devices, switch instantly',
-		'Bluetooth Low Energy or Logi Bolt USB receiver connectivity',
-		'USB-C rechargeable — up to 10 days with backlight on',
-		'Up to 5 months battery life with backlight off',
-		'Works across Windows, macOS, Linux, iOS, Android, ChromeOS',
-		'Customisable via Logi Options+ software',
-		'Spill-resistant design',
-		'Matte coating resists fingerprints and smudges'
+		'Hot-swappable switches — no soldering required',
+		'Gasket mount for a soft, cushioned typing feel',
+		'Per-key RGB with 16.8 million colors',
+		'Tri-mode: 2.4GHz wireless, Bluetooth 5.0, USB-C wired',
+		'South-facing PCB — no RGB shine interference',
+		'Pre-lubed stabilizers',
+		'POM plate for a bouncy, smooth keystroke'
 	];
 
 	const specs = [
-		{ label: 'Layout', value: 'Compact 75% (no numpad)' },
-		{ label: 'Colour', value: 'Graphite' },
-		{ label: 'Keys', value: 'Perfect Stroke low-profile scissor keys' },
-		{ label: 'Keycaps', value: 'Low-profile, concave, matte coated' },
-		{ label: 'Connectivity', value: 'Bluetooth Low Energy / Logi Bolt USB receiver' },
-		{ label: 'Paired Devices', value: 'Up to 3, via Easy-Switch button' },
-		{ label: 'Battery', value: 'Built-in rechargeable Li-Po' },
-		{ label: 'Battery Life', value: 'Up to 10 days (backlight on) / 5 months (off)' },
-		{ label: 'Charging', value: 'USB-C' },
-		{ label: 'Backlighting', value: 'White LED, auto on/off via proximity sensor' },
-		{ label: 'Software', value: 'Logi Options+ (optional)' },
-		{ label: 'OS Support', value: 'Windows 10/11 · macOS · Linux · iOS · Android · ChromeOS' },
-		{ label: 'Weight', value: 'Approx. 506g' },
-		{ label: 'Condition', value: 'Brand New' }
+		{ label: 'Layout', value: '75% (80 keys + knob)' },
+		{ label: 'Switch', value: 'Hot-swap (5-pin)' },
+		{ label: 'Battery', value: '4000mAh' },
+		{ label: 'Structure', value: 'Gasket mount' },
+		{ label: 'Connectivity', value: '2.4GHz / BT 5.0 / USB-C' },
+		{ label: 'Polling Rate', value: '1000Hz' },
+		{ label: 'Weight', value: '~1.02kg' },
+		{ label: 'Dimensions', value: '322.7 x 143.2 x 43.1 mm' }
 	];
 
 	const inbox = [
-		'Logitech MX Keys Mini Keyboard (Graphite)',
-		'Logi Bolt USB Receiver',
-		'USB-C charging cable',
-		'Quick start guide'
+		'Aula F75 Keyboard',
+		'2.4GHz USB Dongle',
+		'USB-C Cable',
+		'Keycap & Switch Puller',
+		'Extra Switches (×2)',
+		'User Manual'
 	];
 
 	const faqs = [
@@ -63,28 +61,12 @@
 			a: "Your purchase is covered by Buyer Protection when you pay via the 'Buy' button. This means you'll get a full refund if the item doesn't arrive, is damaged during delivery, or is not what you saw in the listing.<br><a href='https://support.carousell.com/hc/en-us/articles/360038048693--Singapore-What-does-Buyer-Protection-cover' target='_blank' rel='noopener noreferrer'>Learn more</a>"
 		},
 		{
-			q: 'How do I request a return or refund?',
+			q: 'How do I request for a return or refund?',
 			a: "Just tap on 'Return/refund' on your order details page if something goes wrong with your order. Carousell will reach out to you via email within 24h to resolve the issue.<br><a href='https://support.carousell.com/hc/en-us/articles/360001548627--Singapore-How-do-I-raise-a-return-refund-request' target='_blank' rel='noopener noreferrer'>Learn more</a>"
 		},
 		{
-			q: 'How do I switch between paired devices?',
-			a: 'Press the Easy-Switch button on the keyboard corresponding to the device slot (1, 2, or 3) you paired it to. The keyboard reconnects instantly.'
-		},
-		{
-			q: 'How do I pair a new device?',
-			a: "Hold the Easy-Switch button for a device slot for 3 seconds until the LED blinks, then select the keyboard from your device's Bluetooth settings."
-		},
-		{
-			q: 'Does it come with a USB receiver?',
-			a: 'Yes — a Logi Bolt USB receiver is included in the box, in addition to Bluetooth connectivity.'
-		},
-		{
-			q: 'How long does the battery last?',
-			a: 'Up to 10 days on a full charge with backlighting on, or up to 5 months with backlighting off. Charges via USB-C.'
-		},
-		{
-			q: 'Can I customise the keys?',
-			a: "Yes, using Logitech's free Logi Options+ software you can remap keys and adjust backlighting behaviour on Windows or macOS."
+			q: 'What type of connection does it support?',
+			a: 'It supports tri-mode connectivity: 2.4GHz wireless, Bluetooth, and USB-C wired.'
 		},
 		{
 			q: 'How long does shipping take?',
@@ -100,15 +82,9 @@
 		<div class="visual">
 			<div class="main-image">
 				{#if isVideo}
-					<video
-						src={activeMedia}
-						controls
-						autoplay
-						loop
-						poster="/img/mxkeys-white-video-thumb.png"
-					/>
+					<video src={activeMedia} controls autoplay loop poster="/img/aula-f75-video-thumb.png" />
 				{:else}
-					<img src={activeMedia} alt="Logitech MX Keys Mini Graphite" />
+					<img src={activeMedia} alt="Aula F75 Mechanical Keyboard" />
 				{/if}
 			</div>
 			<div class="thumbnails">
@@ -124,21 +100,21 @@
 								<span class="play-icon">{activeMedia === item ? '⏸' : '▶'}</span>
 							</div>
 						{:else}
-							<img src={item} alt="MX Keys Mini view" />
+							<img src={item} alt="Aula F75 view" />
 						{/if}
 					</button>
 				{/each}
 			</div>
-			<p class="image-caption">Logitech MX Keys Mini — Graphite</p>
+			<p class="image-caption">Aula F75 — Glacier Blue</p>
 		</div>
 
 		<div class="details">
-			<p class="collection">MX Series</p>
+			<p class="collection">F Series</p>
 			<h1>{product.name}</h1>
 			<p class="tagline">{product.tagline}</p>
 			<p class="price">${product.price} SGD</p>
 			<a
-				href="https://www.carousell.sg/p/logitech-mx-keys-mini-graphite-1438968400/?t-id=DKpYKLlX5V_1780729958132&t-referrer_browse_type=seller&t-referrer_page_type=profile&t-referrer_request_id=k7auHBK3kWBVk_8Z&t-tap_index=8"
+				href="https://www.carousell.sg/p/creamy-aula-f75-mechanical-keyboard-1457045666/?t-id=rmDovvFOPU_1786716763135&t-referrer_browse_type=seller&t-referrer_page_type=profile&t-referrer_request_id=rqml82LcpYNgCo43&t-tap_index=0"
 				target="_blank"
 				rel="noopener noreferrer"
 				class="buy-btn"
@@ -149,30 +125,42 @@
 
 			<ul class="perks">
 				<li>
-					<strong>Compact 75% Layout</strong> – No numpad means your mouse sits closer, easier on the
-					shoulder for everyday typing.
+					<strong>75% Compact Layout</strong> – Clean desk. Clear mind. All your essential keys in a
+					sleek, space-saving design that looks as good as it feels.
 				</li>
 				<li>
-					<strong>Perfect Stroke Keys</strong> – Low-profile, concave keycaps give a quiet, stable, satisfying
-					typing feel out of the box.
+					<strong>Tri-Mode Connectivity</strong> – Wired USB-C, Bluetooth 5.0, and 2.4 GHz wireless for
+					flexible use. Switch effortlessly between work, gaming, and everything in between.
 				</li>
 				<li>
-					<strong>Easy-Switch, 3 Devices</strong> – Pair a laptop, tablet, and phone, and jump between
-					them with one button press.
+					<strong>Massive 4000 mAh Battery</strong> – Type for days without worrying about charging.
 				</li>
 				<li>
-					<strong>Smart Backlighting</strong> – Keys light up automatically as your hands approach, and
-					dim when you step away to save battery.
+					<strong>Hot-Swappable PCB</strong> – Supports both 3-pin & 5-pin switches; customize without
+					soldering.
 				</li>
 				<li>
-					<strong>USB-C Fast Charging</strong> – Up to 10 days per charge with backlight on, up to 5
-					months with it off.
+					<strong>Gasket-Mount + Foam Layers (Poron, IXPE, PET)</strong> – The gasket-mounted structure
+					with Poron, IXPE, and PET foam layers cushions every keystroke, creating a softer, bouncier
+					typing feel with a creamier, smoother, and more satisfying sound.
+				</li>
+				<li>
+					<strong>Durable PBT Keycaps</strong> – Double-shot or side-printed; resistant to shine and
+					wear.
+				</li>
+				<li>
+					<strong>Multi-Function Metal Knob</strong> – Control volume, media, or lighting with ease.
+				</li>
+				<li>
+					<strong>Vibrant RGB Lighting</strong> – Set the mood. Work mode, gaming mode, late-night vibe
+					— your setup, your atmosphere.
 				</li>
 			</ul>
 		</div>
 	</section>
 
 	<section class="info-sections">
+		<!-- Features -->
 		<div class="info-block">
 			<h2>Features</h2>
 			<ul class="feature-list">
@@ -182,6 +170,7 @@
 			</ul>
 		</div>
 
+		<!-- Specs & Details -->
 		<div class="info-block">
 			<h2>Specs & Details</h2>
 			<table class="specs-table">
@@ -194,6 +183,7 @@
 			</table>
 		</div>
 
+		<!-- What's in the Box -->
 		<div class="info-block">
 			<h2>What's in the Box</h2>
 			<ul class="box-list">
@@ -203,6 +193,7 @@
 			</ul>
 		</div>
 
+		<!-- FAQ -->
 		<div class="info-block">
 			<h2>FAQ</h2>
 			<div class="faq-list">
@@ -253,8 +244,7 @@
 		border-radius: 8px;
 		overflow: hidden;
 	}
-	.main-image img,
-	.main-image video {
+	.main-image img {
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
@@ -276,8 +266,7 @@
 			opacity 0.15s,
 			border-color 0.15s;
 	}
-	.thumb-btn img,
-	.thumb-btn video {
+	.thumb-btn img {
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
@@ -286,6 +275,28 @@
 	.thumb-btn.active {
 		opacity: 1;
 		border-color: #f0ede6;
+	}
+	.thumb-video-wrap {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		display: flex;
+	}
+	.thumb-video-wrap video {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+	.play-icon {
+		position: absolute;
+		inset: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 0.75rem;
+		color: #f0ede6;
+		background: rgba(0, 0, 0, 0.45);
+		pointer-events: none;
 	}
 	.image-caption {
 		font-size: 0.75rem;
@@ -370,6 +381,9 @@
 		color: #c0c0be;
 		font-weight: 500;
 	}
+	/* .perks li::before {
+		content: '— ';
+	} */
 
 	.info-sections {
 		max-width: 860px;
@@ -391,6 +405,7 @@
 		border-bottom: 1px solid #2a2a28;
 	}
 
+	/* Features */
 	.feature-list {
 		list-style: none;
 		display: grid;
@@ -409,6 +424,7 @@
 		vertical-align: middle;
 	}
 
+	/* Specs */
 	.specs-table {
 		width: 100%;
 		border-collapse: collapse;
@@ -435,6 +451,7 @@
 		padding: 0.7rem 0;
 	}
 
+	/* In the Box */
 	.box-list {
 		list-style: none;
 		display: flex;
@@ -450,6 +467,7 @@
 		color: #6a6a68;
 	}
 
+	/* FAQ */
 	.faq-list {
 		display: flex;
 		flex-direction: column;
@@ -506,12 +524,6 @@
 			min-height: 40vh;
 			border-right: none;
 			border-bottom: 1px solid #2a2a28;
-			padding: 2.5rem 1.5rem;
-		}
-		.main-image {
-			width: 100%;
-			height: auto;
-			aspect-ratio: 4/3;
 		}
 		.details {
 			padding: 2.5rem 1.5rem;

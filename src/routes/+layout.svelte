@@ -7,12 +7,11 @@
 	const items = [
 		{ label: 'GamaKay GMK67', href: '/gamakay-gmk67' },
 		{ label: 'AULA WIN68HE', href: '/aula-win68he' },
-		{ label: 'AULA F75', href: '/aula-f75' },
+		{ label: 'AULA F75 - Thunder Black', href: '/aula-f75' },
 		{ label: 'Razer Basilisk X', href: '/razer-basilisk' },
-		{ label: 'AULA F87', href: '/aula-f87' },
-		{ label: 'Lofree Flow Lite', href: '/lofree-flow-lite' },
+		{ label: 'AULA F87', href: '/pop-icon' },
 		{ label: 'MX Keys Mini — Pale Grey', href: '/mx-keys-mini-pale-grey' },
-		{ label: 'MX Keys Mini — Graphite', href: '/mx-keys-mini-graphite' }
+		{ label: 'AULA F75 - Glacier Blue', href: '/aula-f75-1' }
 	];
 
 	function toggle() {

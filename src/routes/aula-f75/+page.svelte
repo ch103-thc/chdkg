@@ -1,16 +1,15 @@
 <script>
 	import { slide } from 'svelte/transition';
 
-	let activeMedia = $state('/img/aula-f75-1.jpg');
+	let activeMedia = $state('/img/thunder-1.png');
 	let isVideo = $derived(activeMedia.endsWith('.MP4'));
 	const media = [
-		'/img/aula-f75-1.jpg',
-		'/img/aula-f75-2.jpg',
-		'/img/aula-f75-3.jpg',
-		'/img/aula-f75-4.jpg',
-		'/img/aula-f75-5.jpg',
-		'/img/aula-f75-6.jpg',
-		'/img/aula-f75.MP4'
+		'/img/thunder-1.png',
+		'/img/thunder-2.png',
+		'/img/thunder-3.png',
+		'/img/thunder-4.png',
+		'/img/thunder-5.png',
+		'/img/thunder.MP4'
 	];
 
 	const product = {
@@ -105,7 +104,7 @@
 					</button>
 				{/each}
 			</div>
-			<p class="image-caption">Aula F75 — Glacier Blue</p>
+			<p class="image-caption">Aula F75 — Thunder Black</p>
 		</div>
 
 		<div class="details">
@@ -114,7 +113,7 @@
 			<p class="tagline">{product.tagline}</p>
 			<p class="price">${product.price} SGD</p>
 			<a
-				href="https://www.carousell.sg/p/creamy-epomaker-x-aula-f75-mechanical-keyboard-1444690135/?t-id=DKpYKLlX5V_1780729958132&t-referrer_browse_type=seller&t-referrer_page_type=profile&t-referrer_request_id=ZD2fPusJZu0_XfcA&t-tap_index=1"
+				href="https://www.carousell.sg/p/creamy-aula-f75-mechanical-keyboard-1456965993/?t-id=rmDovvFOPU_1786716763135&t-referrer_browse_type=seller&t-referrer_page_type=profile&t-referrer_request_id=19MXDGjsJhWzoTR9&t-tap_index=2"
 				target="_blank"
 				rel="noopener noreferrer"
 				class="buy-btn"
