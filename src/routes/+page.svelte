@@ -183,7 +183,7 @@
 </main>
 
 <style>
-	@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap');
+	@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap');
 
 	:global(*) {
 		margin: 0;
@@ -192,9 +192,9 @@
 	}
 
 	:global(body) {
-		background: #0e0d0b;
-		color: #f0ede6;
-		font-family: 'DM Sans', sans-serif;
+		background: #fafafa;
+		color: #1a1a1a;
+		font-family: 'Inter', sans-serif;
 		-webkit-font-smoothing: antialiased;
 	}
 
@@ -203,9 +203,9 @@
 		position: sticky;
 		top: 0;
 		z-index: 50;
-		background: rgba(14, 13, 11, 0.92);
+		background: rgba(255, 255, 255, 0.85);
 		backdrop-filter: blur(12px);
-		border-bottom: 1px solid #2a2a28;
+		border-bottom: 1px solid #ececec;
 	}
 	.header-inner {
 		max-width: 1400px;
@@ -223,12 +223,14 @@
 		flex-shrink: 0;
 	}
 	.brand-mark {
-		color: #6a6a68;
+		color: #6366f1;
 		font-size: 0.7rem;
 	}
 	.brand-name {
-		font-family: 'Playfair Display', serif;
+		font-family: 'Space Grotesk', sans-serif;
 		font-size: 1.1rem;
+		font-weight: 600;
+		color: #1a1a1a;
 		letter-spacing: 0.05em;
 	}
 	.filter-tabs {
@@ -240,7 +242,7 @@
 	.tab {
 		background: none;
 		border: none;
-		color: #6a6a68;
+		color: #8a8a8a;
 		font-family: 'DM Sans', sans-serif;
 		font-size: 0.78rem;
 		letter-spacing: 0.12em;
@@ -253,18 +255,18 @@
 			background 0.15s;
 	}
 	.tab:hover {
-		color: #c0c0be;
+		color: #1a1a1a;
 	}
 	.tab.active {
-		color: #f0ede6;
-		background: #1e1e1c;
+		color: #1a1a1a;
+		background: #f0f0ff;
 	}
 	.header-meta {
 		flex-shrink: 0;
 	}
 	.product-count {
 		font-size: 0.75rem;
-		color: #4a4a48;
+		color: #a0a0a0;
 		letter-spacing: 0.1em;
 	}
 
@@ -273,26 +275,26 @@
 		max-width: 1400px;
 		margin: 0 auto;
 		padding: 4rem 3rem 3rem;
-		border-bottom: 1px solid #1e1e1c;
+		border-bottom: 1px solid #ececec;
 	}
 	.hero-label {
 		font-size: 0.7rem;
 		letter-spacing: 0.25em;
-		color: #4a4a48;
+		color: #a0a0a0;
 		text-transform: uppercase;
 		margin-bottom: 0.6rem;
 	}
 	.hero-title {
-		font-family: 'Playfair Display', serif;
+		font-family: 'Space Grotesk', sans-serif;
 		font-size: clamp(2.2rem, 5vw, 4rem);
-		font-weight: 400;
+		font-weight: 600;
+		color: #1a1a1a;
 		line-height: 1;
 		margin-bottom: 0.75rem;
 	}
 	.hero-sub {
 		font-size: 0.9rem;
-		color: #6a6a68;
-		font-style: italic;
+		color: #6a6a6a;
 	}
 
 	/* ── Grid ── */
@@ -302,28 +304,36 @@
 		padding: 3rem;
 		display: grid;
 		grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-		gap: 1.5px;
-		background: #1a1a18;
-		border: 1px solid #1a1a18;
+		gap: 1.5rem;
+		background: transparent;
+		border: none;
 	}
 
 	/* ── Card ── */
 	.product-card {
-		background: #0e0d0b;
+		background: #ffffff;
+		border: 1px solid #ececec;
+		border-radius: 14px;
+		overflow: hidden;
 		display: flex;
 		flex-direction: column;
-		transition: background 0.2s;
+		box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
+		transition:
+			box-shadow 0.2s,
+			transform 0.2s;
 		cursor: default;
 	}
 	.product-card.hovered {
-		background: #141412;
+		background: #ffffff;
+		box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+		transform: translateY(-2px);
 	}
 
 	.card-image {
 		position: relative;
 		aspect-ratio: 4 / 3;
 		overflow: hidden;
-		background: #141412;
+		background: #f5f5f7;
 	}
 	.card-image img {
 		width: 100%;
@@ -332,11 +342,9 @@
 		transition:
 			transform 0.5s ease,
 			filter 0.3s ease;
-		filter: brightness(0.9);
 	}
 	.product-card.hovered .card-image img {
 		transform: scale(1.04);
-		filter: brightness(1);
 	}
 
 	.badge {
@@ -357,8 +365,8 @@
 		bottom: 1rem;
 		left: 50%;
 		transform: translateX(-50%) translateY(8px);
-		background: #f0ede6;
-		color: #0e0d0b;
+		background: #6366f1;
+		color: #ffffff;
 		text-decoration: none;
 		font-size: 0.72rem;
 		font-weight: 600;
@@ -383,7 +391,7 @@
 		flex-direction: column;
 		gap: 0.4rem;
 		flex: 1;
-		border-top: 1px solid #1a1a18;
+		border-top: 1px solid #f0f0f0;
 	}
 	.card-meta {
 		display: flex;
@@ -393,7 +401,7 @@
 	.card-collection {
 		font-size: 0.68rem;
 		letter-spacing: 0.18em;
-		color: #4a4a48;
+		color: #a0a0a0;
 		text-transform: uppercase;
 	}
 	.card-color {
@@ -402,28 +410,27 @@
 		letter-spacing: 0.05em;
 	}
 	.card-name {
-		font-family: 'Playfair Display', serif;
+		font-family: 'Space Grotesk', sans-serif;
 		font-size: 1.35rem;
-		font-weight: 400;
+		font-weight: 600;
+		color: #1a1a1a;
 		line-height: 1.2;
-		color: #f0ede6;
 	}
 	.card-fullname {
 		font-size: 0.72rem;
-		color: #3a3a38;
+		color: #8a8a8a;
 		line-height: 1.4;
 		margin-top: -0.1rem;
 	}
 	.price-dm {
 		font-size: 0.75rem;
-		color: #5a5a58;
+		color: #a0a0a0;
 		font-style: italic;
 		letter-spacing: 0.03em;
 	}
 	.card-tagline {
 		font-size: 0.78rem;
-		color: #5a5a58;
-		font-style: italic;
+		color: #7a7a7a;
 		line-height: 1.5;
 	}
 	.card-footer {
@@ -432,22 +439,24 @@
 		align-items: center;
 		margin-top: 0.75rem;
 		padding-top: 0.75rem;
-		border-top: 1px solid #1e1e1c;
+		border-top: 1px solid #f0f0f0;
 	}
 	.card-price {
 		font-size: 1rem;
 		font-weight: 500;
+		color: #1a1a1a;
 		letter-spacing: 0.04em;
 	}
 	.currency {
 		font-size: 0.7rem;
-		color: #6a6a68;
+		color: #a0a0a0;
 		font-weight: 400;
 	}
 	.card-btn {
 		display: inline-block;
-		border: 1px solid #3a3a38;
-		color: #a0a09e;
+		border: none;
+		background: #1a1a1a;
+		color: #ffffff;
 		text-decoration: none;
 		font-size: 0.72rem;
 		letter-spacing: 0.12em;
@@ -460,9 +469,9 @@
 			background 0.15s;
 	}
 	.card-btn:hover {
-		border-color: #f0ede6;
-		color: #f0ede6;
-		background: #1a1a18;
+		background: #6366f1;
+		border-color: transparent;
+		color: #ffffff;
 	}
 
 	/* ── Footer ── */
@@ -473,15 +482,15 @@
 		display: flex;
 		align-items: center;
 		gap: 1rem;
-		border-top: 1px solid #1a1a18;
+		border-top: 1px solid #ececec;
 	}
 	.footer-mark {
-		color: #3a3a38;
+		color: #c0c0c0;
 		font-size: 0.7rem;
 	}
 	footer p {
 		font-size: 0.75rem;
-		color: #3a3a38;
+		color: #a0a0a0;
 		letter-spacing: 0.05em;
 	}
 

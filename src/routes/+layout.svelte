@@ -26,7 +26,7 @@
 <svelte:head>
 	<link rel="icon" href={favicon} />
 	<link
-		href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap"
+		href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap"
 		rel="stylesheet"
 	/>
 </svelte:head>
@@ -87,9 +87,9 @@
 		padding: 0;
 	}
 	:global(body) {
-		font-family: 'DM Sans', sans-serif;
-		background: #0e0d0b;
-		color: #f0ede6;
+		font-family: 'Inter', sans-serif;
+		background: #fafafa;
+		color: #1a1a1a;
 	}
 	.site {
 		min-height: 100vh;
@@ -99,27 +99,27 @@
 		justify-content: space-between;
 		align-items: center;
 		padding: 1.5rem 3rem;
-		border-bottom: 1px solid #2a2a28;
+		border-bottom: 1px solid #ececec;
+		background: #ffffff;
 		position: sticky;
 		top: 0;
-		background: #0e0d0b;
 		z-index: 200;
 	}
 	.wordmark {
-		font-family: 'Playfair Display', serif;
-		font-size: 1.1rem;
-		letter-spacing: 0.25em;
+		font-family: 'Space Grotesk', sans-serif;
+		font-weight: 600;
+		letter-spacing: 0.05em;
+		color: #1a1a1a;
 		text-decoration: none;
-		color: #f0ede6;
 	}
 	.item-label {
 		font-size: 0.85rem;
 		letter-spacing: 0.1em;
-		color: #8a8a88;
+		color: #6a6a6a;
 		text-decoration: none;
 	}
 	.item-label:hover {
-		color: #f0ede6;
+		color: #1a1a1a;
 	}
 	.dropdown {
 		position: relative;
@@ -136,7 +136,7 @@
 	}
 	.chevron {
 		transition: transform 0.2s ease;
-		color: #8a8a88;
+		color: #6a6a6a;
 	}
 	.chevron.open {
 		transform: rotate(180deg);
@@ -145,8 +145,10 @@
 		position: absolute;
 		right: 0;
 		top: calc(100% + 0.75rem);
-		background: #141412;
-		border: 1px solid #2a2a28;
+		background: #ffffff;
+		border: 1px solid #ececec;
+		border-radius: 10px;
+		box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
 		list-style: none;
 		min-width: 200px;
 		padding: 0.6rem 0;
@@ -169,7 +171,7 @@
 		padding: 0.8rem 1.5rem;
 		font-size: 0.9rem;
 		letter-spacing: 0.08em;
-		color: #8a8a88;
+		color: #6a6a6a;
 		text-decoration: none;
 		transition:
 			color 0.15s,
@@ -177,8 +179,8 @@
 		white-space: nowrap;
 	}
 	.menu-item:hover {
-		color: #f0ede6;
-		background: #1e1e1c;
+		color: #1a1a1a;
+		background: #f7f7fb;
 	}
 
 	@media (max-width: 768px) {
