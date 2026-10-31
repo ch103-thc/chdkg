@@ -12,39 +12,6 @@
 			href: '/gamakay-gmk67'
 		},
 		{
-			id: 2,
-			category: 'Keyboards',
-			name: 'AULA WIN68HE',
-			fullName: 'AULA WIN68HE Wireless Mechanical Keyboard',
-			tagline: 'Hall effect precision. Wire-free freedom.',
-			price: 75,
-			badge: null,
-			img: 'img/aula-win68he.png',
-			href: '/aula-win68he'
-		},
-		{
-			id: 3,
-			category: 'Keyboards',
-			name: 'AULA F75 - Thunder Black',
-			fullName: 'AULA F75 Wireless Mechanical Keyboard',
-			tagline: 'Compact. Precise. Yours.',
-			price: 60,
-			badge: null,
-			img: 'img/aula-f75.png',
-			href: '/aula-f75'
-		},
-		{
-			id: 4,
-			category: 'Mice',
-			name: 'Razer Basilisk X',
-			fullName: 'Razer Basilisk X HyperSpeed Wireless Gaming Mouse',
-			tagline: 'HyperSpeed wireless. Built to win.',
-			price: 55,
-			badge: null,
-			img: 'img/razer-basilisk.png',
-			href: '/razer-basilisk'
-		},
-		{
 			id: 5,
 			category: 'Keyboards',
 			name: 'POP Icon Keys',

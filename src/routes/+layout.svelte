@@ -6,9 +6,6 @@
 
 	const items = [
 		{ label: 'GamaKay GMK67', href: '/gamakay-gmk67' },
-		{ label: 'AULA WIN68HE', href: '/aula-win68he' },
-		{ label: 'AULA F75 - Thunder Black', href: '/aula-f75' },
-		{ label: 'Razer Basilisk X', href: '/razer-basilisk' },
 		{ label: 'AULA F87', href: '/pop-icon' },
 		{ label: 'MX Keys Mini — Pale Grey', href: '/mx-keys-mini-pale-grey' },
 		{ label: 'AULA F75 - Glacier Blue', href: '/aula-f75-1' }
