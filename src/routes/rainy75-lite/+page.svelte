@@ -1,60 +1,52 @@
 <script>
 	import { slide } from 'svelte/transition';
 
-	let activeMedia = $state('/img/mxkeys-white-1.jpg');
+	let activeMedia = $state('/img/rainy75-1.jpg');
 	let isVideo = $derived(activeMedia.endsWith('.MP4'));
 
 	const media = [
-		'/img/mxkeys-white-1.jpg',
-		'/img/mxkeys-white-2.jpg',
-		'/img/mxkeys-white-3.jpg',
-		'/img/mxkeys-white-4.jpg'
+		'/img/rainy75-1.jpg',
+		'/img/rainy75-2.jpg',
+		'/img/rainy75-3.jpg',
+		'/img/rainy75-4.jpg',
+		'/img/rainy75-video.MP4'
 	];
 
 	const product = {
-		name: 'Logitech MX Keys Mini - Pale Grey',
-		tagline: 'Compact by design. Comfortable by feel. Pale Grey.',
-		price: 100,
+		name: 'Rainy75 Lite — HMX Violet',
+		tagline: 'Compact. Smooth. Distinctly tuned. No RGB.',
+		price: 104,
 		description:
-			'The Logitech MX Keys Mini brings all the comfort of the full-size MX Keys into a compact 75% frame. Low-profile, concave keycaps and Perfect Stroke keys give every keypress a quiet, stable feel, while smart backlighting adjusts automatically as your hands approach. Pair up to 3 devices over Bluetooth and switch between them instantly with Easy-Switch. Pale Grey colourway.'
+			'The Rainy75 Lite is a compact 75% mechanical keyboard built for a clean, focused desk setup. This unit comes with HMX Violet switches for a smooth, consistent feel, and the no-RGB build keeps the look understated. Hot-swappable, so you can change switches anytime without soldering. Lite version.'
 	};
 
 	const features = [
-		'Compact 75% layout — closer reach to your mouse, no numpad',
-		'Low-profile, concave spherical keycaps for stable typing',
-		'Perfect Stroke keys — quiet, precise 1.5mm actuation',
-		'Smart illumination — backlights adjust as your hands approach',
-		'Easy-Switch — pair up to 3 devices, switch instantly',
-		'Bluetooth Low Energy or Logi Bolt USB receiver connectivity',
-		'USB-C rechargeable — up to 10 days with backlight on',
-		'Up to 5 months battery life with backlight off',
-		'Works across Windows, macOS, Linux, iOS, Android, ChromeOS',
-		'Customisable via Logi Options+ software',
-		'Spill-resistant design',
-		'Matte coating resists fingerprints and smudges'
+		'Compact 75% layout — arrow keys and function row, no numpad',
+		'HMX Violet switches pre-installed',
+		'No RGB — clean, understated look',
+		'Hot-swappable sockets — change switches without soldering',
+		'Lite version of the Rainy75',
+		'Compatible with most MX-style switches and keycaps',
+		'Works across Windows and macOS'
 	];
 
 	const specs = [
-		{ label: 'Layout', value: 'Compact 75% (no numpad)' },
-		{ label: 'Colour', value: 'Pale Grey' },
-		{ label: 'Keys', value: 'Perfect Stroke low-profile scissor keys' },
-		{ label: 'Keycaps', value: 'Low-profile, concave, matte coated' },
-		{ label: 'Connectivity', value: 'Bluetooth Low Energy / Logi Bolt USB receiver' },
-		{ label: 'Paired Devices', value: 'Up to 3, via Easy-Switch button' },
-		{ label: 'Battery', value: 'Built-in rechargeable Li-Po' },
-		{ label: 'Battery Life', value: 'Up to 10 days (backlight on) / 5 months (off)' },
-		{ label: 'Charging', value: 'USB-C' },
-		{ label: 'Backlighting', value: 'White LED, auto on/off via proximity sensor' },
-		{ label: 'Software', value: 'Logi Options+ (optional)' },
-		{ label: 'OS Support', value: 'Windows 10/11 · macOS · Linux · iOS · Android · ChromeOS' },
-		{ label: 'Weight', value: 'Approx. 506g' },
+		{ label: 'Layout', value: '75% (no numpad)' },
+		{ label: 'Version', value: 'Lite' },
+		{ label: 'Switches', value: 'HMX Violet' },
+		{ label: 'Backlighting', value: 'None (no RGB)' },
+		{ label: 'Hot-swap', value: 'Yes' },
+		{ label: 'Connectivity', value: '2.4GHz / Bluetooth / USB-C' },
+		{ label: 'Battery', value: '3500 mAh' },
+		{ label: 'OS Support', value: 'Windows · macOS' },
+		{ label: 'Weight', value: '~1.8kg' },
 		{ label: 'Condition', value: 'Brand New' }
 	];
 
 	const inbox = [
-		'Logitech MX Keys Mini Keyboard (Pale Grey)',
-		'Logi Bolt USB Receiver',
-		'USB-C charging cable',
+		'Rainy75 Lite Keyboard (HMX Violet, No RGB)',
+		'USB-C cable',
+		'Keycap / switch puller',
 		'Quick start guide'
 	];
 
@@ -72,24 +64,20 @@
 			a: "Just tap on 'Return/refund' on your order details page if something goes wrong with your order. Carousell will reach out to you via email within 24h to resolve the issue.<br><a href='https://support.carousell.com/hc/en-us/articles/360001548627--Singapore-How-do-I-raise-a-return-refund-request' target='_blank' rel='noopener noreferrer'>Learn more</a>"
 		},
 		{
-			q: 'How do I switch between paired devices?',
-			a: 'Press the Easy-Switch button on the keyboard corresponding to the device slot (1, 2, or 3) you paired it to. The keyboard reconnects instantly.'
+			q: 'What switches does it come with?',
+			a: 'HMX Violet switches come pre-installed.'
 		},
 		{
-			q: 'How do I pair a new device?',
-			a: "Hold the Easy-Switch button for a device slot for 3 seconds until the LED blinks, then select the keyboard from your device's Bluetooth settings."
+			q: 'Does it have RGB?',
+			a: 'No. This is the no-RGB version.'
+		},
+		{
+			q: 'Can I swap the switches?',
+			a: 'Yes, the board is hot-swappable, so you can swap switches without soldering.'
 		},
 		{
 			q: 'Does it come with a USB receiver?',
-			a: 'Yes — a Logi Bolt USB receiver is included in the box, in addition to Bluetooth connectivity.'
-		},
-		{
-			q: 'How long does the battery last?',
-			a: 'Up to 10 days on a full charge with backlighting on, or up to 5 months with backlighting off. Charges via USB-C.'
-		},
-		{
-			q: 'Can I customise the keys?',
-			a: "Yes, using Logitech's free Logi Options+ software you can remap keys and adjust backlighting behaviour on Windows or macOS."
+			a: 'Yes — a USB receiver is included in the box, in addition to Bluetooth connectivity.'
 		},
 		{
 			q: 'How long does shipping take?',
@@ -113,7 +101,7 @@
 						poster="/img/mxkeys-white-video-thumb.png"
 					/>
 				{:else}
-					<img src={activeMedia} alt="Logitech MX Keys Mini Pale Grey" />
+					<img src={activeMedia} alt="Rainy75 Lite HMX Violet" />
 				{/if}
 			</div>
 			<div class="thumbnails">
@@ -129,21 +117,21 @@
 								<span class="play-icon">{activeMedia === item ? '⏸' : '▶'}</span>
 							</div>
 						{:else}
-							<img src={item} alt="MX Keys Mini view" />
+							<img src={item} alt="Rainy75 Lite view" />
 						{/if}
 					</button>
 				{/each}
 			</div>
-			<p class="image-caption">Logitech MX Keys Mini — Pale Grey</p>
+			<p class="image-caption">Rainy75 Lite — HMX Violet</p>
 		</div>
 
 		<div class="details">
-			<p class="collection">MX Series</p>
+			<p class="collection">Rainy Series</p>
 			<h1>{product.name}</h1>
 			<p class="tagline">{product.tagline}</p>
 			<p class="price">${product.price} SGD</p>
 			<a
-				href="https://www.carousell.sg/p/logitech-mx-keys-mini-wireless-low-profile-keyboard-1446444523/?t-id=DKpYKLlX5V_1780729958132&t-referrer_browse_type=seller&t-referrer_page_type=profile&t-referrer_request_id=k7auHBK3kWBVk_8Z&t-tap_index=4"
+				href="https://www.carousell.sg/p/wobkey-rainy75-anodised-silver-1472312076/?t-id=14184060_1793416669434&t-referrer_browse_type=seller&t-referrer_page_type=me_page&t-referrer_request_id=tZRgnCvyFAWP_iVZ&t-tap_index=1"
 				target="_blank"
 				rel="noopener noreferrer"
 				class="buy-btn"
@@ -154,24 +142,17 @@
 
 			<ul class="perks">
 				<li>
-					<strong>Compact 75% Layout</strong> – No numpad means your mouse sits closer, easier on the
-					shoulder for everyday typing.
+					<strong>Compact 75% Layout</strong> – Keeps your mouse close and your desk tidy, with arrow
+					keys and function row intact.
 				</li>
 				<li>
-					<strong>Perfect Stroke Keys</strong> – Low-profile, concave keycaps give a quiet, stable, satisfying
-					typing feel out of the box.
+					<strong>HMX Violet Switches</strong> – Smooth, consistent keystrokes right out of the box.
 				</li>
 				<li>
-					<strong>Easy-Switch, 3 Devices</strong> – Pair a laptop, tablet, and phone, and jump between
-					them with one button press.
+					<strong>No RGB</strong> – A clean, minimal look with nothing to distract.
 				</li>
 				<li>
-					<strong>Smart Backlighting</strong> – Keys light up automatically as your hands approach, and
-					dim when you step away to save battery.
-				</li>
-				<li>
-					<strong>USB-C Fast Charging</strong> – Up to 10 days per charge with backlight on, up to 5
-					months with it off.
+					<strong>Hot-Swappable</strong> – Swap switches anytime, no soldering needed.
 				</li>
 			</ul>
 		</div>

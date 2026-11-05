@@ -12,7 +12,7 @@
 			href: '/gamakay-gmk67'
 		},
 		{
-			id: 5,
+			id: 2,
 			category: 'Keyboards',
 			name: 'POP Icon Keys',
 			fullName: 'POP Icon Keys Bluetooth Mechanical Keyboard',
@@ -23,18 +23,18 @@
 			href: '/pop-icon'
 		},
 		{
-			id: 6,
+			id: 3,
 			category: 'Keyboards',
-			name: 'Logitech MX Keys Mini',
-			fullName: 'Logitech MX Keys Mini Wireless Illuminated Keyboard — Pale Grey',
-			tagline: 'Compact by design. Comfortable by feel.',
-			price: 100,
+			name: 'Rainy75 Lite',
+			fullName: 'Rainy75 Lite Mechanical Keyboard — HMX Violet, No RGB',
+			tagline: 'Compact. Smooth. Distinctly tuned.',
+			price: 104,
 			badge: null,
-			img: 'img/mx-keys-mini-white.png',
-			href: '/mx-keys-mini-pale-grey'
+			img: 'img/rainy75-lite.png',
+			href: '/rainy75-lite'
 		},
 		{
-			id: 7,
+			id: 4,
 			category: 'Keyboards',
 			name: 'AULA F75 - Glacier Blue',
 			fullName: 'AULA F75 Wireless Mechanical Keyboard',
