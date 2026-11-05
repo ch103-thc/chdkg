@@ -1,7 +1,7 @@
 <script>
 	import { slide } from 'svelte/transition';
 
-	let activeMedia = $state('/img/aula-f87-1.jpg');
+	let activeMedia = $state('/img/pop-icon-1.jpg');
 	let isVideo = $derived(activeMedia.endsWith('.MP4'));
 
 	const media = [
@@ -88,9 +88,9 @@
 		<div class="visual">
 			<div class="main-image">
 				{#if isVideo}
-					<video src={activeMedia} controls autoplay loop poster="/img/aula-f87-video-thumb.png" />
+					<video src={activeMedia} controls autoplay loop poster="/img/logitech-pop-icon-video-thumb.png" />
 				{:else}
-					<img src={activeMedia} alt="Aula F87 Mechanical Keyboard" />
+					<img src={activeMedia} alt="Logitech POP Icon Keys" />
 				{/if}
 			</div>
 			<div class="thumbnails">
@@ -106,7 +106,7 @@
 								<span class="play-icon">{activeMedia === item ? '⏸' : '▶'}</span>
 							</div>
 						{:else}
-							<img src={item} alt="Aula F87 view" />
+							<img src={item} alt="Logitech POP Icon Keys view" />
 						{/if}
 					</button>
 				{/each}
@@ -221,6 +221,15 @@
 </main>
 
 <style>
+	@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+	:global(body) {
+		background: #fafafa;
+		color: #1a1a1a;
+		font-family: 'Inter', sans-serif;
+		-webkit-font-smoothing: antialiased;
+	}
+
 	.product {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
@@ -229,14 +238,14 @@
 	}
 
 	.visual {
-		background: #141412;
+		background: #f5f5f7;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
 		gap: 1.5rem;
 		padding: 4rem;
-		border-right: 1px solid #2a2a28;
+		border-right: 1px solid #ececec;
 		min-width: 0;
 		overflow: hidden;
 		max-width: 100%;
@@ -244,11 +253,13 @@
 	.main-image {
 		width: 420px;
 		height: 350px;
-		border-radius: 8px;
+		border-radius: 14px;
 		overflow: hidden;
+		background: #fff;
+		border: 1px solid #ececec;
+		box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
 	}
-	.main-image img,
-	.main-image video {
+	.main-image img {
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
@@ -261,11 +272,12 @@
 		width: 60px;
 		height: 50px;
 		padding: 0;
-		border: 1px solid #3a3a38;
-		border-radius: 4px;
+		border: 1px solid #ececec;
+		border-radius: 8px;
 		overflow: hidden;
 		cursor: pointer;
-		opacity: 0.5;
+		background: #fff;
+		opacity: 0.6;
 		transition:
 			opacity 0.15s,
 			border-color 0.15s;
@@ -278,7 +290,7 @@
 	.thumb-btn:hover,
 	.thumb-btn.active {
 		opacity: 1;
-		border-color: #f0ede6;
+		border-color: #6366f1;
 	}
 	.thumb-video-wrap {
 		position: relative;
@@ -298,14 +310,14 @@
 		align-items: center;
 		justify-content: center;
 		font-size: 0.75rem;
-		color: #f0ede6;
-		background: rgba(0, 0, 0, 0.45);
+		color: #fff;
+		background: rgba(0, 0, 0, 0.35);
 		pointer-events: none;
 	}
 	.image-caption {
-		font-size: 0.75rem;
-		letter-spacing: 0.15em;
-		color: #6a6a68;
+		font-size: 0.7rem;
+		letter-spacing: 0.18em;
+		color: #a0a0a0;
 		text-transform: uppercase;
 	}
 
@@ -319,93 +331,103 @@
 		overflow: hidden;
 	}
 	.collection {
-		font-size: 0.75rem;
-		letter-spacing: 0.2em;
-		color: #8a8a88;
+		font-size: 0.7rem;
+		letter-spacing: 0.25em;
+		color: #a0a0a0;
 		text-transform: uppercase;
 	}
 	h1 {
-		font-family: 'Playfair Display', serif;
+		font-family: 'Space Grotesk', sans-serif;
 		font-size: 2.8rem;
 		line-height: 1.1;
-		font-weight: 400;
+		font-weight: 600;
+		color: #1a1a1a;
 	}
 	.tagline {
 		font-size: 1rem;
-		color: #a0a09e;
-		font-style: italic;
+		color: #7a7a7a;
+		font-style: normal;
 	}
 	.price {
 		font-size: 1.4rem;
 		font-weight: 500;
-		letter-spacing: 0.05em;
+		letter-spacing: 0.04em;
+		color: #1a1a1a;
 	}
 	.buy-btn {
 		display: inline-block;
-		background: #f0ede6;
-		color: #0e0d0b;
+		background: #1a1a1a;
+		color: #fff;
 		text-decoration: none;
 		padding: 0.85rem 2rem;
-		font-size: 0.85rem;
+		font-size: 0.78rem;
 		font-weight: 600;
-		letter-spacing: 0.15em;
+		letter-spacing: 0.12em;
 		text-transform: uppercase;
 		border-radius: 2px;
-		transition:
-			background 0.2s,
-			color 0.2s;
+		transition: background 0.2s;
 		width: fit-content;
 	}
 	.buy-btn:hover {
-		background: #d8d5ce;
+		background: #6366f1;
 	}
 	.description {
 		font-size: 0.9rem;
 		line-height: 1.7;
-		color: #b0b0ae;
-		border-top: 1px solid #2a2a28;
+		color: #6a6a6a;
+		border-top: 1px solid #f0f0f0;
 		padding-top: 1.25rem;
 	}
-
 	.perks {
 		list-style: none;
 		display: flex;
 		flex-direction: column;
 		gap: 0.4rem;
-		border-top: 1px solid #2a2a28;
+		border-top: 1px solid #f0f0f0;
 		padding-top: 1.25rem;
 	}
 	.perks li {
 		font-size: 0.8rem;
-		color: #8a8a88;
-		letter-spacing: 0.03em;
+		color: #7a7a7a;
+		letter-spacing: 0.02em;
 		line-height: 1.6;
 	}
 	.perks li strong {
-		color: #c0c0be;
+		color: #1a1a1a;
 		font-weight: 500;
 	}
+	/* .perks li::before {
+		content: '— ';
+	} */
 
 	.info-sections {
 		max-width: 860px;
 		margin: 0 auto;
-		padding: 5rem 3rem;
+		padding: 4rem 3rem;
 		width: 100%;
 		box-sizing: border-box;
 		display: flex;
 		flex-direction: column;
-		gap: 4rem;
+		gap: 1.5rem;
 	}
-
+	.info-block {
+		background: #fff;
+		border: 1px solid #ececec;
+		border-radius: 14px;
+		padding: 2rem;
+		box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
+	}
 	.info-block h2 {
-		font-family: 'Playfair Display', serif;
-		font-size: 1.5rem;
-		font-weight: 400;
-		margin-bottom: 1.5rem;
+		font-family: 'Space Grotesk', sans-serif;
+		font-size: 1.3rem;
+		font-weight: 600;
+		color: #1a1a1a;
+		margin-bottom: 1.25rem;
 		padding-bottom: 0.75rem;
-		border-bottom: 1px solid #2a2a28;
+		border-bottom: 1px solid #f0f0f0;
 	}
 
+	/* Features */
 	.feature-list {
 		list-style: none;
 		display: grid;
@@ -414,16 +436,17 @@
 	}
 	.feature-list li {
 		font-size: 0.875rem;
-		color: #b0b0ae;
+		color: #4a4a4a;
 		line-height: 1.6;
 	}
 	.feature-list li::before {
 		content: '✦ ';
-		color: #6a6a68;
+		color: #6366f1;
 		font-size: 0.6rem;
 		vertical-align: middle;
 	}
 
+	/* Specs */
 	.specs-table {
 		width: 100%;
 		border-collapse: collapse;
@@ -431,14 +454,11 @@
 		word-break: break-word;
 	}
 	.specs-table tr {
-		border-bottom: 1px solid #1e1e1c;
-	}
-	.specs-table tr:last-child {
-		border-bottom: none;
+		border-bottom: 1px solid #f0f0f0;
 	}
 	.spec-label {
-		font-size: 0.8rem;
-		color: #6a6a68;
+		font-size: 0.75rem;
+		color: #8a8a8a;
 		letter-spacing: 0.1em;
 		text-transform: uppercase;
 		padding: 0.7rem 0;
@@ -446,10 +466,11 @@
 	}
 	.spec-value {
 		font-size: 0.875rem;
-		color: #d0d0ce;
+		color: #1a1a1a;
 		padding: 0.7rem 0;
 	}
 
+	/* In the Box */
 	.box-list {
 		list-style: none;
 		display: flex;
@@ -458,19 +479,20 @@
 	}
 	.box-list li {
 		font-size: 0.875rem;
-		color: #b0b0ae;
+		color: #4a4a4a;
 	}
 	.box-list li::before {
 		content: '— ';
-		color: #6a6a68;
+		color: #a0a0a0;
 	}
 
+	/* FAQ */
 	.faq-list {
 		display: flex;
 		flex-direction: column;
 	}
 	.faq-item {
-		border-bottom: 1px solid #2a2a28;
+		border-bottom: 1px solid #f0f0f0;
 	}
 	.faq-question {
 		width: 100%;
@@ -480,37 +502,37 @@
 		padding: 1.1rem 0;
 		background: none;
 		border: none;
-		color: #e0e0de;
+		color: #1a1a1a;
+		font-family: 'Inter', sans-serif;
 		font-size: 0.9rem;
 		text-align: left;
 		cursor: pointer;
-		letter-spacing: 0.02em;
 		transition: color 0.15s;
 	}
 	.faq-question:hover,
 	.faq-question.open {
-		color: #f0ede6;
+		color: #6366f1;
 	}
 	.faq-icon {
 		font-size: 1.2rem;
-		color: #6a6a68;
+		color: #a0a0a0;
 		flex-shrink: 0;
 		margin-left: 1rem;
 	}
 	.faq-answer {
 		font-size: 0.85rem;
-		color: #8a8a88;
+		color: #6a6a6a;
 		line-height: 1.75;
 		padding-bottom: 1.25rem;
 		max-width: 680px;
 	}
 	.faq-answer :global(a) {
-		color: #f0ede6;
+		color: #6366f1;
 		text-decoration: underline;
 		text-underline-offset: 2px;
 	}
 	.faq-answer :global(a:hover) {
-		color: #d8d5ce;
+		color: #4f46e5;
 	}
 
 	@media (max-width: 768px) {
@@ -518,9 +540,14 @@
 			grid-template-columns: 1fr;
 		}
 		.visual {
-			min-height: 40vh;
-			border-right: none;
-			border-bottom: 1px solid #2a2a28;
+			border-bottom: 1px solid #ececec;
+		}
+		.main-image {
+			width: 100%;
+			max-width: 420px;
+		}
+		.info-block {
+			padding: 1.5rem;
 		}
 		.details {
 			padding: 2.5rem 1.5rem;
